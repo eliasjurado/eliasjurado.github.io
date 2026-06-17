@@ -1,0 +1,179 @@
+# Diccionario i18n del sitio Elías Jurado.
+#
+# Uso desde HTML/Markdown:
+#   <span data-i18n="nav.home">Inicio</span>
+# El texto que escribas dentro del span es el fallback (ES por defecto).
+# El JS lee el diccionario al cargar y reemplaza si idioma activo = EN.
+#
+# Detección de idioma:
+#   1) localStorage.eliasjurado_lang (preferencia explícita del usuario)
+#   2) navigator.language: si empieza con "es" → ES, en cualquier otro caso → EN
+#   3) fallback final: ES
+#
+# Estructura: claves jerárquicas con .es / .en obligatorios.
+# Mantener orden alfabético dentro de cada grupo para facilitar mantenimiento.
+
+# ── NAVEGACIÓN ─────────────────────────────────────────────────────────────
+nav:
+  home:        { es: "Inicio",      en: "Home"        }
+  strategies:  { es: "Estrategias", en: "Strategies"  }
+  portfolio:   { es: "Portafolio",  en: "Portfolio"   }
+  about:       { es: "Sobre mí",    en: "About"       }
+  contact:     { es: "Contacto",    en: "Contact"     }
+
+# ── TOGGLE DE IDIOMA ───────────────────────────────────────────────────────
+toggle:
+  aria_label:  { es: "Cambiar idioma",    en: "Change language" }
+
+# ── HERO DE HOME ───────────────────────────────────────────────────────────
+hero:
+  kicker:        { es: "Madurez digital de tu pyme",                    en: "Your SMB's digital maturity"                                    }
+  tagline:       { es: "Acompaño la madurez digital de tu pyme — de la visibilidad a la conversión, de la conversión a la eficiencia.",
+                   en: "I guide your SMB through its digital maturity — from visibility to conversion, from conversion to efficiency."   }
+  title_short:   { es: "Acompaño la madurez digital de tu pyme.",
+                   en: "I guide your SMB through its digital maturity." }
+  subtitle_flow: { es: "Visibilidad → Conversión → Eficiencia",
+                   en: "Visibility → Conversion → Efficiency" }
+  cta_primary:   { es: "Conversemos",       en: "Let's talk"       }
+  cta_secondary: { es: "Ver estrategias",   en: "View strategies"  }
+
+# ── SECCIONES DEL HOME ─────────────────────────────────────────────────────
+home:
+  quickwin_kicker:   { es: "Por dónde empezar",                       en: "Where to start"                              }
+  quickwin_title:    { es: "Ataca primero la vena del negocio",       en: "Attack the revenue lifeline first"           }
+  quickwin_body:     { es: "Antes de invertir en lo grande, activa la conversión inmediata. Bajo costo, retorno medible en semanas.",
+                       en: "Before investing in the big stuff, activate immediate conversion. Low cost, measurable returns in weeks." }
+  quickwin_see_more: { es: "Ver detalle →",                           en: "See details →"                               }
+
+  levels_kicker:     { es: "Mapa de Madurez Digital",                 en: "Digital Maturity Map"                        }
+  levels_title:      { es: "Tres niveles para crecer ordenado",       en: "Three levels to grow with structure"         }
+  levels_body:       { es: "Cuando el Quick Win deja rentabilidad, llega el momento de construir capacidad real. Estos son los tres escalones.",
+                       en: "Once the Quick Win shows profitability, it's time to build real capacity. These are the three levels." }
+  levels_cta:        { es: "Ver pricing completo + add-ons →",        en: "See full pricing + add-ons →"                }
+
+  journey_title:     { es: "Tu recorrido, paso a paso",               en: "Your journey, step by step"                  }
+  journey_body:      { es: "Cuatro estaciones del camino digital de tu negocio. Empieza donde estés. Avanza cuando el retorno lo pida.",
+                       en: "Four stations on your business's digital path. Start where you are. Move forward when the return justifies it." }
+  journey_entry:     { es: "Punto de entrada",                        en: "Entry point"                                  }
+  journey_cta:       { es: "Ver detalle →",                           en: "See detail →"                                 }
+
+  closing_title:     { es: "¿Tu negocio necesita escalar?",           en: "Does your business need to scale?"           }
+  closing_body:      { es: "Conversemos sin compromiso. Te respondo en menos de 24 horas en días hábiles.",
+                       en: "Let's talk with no commitment. I'll reply within 24 hours on business days." }
+  closing_cta:       { es: "Escribir por WhatsApp",                   en: "Message me on WhatsApp"                      }
+
+# ── PÁGINA SERVICES / ESTRATEGIAS ──────────────────────────────────────────
+services:
+  page_title:     { es: "Estrategias",                                en: "Strategies"                                  }
+  page_kicker:    { es: "Mapa de Madurez Digital",                    en: "Digital Maturity Map"                        }
+  page_subtitle:  { es: "Una estrategia para cada fase del negocio. Empieza donde estés — y avanza cuando el retorno lo pida.",
+                    en: "A strategy for every stage of your business. Start where you are — and move forward when the return justifies it." }
+  intro_body:     { es: "Toda pyme atraviesa el mismo viaje digital — solo cambia en qué punto está hoy. Acá vas a encontrar tres niveles del Mapa de Madurez para construir capacidad real, y un Quick Win transversal que activa la conversión inmediata antes de invertir en lo grande.",
+                    en: "Every SMB goes through the same digital journey — only the starting point varies. Here you'll find three Digital Maturity levels to build real capacity, plus a transversal Quick Win that activates immediate conversion before investing in the larger pieces." }
+
+  summary_qw_kicker:   { es: "Paso 0 · Transversal a cualquier nivel", en: "Step 0 · Transversal to any level"          }
+  detail_qw_kicker:    { es: "Paso 0 · Activación inmediata",          en: "Step 0 · Immediate activation"               }
+  detail_section:      { es: "Detalle de cada estrategia",            en: "Details of each strategy"                    }
+  back_to_summary:     { es: "↑ Volver al resumen",                   en: "↑ Back to summary"                           }
+  see_more:            { es: "Ver más →",                             en: "See more →"                                  }
+
+  whats_included:      { es: "Qué incluye",                           en: "What's included"                             }
+  market_ref:          { es: "Mercado",                               en: "Market"                                      }
+  market_ref_long:     { es: "Referencia mercado",                    en: "Market reference"                            }
+  starting_at:         { es: "Desde",                                 en: "From"                                        }
+  price_note_short:    { es: "*Precio referencial",                   en: "*Reference price"                            }
+  price_note_long:     { es: "*Precio referencial. La cotización final se ajusta según alcance.",
+                         en: "*Reference price. Final quote depends on project scope." }
+  reference_short:     { es: "*Referencial",                          en: "*Reference"                                  }
+
+  potenciadores_kicker_top: { es: "+ Potenciadores opcionales",        en: "+ Optional boosters"                       }
+  potenciadores_caption:    { es: "Suman a cualquier estrategia. Haz clic en cada uno para ver detalle.",
+                              en: "Add to any strategy. Click each one for details." }
+  addons_kicker:       { es: "Potenciadores opcionales",               en: "Optional boosters"                           }
+  addons_title:        { es: "Servicios que se suman a cualquier estrategia",
+                         en: "Services that complement any strategy" }
+  addons_body:         { es: "Marketing experiencial, integraciones puntuales y capacitación. Se cotizan aparte y se agregan al Quick Win o a cualquier nivel del Mapa.",
+                         en: "Experiential marketing, targeted integrations, and training. Priced separately and added to the Quick Win or any Map level." }
+  addons_investment:   { es: "Inversión",                             en: "Investment"                                  }
+  addons_term:         { es: "Plazo",                                 en: "Term"                                        }
+
+  care_kicker:         { es: "Plan Cuidado mensual",                  en: "Monthly Care Plan"                           }
+  care_title:          { es: "Hosting, soporte y mejoras continuas",  en: "Hosting, support and continuous improvements" }
+  care_body:           { es: "Todo proyecto en producción necesita mantenimiento. El Plan Cuidado es la operación recurrente — independiente del costo de desarrollo.",
+                         en: "Every project in production needs maintenance. The Care Plan is the recurring operation — independent of development cost." }
+
+  process_title:       { es: "¿Cómo trabajamos juntos?",              en: "How do we work together?"                    }
+  process_step1:       { es: "Conversamos sin compromiso.",           en: "We talk without commitment."                 }
+  process_step1_body:  { es: "Una llamada de 30 minutos para entender qué problema quieres resolver. Te muestro demos en vivo de proyectos funcionando.",
+                         en: "A 30-minute call to understand what problem you want to solve. I show you live demos of working projects." }
+  process_step2:       { es: "Te paso una propuesta clara.",          en: "I send you a clear proposal."                }
+  process_step2_body:  { es: "Alcance, hitos, tiempos y costo en un solo documento. Si te encaja, firmamos. Si no, tan amigos.",
+                         en: "Scope, milestones, timeline and cost in a single document. If it fits, we sign. If not, no hard feelings." }
+  process_step3:       { es: "Construimos juntos.",                   en: "We build together."                          }
+  process_step3_body:  { es: "Cada semana hay una entrega tangible que puedes revisar y aprobar. Staging durante todo el desarrollo; producción al pago del último hito.",
+                         en: "Every week there's a tangible deliverable to review and approve. Staging during development; production goes live with the final payment." }
+  process_step4:       { es: "Lanzamos y cuidamos.",                  en: "We launch and care."                         }
+  process_step4_body:  { es: "Una vez en vivo, el Plan Cuidado mantiene el sistema funcionando, con soporte directo conmigo.",
+                         en: "Once live, the Care Plan keeps the system running, with direct support from me." }
+
+  final_title:    { es: "¿No sabes por dónde empezar?",               en: "Not sure where to start?"                    }
+  final_body:     { es: "Conversemos 30 minutos. Te ayudo a ubicar tu negocio en el mapa y te muestro qué retorno concreto esperar de cada paso.",
+                    en: "Let's talk for 30 minutes. I'll help you locate your business on the map and show you what concrete return to expect from each step." }
+  final_cta:      { es: "Agendar conversación",                       en: "Schedule a call"                             }
+
+  care_strip_kicker:     { es: "+ Plan Cuidado mensual",              en: "+ Monthly Care Plan"                          }
+  care_strip_caption:    { es: "Hosting, soporte y mejoras continuas. Independiente del desarrollo.",
+                           en: "Hosting, support, and continuous improvements. Independent of development." }
+  cuidado_mention:       { es: "+ Plan Cuidado mensual desde USD 48", en: "+ Monthly Care Plan from USD 48"              }
+  method_strip_kicker:   { es: "Nuestro método",                      en: "Our method"                                   }
+  method_strip_caption:  { es: "4 pasos. Cada uno con un entregable tangible que validas antes de continuar.",
+                           en: "4 steps. Each with a tangible deliverable you validate before continuing." }
+  method_step1_short:    { es: "Conversamos",                         en: "We talk"                                      }
+  method_step2_short:    { es: "Propuesta",                           en: "Proposal"                                     }
+  method_step3_short:    { es: "Construimos",                         en: "We build"                                     }
+  method_step4_short:    { es: "Lanzamos y cuidamos",                 en: "We launch and care"                           }
+  method_see_detail:     { es: "Ver detalle del proceso ↓",           en: "See process detail ↓"                         }
+
+# ── FOOTER ─────────────────────────────────────────────────────────────────
+footer:
+  contact_label:  { es: "Contacto",                                   en: "Contact"                                     }
+  links_label:    { es: "Enlaces",                                    en: "Links"                                       }
+  rights:         { es: "Todos los derechos reservados.",             en: "All rights reserved."                        }
+
+# ── TARJETA DIGITAL /card/ ─────────────────────────────────────────────────
+card:
+  tagline:        { es: "Landing · E-commerce · CRM",                 en: "Landing · E-commerce · CRM"                  }
+  whatsapp_label: { es: "WhatsApp",                                   en: "WhatsApp"                                    }
+  call_label:     { es: "Llamar",                                     en: "Call"                                        }
+  email_label:    { es: "Correo",                                     en: "Email"                                       }
+  website_label:  { es: "Sitio web",                                  en: "Website"                                     }
+  save_contact:   { es: "Guardar contacto",                           en: "Save contact"                                }
+  share:          { es: "Compartir",                                  en: "Share"                                       }
+  tax_id_label:   { es: "RUC",                                        en: "Tax ID"                                      }
+  share_title:    { es: "Elías Jurado",                               en: "Elias Jurado"                                }
+  share_text:     { es: "Landing · E-commerce · CRM",                 en: "Landing · E-commerce · CRM"                  }
+  link_copied:    { es: "Enlace copiado al portapapeles.",            en: "Link copied to clipboard."                   }
+  copy_link_prompt: { es: "Copia este enlace:",                       en: "Copy this link:"                             }
+
+# ── ABOUT ───────────────────────────────────────────────────────────────────
+about:
+  page_title:     { es: "Sobre mí",                                   en: "About"                                        }
+  page_kicker:    { es: "Misión y método",                            en: "Mission and method"                           }
+  page_subtitle:  { es: "Por qué hago lo que hago, cómo lo hago, y para quién.",
+                    en: "Why I do what I do, how I do it, and for whom." }
+
+# ── CONTACT ─────────────────────────────────────────────────────────────────
+contact:
+  page_title:     { es: "Contacto",                                   en: "Contact"                                      }
+  page_kicker:    { es: "Conversemos",                                en: "Let's talk"                                   }
+  page_subtitle:  { es: "La forma más rápida de empezar es escribirme. Te respondo en menos de 24 horas en días hábiles.",
+                    en: "The fastest way to start is to write to me. I reply within 24 hours on business days." }
+  name_placeholder:    { es: "Ej. María García",                      en: "e.g. María García"                            }
+  company_placeholder: { es: "Ej. Estudio Nómada",                    en: "e.g. Nómada Studio"                           }
+
+# ── PORTFOLIO ───────────────────────────────────────────────────────────────
+portfolio:
+  page_title:     { es: "Portafolio",                                 en: "Portfolio"                                    }
+  page_kicker:    { es: "Casos",                                      en: "Cases"                                        }
+  page_subtitle:  { es: "Selección de proyectos en los que trabajo o trabajé. Más casos próximamente.",
+                    en: "Selection of projects I'm working on or have worked on. More cases coming soon." }

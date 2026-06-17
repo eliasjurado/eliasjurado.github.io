@@ -1,0 +1,295 @@
+---
+layout: null
+permalink: /card/
+sitemap: false
+---
+{%- assign phone_display = site.contact.phone -%}
+{%- assign phone_e164 = '+' | append: site.contact.whatsapp -%}
+{%- assign wa_text = site.whatsapp_messages.default | default: site.whatsapp_messages.hero -%}
+<!doctype html>
+<html lang="{{ site.locale | default: 'es' | slice: 0, 2 }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title }} · Tarjeta digital</title>
+<meta name="description" content="{{ site.description | strip_newlines }}">
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:description" content="Landing web · E-commerce · CRM.">
+<meta name="theme-color" content="#000000">
+
+{%- if site.gtm_container -%}
+<!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),
+        dl=l!='dataLayer' ? '&l='+l : '';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.gtm_container }}');
+</script>
+<!-- End Google Tag Manager -->
+{%- endif -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+<script id="i18n-data" type="application/json">{{ site.data.i18n | jsonify }}</script>
+<script src="{{ '/assets/js/i18n.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/analytics.js' | relative_url }}" defer></script>
+<style>
+  :root {
+    --carbon:    #000000;
+    --steel:     #243038;
+    --muted:     #606060;
+    --aluminum:  #f5f5f7;
+    --white:     #ffffff;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(160deg, var(--carbon) 0%, var(--steel) 100%);
+    min-height: 100vh; min-height: 100dvh;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--carbon);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px 16px;
+  }
+  .card {
+    width: 100%; max-width: 400px;
+    background: var(--white);
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.55);
+  }
+
+  /* HEADER con gradiente carbón → steel y logo blanco */
+  .head {
+    background: linear-gradient(160deg, var(--carbon) 0%, var(--steel) 100%);
+    padding: 44px 28px 32px;
+    color: var(--white);
+    text-align: center;
+  }
+  .head__logo {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 14px;
+  }
+  .head__name {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--white);
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .head__tagline {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--aluminum);
+    opacity: 0.75;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 10px 0 0;
+  }
+
+  /* Lista de acciones sobre fondo blanco */
+  .actions { padding: 20px 18px 8px; background: var(--white); }
+  .btn {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px;
+    background: var(--aluminum);
+    color: var(--carbon);
+    text-decoration: none;
+    font-size: 15px; font-weight: 500;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    transition: all 0.18s ease;
+    cursor: pointer;
+  }
+  .btn:hover, .btn:active {
+    background: var(--white);
+    border-color: var(--carbon);
+    transform: translateY(-1px);
+  }
+  .btn:focus-visible,
+  .btn-2:focus-visible {
+    outline: 2px solid var(--carbon);
+    outline-offset: 2px;
+  }
+  .btn .ico {
+    flex-shrink: 0; width: 38px; height: 38px;
+    display: grid; place-items: center;
+    background: var(--carbon); color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .btn.whatsapp .ico { background: var(--steel); color: var(--white); }
+  .btn .label-r {
+    color: var(--muted);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .btn .text { display: flex; flex-direction: column; gap: 2px; }
+  .btn .value { font-weight: 600; color: var(--carbon); font-size: 14.5px; }
+
+  /* Acciones secundarias */
+  .secondary {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; padding: 8px 18px 22px;
+    background: var(--white);
+  }
+  .btn-2 {
+    text-align: center; padding: 14px 10px;
+    background: var(--carbon); color: var(--white);
+    font-size: 13px; font-weight: 600;
+    text-decoration: none; cursor: pointer; border: none;
+    font-family: inherit;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    transition: all 0.18s ease;
+  }
+  .btn-2.outline {
+    background: transparent; color: var(--carbon);
+    border: 1.5px solid var(--carbon);
+  }
+  .btn-2:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-2.outline:hover { background: var(--aluminum); }
+
+  /* Footer */
+  .foot {
+    padding: 18px 24px 22px; text-align: center;
+    background: var(--white);
+    border-top: 1px solid var(--aluminum);
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.4px;
+    line-height: 1.7;
+  }
+  .foot a { color: var(--carbon); text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+{%- if site.gtm_container -%}
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm_container }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{%- endif -%}
+
+<main class="card">
+  <header class="head">
+    <!-- Logo blanco oficial Miki sobre gradiente carbón → steel -->
+    <img class="head__logo" src="/assets/images/logo/logo-blanco.svg" alt="{{ site.title }}">
+    <h1 class="head__name">{{ site.title }}</h1>
+    <p class="head__tagline" data-i18n="card.tagline">Landing · E-commerce · CRM</p>
+  </header>
+
+  <nav class="actions" aria-label="Contacto">
+    <a class="btn whatsapp" href="https://wa.me/{{ site.contact.whatsapp }}?text={{ wa_text | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+      <span class="ico" aria-hidden="true">💬</span>
+      <span class="text">
+        <span class="label-r" data-i18n="card.whatsapp_label">WhatsApp</span>
+        <span class="value">{{ phone_display }}</span>
+      </span>
+    </a>
+    <a class="btn" href="tel:{{ phone_e164 }}" aria-label="Llamar por telefono">
+      <span class="ico" aria-hidden="true">📞</span>
+      <span class="text">
+        <span class="label-r" data-i18n="card.call_label">Llamar</span>
+        <span class="value">{{ phone_display }}</span>
+      </span>
+    </a>
+    <a class="btn" href="mailto:{{ site.contact.email }}" aria-label="Enviar correo">
+      <span class="ico" aria-hidden="true">✉</span>
+      <span class="text">
+        <span class="label-r" data-i18n="card.email_label">Correo</span>
+        <span class="value">{{ site.contact.email }}</span>
+      </span>
+    </a>
+    <a class="btn" href="{{ site.url }}" target="_blank" rel="noopener noreferrer" aria-label="Ir al sitio web">
+      <span class="ico" aria-hidden="true">🌐</span>
+      <span class="text">
+        <span class="label-r" data-i18n="card.website_label">Sitio web</span>
+        <span class="value">{{ site.url | replace: 'https://', '' | replace: 'http://', '' }}</span>
+      </span>
+    </a>
+  </nav>
+
+  <div class="secondary">
+    <button class="btn-2" onclick="downloadVCard()" data-i18n="card.save_contact">Guardar contacto</button>
+    <button class="btn-2 outline" onclick="shareCard()" data-i18n="card.share">Compartir</button>
+  </div>
+
+  <footer class="foot">
+    {{ site.contact.city }} · <span data-i18n="card.tax_id_label">RUC</span> {{ site.contact.ruc }}<br>
+    <a href="{{ site.url }}">{{ site.url | replace: 'https://', '' | replace: 'http://', '' }}</a>
+  </footer>
+</main>
+
+<script>
+function i18nLookup(key, fallback) {
+  if (window.eliasI18n && typeof window.eliasI18n.lookup === 'function') {
+    var lang = (typeof window.eliasI18n.getLang === 'function' && window.eliasI18n.getLang())
+      || document.documentElement.getAttribute('lang')
+      || 'es';
+    var val = window.eliasI18n.lookup(key, lang);
+    if (val) return val;
+  }
+  return fallback;
+}
+
+function downloadVCard() {
+  const contactName = {{ site.author.name | jsonify }};
+  const contactPhone = {{ phone_e164 | jsonify }};
+  const contactEmail = {{ site.contact.email | jsonify }};
+  const contactUrl = {{ site.url | jsonify }};
+  const contactCity = {{ site.contact.city | jsonify }};
+
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "FN:" + contactName,
+    "N:Jurado;Elías;Luis;;",
+    "ORG:" + contactName,
+    "TITLE:Landing web · E-commerce · CRM",
+    "TEL;TYPE=CELL,VOICE:" + contactPhone,
+    "EMAIL;TYPE=WORK:" + contactEmail,
+    "URL:" + contactUrl,
+    "ADR;TYPE=WORK:;;;" + contactCity + ";;;;",
+    "NOTE:Acompaño la madurez digital de tu pyme — de la visibilidad a la conversión\\, de la conversión a la eficiencia.",
+    "END:VCARD"
+  ].join("\r\n");
+  const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "elias-jurado.vcf";
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 200);
+}
+async function shareCard() {
+  const data = {
+    title: i18nLookup('card.share_title', {{ site.title | jsonify }}),
+    text: i18nLookup('card.share_text', 'Landing · E-commerce · CRM'),
+    url: location.href
+  };
+  if (navigator.share) {
+    try { await navigator.share(data); } catch {}
+  } else {
+    try {
+      await navigator.clipboard.writeText(location.href);
+      alert(i18nLookup('card.link_copied', 'Enlace copiado al portapapeles.'));
+    } catch {
+      prompt(i18nLookup('card.copy_link_prompt', 'Copia este enlace:'), location.href);
+    }
+  }
+}
+</script>
+
+</body>
+</html>

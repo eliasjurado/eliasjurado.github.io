@@ -1,0 +1,488 @@
+// ── Botones ──────────────────────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $s-2;
+  padding: $s-3 $s-5;
+  font-family: $font-sans;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: $radius-pill;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all $dur $ease;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &--primary {
+    background: $brand-primary;
+    color: #fff;
+    &:hover { background: lighten($brand-primary, 8%); color: #fff; transform: translateY(-1px); box-shadow: $shadow; }
+  }
+  &--accent {
+    background: $brand-accent;
+    color: #fff;
+    &:hover { background: lighten($brand-accent, 6%); color: #fff; transform: translateY(-1px); }
+  }
+  &--ghost {
+    background: transparent;
+    color: $brand-primary;
+    border-color: $brand-primary;
+    &:hover { background: $brand-primary; color: #fff; }
+  }
+  &--lg { padding: $s-4 $s-6; font-size: 1rem; }
+}
+
+// ── Hero ─────────────────────────────────────────────────────────────────────
+.hero {
+  padding-block: $s-8 $s-7;
+  @media (min-width: $bp-md) { padding-block: $s-9 $s-8; }
+  background:
+    radial-gradient(circle at top right, rgba($brand-primary, 0.06), transparent 60%),
+    radial-gradient(circle at bottom left, rgba($brand-accent, 0.04), transparent 50%);
+}
+.hero__grid {
+  display: grid;
+  gap: $s-6;
+  align-items: center;
+
+  @media (max-width: ($bp-md - 1)) {
+    justify-items: center;
+  }
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: 1fr auto;
+    gap: $s-8;
+  }
+}
+.hero__title {
+  margin-bottom: $s-3;
+  text-wrap: balance;
+}
+.hero__tagline {
+  font-size: 1.15rem;
+  color: $ink-soft;
+  margin-bottom: $s-6;
+  max-width: 36em;
+  text-wrap: pretty;
+
+  @media (max-width: ($bp-md - 1)) {
+    font-size: 1.02rem;
+    line-height: 1.5;
+    margin-bottom: $s-5;
+  }
+}
+.hero__content {
+  @media (max-width: ($bp-md - 1)) {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.hero__actions {
+  display: flex;
+  gap: $s-4;
+  flex-wrap: wrap;
+
+  @media (max-width: ($bp-md - 1)) {
+    justify-content: center;
+  }
+}
+.hero__avatar {
+  // Líneas rectas — sin borde, sin background, sin shadow. El logo se presenta limpio y grande.
+  width: 320px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+
+  & > img,
+  & > svg {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  @media (max-width: ($bp-md - 1)) {
+    order: -1;
+    width: min(88vw, 380px);
+  }
+
+  @media (min-width: $bp-md) { width: 420px; }
+}
+
+// Header brand monograma — el <img> con SVG nativo de Miki
+.site-header__brand img.brand-monograma {
+  width: auto;
+  height: 52px;
+  border: none;
+  background: transparent;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+// ── Card base — de servicio, proyecto, etc. ─────────────────────────────────
+.card {
+  background: $bg;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: $s-5;
+  transition: transform $dur $ease, box-shadow $dur $ease, border-color $dur $ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow;
+    border-color: $brand-primary-line;
+  }
+  &__icon {
+    width: 44px; height: 44px;
+    border-radius: $radius-sm;
+    background: $brand-primary-soft;
+    color: $brand-primary;
+    display: grid; place-items: center;
+    margin-bottom: $s-4;
+    font-size: 1.4rem;
+  }
+  &__title { margin-bottom: $s-2; font-size: 1.2rem; }
+  &__body  { color: $muted; font-size: 0.95rem; margin: 0; }
+}
+
+// ── Card de servicio — jerarquía esquemática completa ───────────────────────
+// Estructura del contenido (en orden visual descendente):
+//   1. icon              — pequeño, decorativo
+//   2. card__title       — nombre_corto (Web / Tienda / Flujo) — palabra de impacto
+//   3. card__subtitle    — nombre largo (Diseño y desarrollo web…) — precisión y SEO
+//   4. card__benefit     — frase emocional ("Tu negocio visible y profesional")
+//   5. card__body        — descripción técnica breve
+//
+// El cliente escanea de arriba a abajo en 2-3 segundos y entiende qué es,
+// cómo lo llamas, qué le da a él, cómo lo entregas. Sin clicks ocultos.
+.card--servicio {
+  display: flex;
+  flex-direction: column;
+
+  .card__title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: $brand-primary;
+    margin-bottom: $s-1;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .card__subtitle {
+    font-size: 0.8rem;
+    color: $muted;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    margin: 0 0 $s-4;
+  }
+
+  .card__benefit {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: $ink;
+    line-height: 1.35;
+    margin: 0 0 $s-4;
+    padding-bottom: $s-4;
+    border-bottom: 1px solid $line;
+    text-wrap: balance;
+  }
+
+  .card__body {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: $muted;
+    margin: 0;
+  }
+}
+
+// ── Grid de cards ────────────────────────────────────────────────────────────
+.grid {
+  display: grid;
+  gap: $s-5;
+  &--3 { grid-template-columns: 1fr; }
+  @media (min-width: $bp-md) {
+    &--3 { grid-template-columns: repeat(3, 1fr); }
+    &--2 { grid-template-columns: repeat(2, 1fr); }
+  }
+}
+
+// ── Header / Nav ─────────────────────────────────────────────────────────────
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid $line;
+}
+.site-header__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: $s-4; padding-block: $s-3;
+
+  @media (max-width: ($bp-md - 1)) {
+    gap: $s-3;
+    padding-block: $s-2;
+  }
+}
+.site-header__brand {
+  display: flex; align-items: center; gap: $s-3;
+  text-decoration: none; color: $brand-primary;
+  font-family: $font-sans; font-size: 1.15rem; font-weight: 700;
+  letter-spacing: -0.01em;
+  // Logo legacy PNG — fallback si alguna versión vieja del header lo usa.
+  img { width: 36px; height: 36px; border: 1.5px solid $brand-primary-line; object-fit: contain; }
+  // Monograma SVG inline — versión luxury black actual.
+  .brand-monograma { color: $brand-primary; height: 34px; width: auto; flex-shrink: 0; }
+  &:hover .brand-monograma { color: $ink-pure; }
+
+  @media (max-width: ($bp-md - 1)) {
+    gap: $s-2;
+    font-size: 1rem;
+  }
+}
+.site-nav {
+  display: none;
+  @media (min-width: $bp-md) { display: flex; gap: $s-5; align-items: center; }
+  a {
+    color: $ink; font-size: 0.95rem; font-weight: 500;
+    padding: $s-2 0; position: relative;
+    &::after {
+      content: ""; position: absolute; left: 0; bottom: -2px;
+      width: 0; height: 2px; background: $brand-accent;
+      transition: width $dur $ease;
+    }
+    &:hover, &[aria-current="page"] {
+      color: $brand-primary;
+      &::after { width: 100%; }
+    }
+  }
+}
+.site-nav__toggle {
+  display: inline-flex; @media (min-width: $bp-md) { display: none; }
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: $bg;
+  border: 1px solid $line;
+  cursor: pointer;
+  padding: 0;
+  color: $brand-primary;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: border-color $dur $ease, background-color $dur $ease, color $dur $ease, transform $dur $ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: $brand-primary;
+    background: $bg-soft;
+    outline: none;
+  }
+
+  &[aria-expanded="true"] {
+    background: $brand-primary;
+    color: $bg;
+    border-color: $brand-primary;
+    transform: translateY(1px);
+  }
+
+  @media (max-width: ($bp-md - 1)) {
+    width: 38px;
+    height: 38px;
+    font-size: 1.15rem;
+  }
+}
+.site-nav--mobile {
+  display: none;
+  &.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: $s-3 0 $s-4;
+    border-top: 1px solid $line;
+  }
+  a {
+    color: $ink;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: $s-3 0;
+    text-align: center;
+    border-bottom: 1px solid $line;
+  }
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+.site-footer {
+  background: $brand-primary;
+  color: rgba(255, 255, 255, 0.85);
+  padding-block: $s-7;
+  margin-top: $s-8;
+  a { color: #fff; }
+  h4 { color: #fff; font-size: 0.95rem; margin-bottom: $s-3; }
+}
+.site-footer__description {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  max-width: 32em;
+}
+.site-footer__list {
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+.site-footer__grid {
+  display: grid; gap: $s-6;
+  @media (min-width: $bp-md) { grid-template-columns: 2fr 1fr 1fr; }
+}
+.site-footer__bottom {
+  margin-top: $s-6; padding-top: $s-4;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  display: flex; flex-wrap: wrap; gap: $s-3; justify-content: space-between;
+}
+
+// ── Page header (interno de páginas que no son home) ────────────────────────
+.page-header {
+  padding-block: $s-7 $s-5;
+  background: linear-gradient(180deg, $brand-primary-soft 0%, transparent 100%);
+  border-bottom: 1px solid $brand-primary-line;
+}
+.page-header__inner {
+  .page-header__subtitle {
+    font-size: 1.1rem;
+    max-width: 36em;
+  }
+
+  @media (max-width: ($bp-md - 1)) {
+    text-align: center;
+    .page-header__subtitle { margin-inline: auto; }
+  }
+}
+.page-header__kicker {
+  font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: $brand-accent; font-weight: 600; margin-bottom: $s-2;
+}
+
+.proyecto__resumen {
+  font-size: 1.1rem;
+}
+
+.proyecto__back {
+  margin-top: 3rem;
+}
+
+// ── Formulario WhatsApp (tarjeta de contacto) ────────────────────────────────
+.wa-form {
+  display: flex;
+  flex-direction: column;
+  gap: $s-4;
+}
+
+.wa-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: $s-1;
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: $muted;
+  }
+
+  input {
+    font-family: $font-sans;
+    font-size: 0.95rem;
+    color: $ink;
+    background: $bg-soft;
+    border: 1.5px solid $line;
+    border-radius: $radius-sm;
+    padding: $s-3 $s-4;
+    width: 100%;
+    transition: border-color $dur $ease, box-shadow $dur $ease;
+    outline: none;
+    box-sizing: border-box;
+
+    &::placeholder { color: $muted; }
+    &:focus {
+      border-color: $brand-primary-line;
+      box-shadow: 0 0 0 3px rgba(43, 5, 72, 0.08);
+    }
+  }
+}
+
+.wa-form__submit {
+  margin-top: $s-2;
+}
+
+// ── Wordmarks de clientes (sección "Confiaron en este trabajo") ─────────────
+// Cada cliente se renderiza como wordmark monocromático en color de marca,
+// sin usar su logo original. Esto preserva la disciplina cromática del sitio
+// y funciona como social proof B2B estándar (estilo Stripe, Vercel, Linear).
+.clientes-wordmarks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: $s-5;
+  @media (min-width: $bp-md) { gap: $s-7; }
+}
+
+.cliente-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  padding: $s-3 $s-4;
+  border-radius: $radius-sm;
+  transition: opacity $dur $ease, background $dur $ease, transform $dur $ease;
+
+  // Estado link
+  &[href]:hover {
+    background: $brand-primary-soft;
+    transform: translateY(-1px);
+  }
+  &[href]:focus-visible {
+    outline: 2px solid $brand-primary;
+    outline-offset: 2px;
+  }
+
+  &__name {
+    font-family: $font-sans;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: $brand-primary;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  &__industria {
+    font-size: 0.72rem;
+    color: $muted;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+}
+
+// ── Quote / callout ──────────────────────────────────────────────────────────
+.callout {
+  border-left: 4px solid $brand-primary;
+  background: $brand-primary-soft;
+  padding: $s-4 $s-5;
+  border-radius: $radius-sm;
+  margin-block: $s-5;
+  font-size: 0.95rem;
+}

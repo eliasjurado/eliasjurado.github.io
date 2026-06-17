@@ -1,0 +1,110 @@
+# Sitio personal de Elías Jurado
+# https://eliasjurado.com
+# Build automático en GitHub Pages al pushear a main.
+
+# ── Identidad del sitio ──────────────────────────────────────────────────────
+title: Elías Jurado
+tagline: Acompaño la madurez digital de tu pyme.
+description: >-
+  Visibilidad → Conversión → Eficiencia. Landing web, e-commerce y CRM para
+  pymes que quieren crecer ordenado.
+url: 'https://eliasjurado.com'
+author:
+  name: Elías Luis Jurado Santos
+  email: info@eliasjurado.com
+  twitter: # opcional
+locale: es_PE
+timezone: America/Lima
+
+# ── Branding ─────────────────────────────────────────────────────────────────
+# Paleta oficial entregada por Miki (mayo 2026). 4 colores únicos documentados.
+brand:
+  primary:   '#000000'   # negro puro — institucional
+  accent:    '#243038'   # gris steel — acento elegante
+  muted:     '#606060'   # gris medio — texto secundario
+  white:     '#ffffff'   # blanco puro
+  ink:       '#000000'
+chrome_mobile_color: '#000000'
+
+# ── Contacto ─────────────────────────────────────────────────────────────────
+contact:
+  email: info@eliasjurado.com
+  phone: '+51 920 050 617'
+  whatsapp: '51920050617'
+  city: Miraflores, Lima — Perú
+  ruc: '10434645421'
+
+# ── Mensajes pre-llenados de WhatsApp Click-to-Chat ──────────────────────────
+# Cada CTA del sitio abre wa.me con el texto correspondiente ya escrito.
+# El cliente puede editarlo antes de enviar.
+whatsapp_messages:
+  default:  'Hola Elías, vi tu web y me gustaría conversar sobre un proyecto.'
+  hero:     'Hola Elías, vi tu web y me gustaría conversar sobre un proyecto.'
+  contact:  'Hola Elías, te escribo desde tu página de contacto. Me interesa saber más sobre tus servicios.'
+  contacto: 'Hola Elías, te escribo desde tu página de contacto. Me interesa saber más sobre tus servicios.'
+  footer:   'Hola Elías, te escribo desde tu web. Me gustaría más información.'
+
+# ── Redes ────────────────────────────────────────────────────────────────────
+redes:
+  github:   eliasjurado
+  linkedin: eliasjurado
+  credly:   credly.com/users/eliasjurado
+
+# ── Navegación principal ─────────────────────────────────────────────────────
+# Rutas en inglés desde mayo 2026. Etiquetas visibles siguen en español.
+nav:
+  - { label: Inicio,       url: /,            i18n: nav.home       }
+  - { label: Estrategias,  url: /services/,   i18n: nav.strategies }
+  - { label: Portafolio,   url: /portfolio/,  i18n: nav.portfolio  }
+  - { label: Sobre mí,     url: /about/,      i18n: nav.about      }
+  - { label: Contacto,     url: /contact/,    i18n: nav.contact    }
+
+# ── Collections (Jekyll trata cada carpeta como un mini-CMS) ─────────────────
+collections:
+  proyectos:
+    output: true
+    permalink: /portfolio/:slug/
+  servicios:
+    output: false  # los servicios viven en _data/servicios.yml por ahora
+
+defaults:
+  - scope: { path: "", type: pages }
+    values: { layout: page }
+  - scope: { path: "", type: proyectos }
+    values: { layout: proyecto }
+
+# ── Plugins (whitelisted en GitHub Pages) ────────────────────────────────────
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# ── Sass/SCSS ────────────────────────────────────────────────────────────────
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# ── Build ────────────────────────────────────────────────────────────────────
+encoding: "utf-8"
+markdown: kramdown
+permalink: /:slug/
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - docker-compose.yml
+  - vendor
+
+# ── Tracker (deshabilitado — Universal Analytics deprecado en jul-2023) ──────
+# Para habilitar GA4, coloca tu measurement ID (ej: G-AB12C3D4E5).
+# El snippet de GA4 se inyecta automaticamente desde _includes/seo.html
+# cuando este campo tiene valor.
+analytics:
+
+# ── Google Tag Manager (GTM) ────────────────────────────────────────────────
+# Contenedor GTM para gestionar etiquetas sin tocar codigo en cada cambio.
+gtm_container: 'GTM-MMX46W5Q'
+
+# ── Dev local ────────────────────────────────────────────────────────────────
+port: 4000
+host: 0.0.0.0

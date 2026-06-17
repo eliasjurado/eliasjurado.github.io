@@ -1,0 +1,78 @@
+// ── Reset / normalización mínima ─────────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $ink;
+  background: $bg;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg { max-width: 100%; display: block; }
+a {
+  color: $brand-primary;
+  text-decoration: none;
+  transition: color $dur $ease;
+  &:hover { color: $brand-accent; }
+}
+
+// ── Tipografía ──────────────────────────────────────────────────────────────
+h1, h2, h3, h4 {
+  font-family: $font-serif;
+  color: $brand-primary;
+  font-weight: 700;
+  margin: 0 0 $s-4;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+h1 { font-size: #{"clamp(2rem, 1rem + 4vw, 3.25rem)"}; }
+h2 { font-size: #{"clamp(1.5rem, 0.9rem + 2vw, 2.25rem)"}; }
+h3 { font-size: #{"clamp(1.25rem, 0.9rem + 1vw, 1.5rem)"}; }
+h4 { font-size: 1.1rem; color: $ink; }
+p  { margin: 0 0 $s-4; }
+small, .text-sm { font-size: 0.875rem; color: $muted; }
+.text-muted { color: $muted; }
+.text-center { text-align: center; }
+.text-balance { text-wrap: balance; }
+
+// ── Layout helpers ──────────────────────────────────────────────────────────
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: $s-5;
+}
+.container-narrow {
+  width: 100%;
+  max-width: $container-narrow;
+  margin-inline: auto;
+  padding-inline: $s-5;
+}
+.section {
+  padding-block: $s-8;
+  @media (min-width: $bp-md) { padding-block: $s-9; }
+}
+.section--soft { background: $brand-primary-soft; }
+.section--accent-soft { background: $brand-accent-soft; }
+
+// ── Visualmente oculto (accesible) ──────────────────────────────────────────
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+// ── Selección ───────────────────────────────────────────────────────────────
+::selection { background: $brand-primary; color: #fff; }
+
+// ── Constraint tipográfico interno ──────────────────────────────────────────
+// Container amplio (1080px) — protegemos legibilidad de párrafos sueltos.
+// NO afecta texto dentro de cards, grids, summary, journey ni article wrappers.
+.section > .container > p,
+.section > .container > ul:not([class]),
+.section > .container > ol:not([class]) {
+  max-width: 60ch;
+}

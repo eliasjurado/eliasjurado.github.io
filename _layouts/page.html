@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<header class="page-header">
+  <div class="container page-header__inner">
+    {%- if page.kicker -%}<p class="page-header__kicker"{% if page.i18n_prefix %} data-i18n="{{ page.i18n_prefix }}.page_kicker"{% endif %}>{{ page.kicker }}</p>{%- endif -%}
+    <h1{% if page.i18n_prefix %} data-i18n="{{ page.i18n_prefix }}.page_title"{% endif %}>{{ page.title }}</h1>
+    {%- if page.subtitle -%}<p class="text-muted page-header__subtitle"{% if page.i18n_prefix %} data-i18n="{{ page.i18n_prefix }}.page_subtitle"{% endif %}>{{ page.subtitle }}</p>{%- endif -%}
+  </div>
+</header>
+
+<article class="section">
+  <div class="container">
+    {{ content }}
+  </div>
+</article>

@@ -1,0 +1,14 @@
+# Clientes con los que ya trabajé — se muestran en la home como wordmarks
+# monocromáticos en color morado de marca. Cada uno linkea al sitio del cliente.
+# Para agregar uno nuevo: copiar la estructura, mantener orden cronológico de cierre.
+
+- nombre: Hanna Comida Árabe
+  industria: { es: "Gastronomía", en: "Food & Hospitality" }
+  url: https://hannacomidaarabe.com
+  cerrado: 2026-05
+
+# Pendiente de cerrar:
+# - nombre: Estudio Jurídico Foti
+#   industria: Servicios Jurídicos
+#   url: https://estudiofoti.com  # placeholder, actualizar al go-live
+#   cerrado: 2026-XX

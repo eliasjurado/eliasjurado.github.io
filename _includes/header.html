@@ -1,0 +1,89 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__brand" aria-label="{{ site.title }} — Inicio">
+      <!-- Logo oficial Miki: SVG nativo entregado en logotipo-pack2.
+           logo-negro.svg = versión final entregada por Miki, optimizada para fondo claro. -->
+      <img class="brand-monograma" src="/assets/images/logo/logo-negro.svg" alt="" aria-hidden="true">
+      <span>{{ site.title }}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      {%- for item in site.nav -%}
+        {%- assign current = false -%}
+        {%- if page.url == item.url -%}{%- assign current = true -%}{%- endif -%}
+        <a href="{{ item.url }}"{% if current %} aria-current="page"{% endif %}{% if item.i18n %} data-i18n="{{ item.i18n }}"{% endif %}>{{ item.label }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <!-- Toggle de idioma ES | EN -->
+    <div class="lang-toggle" data-lang-toggle role="group" data-i18n-attr-aria-label="toggle.aria_label" aria-label="Cambiar idioma">
+      <button type="button" class="lang-toggle__btn is-active" data-lang="es" aria-pressed="true">ES</button>
+      <span class="lang-toggle__sep" aria-hidden="true">|</span>
+      <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+
+    <button class="site-nav__toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-nav-toggle>
+      ☰
+    </button>
+  </div>
+
+  <nav class="site-nav--mobile container" aria-label="Navegación móvil" data-nav-mobile>
+    {%- for item in site.nav -%}
+      <a href="{{ item.url }}"{% if item.i18n %} data-i18n="{{ item.i18n }}"{% endif %}>{{ item.label }}</a>
+    {%- endfor -%}
+    <!-- Toggle de idioma también en menú móvil -->
+    <div class="lang-toggle lang-toggle--mobile" data-lang-toggle role="group" aria-label="Cambiar idioma">
+      <button type="button" class="lang-toggle__btn is-active" data-lang="es" aria-pressed="true">ES</button>
+      <span class="lang-toggle__sep" aria-hidden="true">|</span>
+      <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </nav>
+</header>
+
+<style>
+  /* Toggle de idioma — esquinas vivas, paleta luxury black */
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 1rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .lang-toggle__btn {
+    background: transparent;
+    border: 0;
+    padding: 0.3rem 0.6rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #606060;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 160ms ease;
+  }
+  .lang-toggle__btn:hover {
+    color: #000;
+  }
+  .lang-toggle__btn.is-active {
+    color: #000;
+    font-weight: 800;
+  }
+  .lang-toggle__sep {
+    color: #d2d2d7;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .lang-toggle--mobile {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin: 0.5rem 0 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e0e0e0;
+  }
+  @media (max-width: 767px) {
+    .site-header__inner .lang-toggle { display: none; }
+    .site-header__brand img.brand-monograma { height: 42px; }
+  }
+</style>

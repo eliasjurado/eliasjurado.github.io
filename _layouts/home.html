@@ -1,0 +1,277 @@
+---
+layout: default
+hero_title: "Acompaño la madurez digital de tu pyme."
+hero_subtitle: "Visibilidad → Conversión → Eficiencia"
+---
+
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <h1 class="hero__title" data-i18n="hero.title_short">{{ page.hero_title | default: site.tagline }}</h1>
+      <p class="hero__tagline" data-i18n="hero.subtitle_flow">{{ page.hero_subtitle | default: site.description }}</p>
+      <div class="hero__actions">
+        <a href="/contact/" class="btn btn--primary btn--lg" data-i18n="hero.cta_primary">Conversemos</a>
+        <a href="/services/" class="btn btn--ghost btn--lg" data-i18n="hero.cta_secondary">Ver estrategias</a>
+      </div>
+    </div>
+    <div class="hero__avatar" role="img" aria-label="Monograma de {{ site.title }}">
+      <!-- Logo oficial Miki — versión negra para fondo claro del hero. -->
+      <img src="/assets/images/logo/logo-negro.svg" alt="Logo de {{ site.title }}">
+    </div>
+  </div>
+</section>
+
+{%- if site.data.clientes.size > 0 -%}
+<section class="section trusted-strip" aria-label="Empresas que confiaron en mi trabajo">
+  <div class="container">
+    <p class="page-header__kicker trusted-strip__kicker" data-i18n-en="Trusted in this work">Confiaron en este trabajo</p>
+    <div class="clientes-wordmarks">
+      {%- for c in site.data.clientes -%}
+        {%- if c.url -%}
+          <a href="{{ c.url }}" target="_blank" rel="noopener" class="cliente-wordmark" title="Visitar sitio de {{ c.nombre }}">
+            <span class="cliente-wordmark__name">{{ c.nombre }}</span>
+            <span class="cliente-wordmark__industria" data-i18n-en="{{ c.industria.en }}">{{ c.industria.es | default: c.industria }}</span>
+          </a>
+        {%- else -%}
+          <span class="cliente-wordmark">
+            <span class="cliente-wordmark__name">{{ c.nombre }}</span>
+            <span class="cliente-wordmark__industria" data-i18n-en="{{ c.industria.en }}">{{ c.industria.es | default: c.industria }}</span>
+          </span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- assign qw = site.data.servicios.quick_win -%}
+<section class="section maturity-journey">
+  <div class="container">
+    <header class="maturity-journey__header">
+      <p class="page-header__kicker" data-i18n="home.levels_kicker">Mapa de Madurez Digital</p>
+      <h2 data-i18n="home.journey_title">Tu recorrido, paso a paso</h2>
+      <p class="text-muted" data-i18n="home.journey_body">Cuatro estaciones del camino digital de tu negocio. Empieza donde estés. Avanza cuando el retorno lo pida.</p>
+    </header>
+
+    <ol class="journey" aria-label="Mapa de madurez digital">
+      <li class="journey__step journey__step--entry">
+        <span class="journey__icon" aria-hidden="true">{{ qw.icon }}</span>
+        <p class="journey__phase" data-i18n="home.journey_entry">Punto de entrada</p>
+        <h3 class="journey__name" data-i18n-en="{{ qw.nombre_corto.en }}">{{ qw.nombre_corto.es }}</h3>
+        <p class="journey__benefit" data-i18n-en="{{ qw.beneficio.en }}">{{ qw.beneficio.es }}</p>
+        <p class="journey__factor" data-i18n-en="{{ qw.factor_humano.en }}">{{ qw.factor_humano.es }}</p>
+        <p class="journey__price"><span data-i18n="services.starting_at">Desde</span> USD {{ qw.precio_usd }}</p>
+        <a class="journey__cta" href="/services/#{{ qw.slug }}" data-i18n="home.journey_cta">Ver detalle →</a>
+      </li>
+      <li class="journey__arrow" aria-hidden="true">→</li>
+
+      {%- for s in site.data.servicios.niveles -%}
+      <li class="journey__step">
+        <span class="journey__num">0{{ s.nivel }}</span>
+        <span class="journey__icon" aria-hidden="true">{{ s.icon }}</span>
+        <p class="journey__phase" data-i18n-en="{{ s.fase.en }}">{{ s.fase.es }}</p>
+        <h3 class="journey__name" data-i18n-en="{{ s.nombre_corto.en }}">{{ s.nombre_corto.es }}</h3>
+        <p class="journey__benefit" data-i18n-en="{{ s.beneficio.en }}">{{ s.beneficio.es }}</p>
+        <p class="journey__factor" data-i18n-en="{{ s.factor_humano.en }}">{{ s.factor_humano.es }}</p>
+        <p class="journey__price"><span data-i18n="services.starting_at">Desde</span> USD {{ s.precio_usd }}</p>
+        <a class="journey__cta" href="/services/#{{ s.slug }}" data-i18n="home.journey_cta">Ver detalle →</a>
+      </li>
+      {%- unless forloop.last -%}
+      <li class="journey__arrow" aria-hidden="true">→</li>
+      {%- endunless -%}
+      {%- endfor -%}
+    </ol>
+
+    <div class="maturity-journey__cta-wrap">
+      <a href="/services/" class="btn btn--ghost" data-i18n="home.levels_cta">Ver pricing completo + add-ons →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trusted-strip {
+    padding-block: 2.5rem;
+  }
+  .trusted-strip__kicker {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .maturity-journey__header {
+    text-align: center;
+    max-width: 38em;
+    margin: 0 auto 3rem;
+  }
+  .maturity-journey__cta-wrap {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .journey {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: stretch;
+    gap: 0;
+  }
+  .journey__step {
+    background: #fff;
+    border: 1px solid #d2d2d7;
+    padding: 1.4rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .journey__step:hover {
+    border-color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+  }
+  .journey__step--entry {
+    background: linear-gradient(165deg, #000 0%, #243038 100%);
+    color: #fff;
+    border-color: #000;
+  }
+  .journey__step--entry .journey__phase,
+  .journey__step--entry .journey__factor,
+  .journey__step--entry .journey__price { color: #d2d2d7; }
+  .journey__step--entry .journey__name { color: #fff; }
+  .journey__step--entry .journey__benefit { color: #fff; }
+  .journey__step--entry .journey__cta { background: #fff; color: #000; }
+  .journey__step--entry .journey__price { border-top-color: rgba(255,255,255,0.18); }
+
+  .journey__icon { font-size: 2rem; line-height: 1; margin-bottom: 0.5rem; }
+  .journey__num {
+    font-size: 0.7rem; font-weight: 800; color: #d2d2d7;
+    letter-spacing: 0.2em; margin-bottom: 0.4rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .journey__phase {
+    font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: #606060; font-weight: 600; margin: 0 0 0.4rem;
+  }
+  .journey__name {
+    font-size: 1.2rem; font-weight: 800; margin: 0 0 0.5rem; color: #000;
+    letter-spacing: -0.01em;
+  }
+  .journey__benefit {
+    font-size: 0.88rem; color: #000; margin: 0 0 0.6rem;
+    line-height: 1.4; font-weight: 600;
+  }
+  .journey__factor {
+    font-size: 0.72rem; color: #606060; margin: 0 0 0.8rem;
+    font-style: italic; flex: 1;
+  }
+  .journey__price {
+    font-size: 0.88rem; font-weight: 800; color: #000;
+    margin: 0 0 0.8rem; padding-top: 0.7rem;
+    border-top: 1px solid #f5f5f7;
+  }
+  .journey__cta {
+    display: inline-block; background: #000; color: #fff;
+    padding: 0.5rem 0.8rem; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    text-decoration: none; align-self: center;
+    transition: background 200ms ease;
+  }
+  .journey__cta:hover { background: #243038; color: #fff; }
+  .journey__step--entry .journey__cta:hover { background: #d2d2d7; color: #000; }
+
+  .journey__arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: #d2d2d7; font-size: 1.4rem; padding: 0 0.4rem;
+  }
+  .journey__step--entry + .journey__arrow { color: #000; }
+
+  @media (max-width: 900px) {
+    .journey {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .journey__arrow {
+      padding: 0.2rem 0;
+      transform: rotate(90deg);
+    }
+  }
+</style>
+
+{%- assign destacados = site.proyectos | where: "destacado", true -%}
+{%- if destacados.size > 0 -%}
+<section class="section section--soft">
+  <div class="container">
+    <div class="home-featured__header">
+      <p class="page-header__kicker" data-i18n-en="Portfolio">Portafolio</p>
+      <h2 data-i18n-en="Recent cases">Casos recientes</h2>
+    </div>
+    <div class="grid grid--2">
+      {%- for p in destacados limit: 2 -%}
+        <article class="card">
+          <h3 class="card__title"{% if p.title_en %} data-i18n-en="{{ p.title_en }}"{% endif %}>{{ p.title }}</h3>
+          {%- if p.cliente or p.industria -%}<p class="text-sm home-featured__meta">{{ p.cliente }}{% if p.industria %} · <span data-i18n-en="{{ p.industria_en | default: p.industria }}">{{ p.industria }}</span>{% endif %}</p>{%- endif -%}
+          <p class="card__body"{% if p.resumen_en %} data-i18n-en="{{ p.resumen_en }}"{% endif %}>{{ p.resumen }}</p>
+          <p class="home-featured__actions">
+            <a href="{{ p.url }}" class="home-featured__link" data-i18n-en="See case →">Ver caso →</a>
+            {%- if p.url_vivo -%}
+              <a href="{{ p.url_vivo }}" target="_blank" rel="noopener" class="home-featured__link home-featured__link--alt" data-i18n-en="See live site ↗">Ver sitio en vivo ↗</a>
+            {%- endif -%}
+          </p>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+<section class="section">
+  <div class="container container-narrow text-center">
+    <h2 data-i18n="home.closing_title">¿Tu negocio necesita escalar?</h2>
+    <p class="text-muted home-closing__body" data-i18n="home.closing_body">
+      Conversemos sin compromiso. Te respondo en menos de 24 horas en días hábiles.
+    </p>
+    <a href="https://wa.me/{{ site.contact.whatsapp }}?text={{ site.whatsapp_messages.hero | url_encode }}" target="_blank" rel="noopener" class="btn btn--accent btn--lg" data-i18n="home.closing_cta">
+      Escribir por WhatsApp
+    </a>
+  </div>
+</section>
+
+<style>
+  .home-featured__header {
+    text-align: center;
+    max-width: 36em;
+    margin: 0 auto 3rem;
+  }
+  .home-featured__meta {
+    margin-bottom: 0.5rem;
+  }
+  .home-featured__actions {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .home-featured__link {
+    color: {{ site.brand.primary }};
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .home-featured__link--alt {
+    color: {{ site.brand.accent }};
+  }
+  .home-closing__body {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 767px) {
+    .home-featured__actions {
+      justify-content: center;
+      text-align: center;
+      gap: 0.8rem;
+    }
+  }
+</style>

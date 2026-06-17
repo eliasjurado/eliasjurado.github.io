@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 585">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #606060;
+      }
+
+      .cls-4 {
+        font-family: Montserrat-ExtraBold, Montserrat;
+        font-size: 73.48px;
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-8, .cls-9 {
+        font-family: ArialNarrow, Arial;
+        font-size: 35px;
+        letter-spacing: .05em;
+      }
+
+      .cls-9 {
+        fill: #fff;
+      }
+
+      .cls-10 {
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-size: 55.94px;
+        font-weight: 600;
+      }
+
+      .cls-11 {
+        fill: #243038;
+      }
+
+      .cls-12 {
+        letter-spacing: -.03em;
+      }
+    </style>
+  </defs>
+  <rect class="cls-11" x="46.77" y="219.44" width="397.77" height="80" rx="38" ry="38"/>
+  <rect class="cls-3" x="46.77" y="329.22" width="397.77" height="80" rx="38" ry="38"/>
+  <rect class="cls-1" x="46.77" y="439" width="397.77" height="80" rx="38" ry="38"/>
+  <rect x="46.77" y="109.67" width="397.77" height="80" rx="38" ry="38"/>
+  <text transform="translate(693.3 538.63) rotate(-90)"><tspan class="cls-4"><tspan class="cls-6" x="0" y="0">P</tspan><tspan x="50.85" y="0">ALE</tspan><tspan class="cls-12" x="202.8" y="0">T</tspan><tspan x="246.88" y="0">A</tspan></tspan><tspan class="cls-10"><tspan x="0" y="58.78">DE </tspan><tspan class="cls-5" x="99.12" y="58.78">C</tspan><tspan x="138.95" y="58.78">O</tspan><tspan class="cls-7" x="186.05" y="58.78">L</tspan><tspan class="cls-2" x="218.83" y="58.78">ORES</tspan></tspan></text>
+  <text class="cls-9" transform="translate(94.67 162.48)"><tspan x="0" y="0">#000000</tspan></text>
+  <text class="cls-9" transform="translate(94.67 272.26)"><tspan x="0" y="0">#243038</tspan></text>
+  <text class="cls-9" transform="translate(94.67 380.04)"><tspan x="0" y="0">#606060</tspan></text>
+  <text class="cls-8" transform="translate(94.67 491.81)"><tspan x="0" y="0">#FFFFFF</tspan></text>
+</svg>

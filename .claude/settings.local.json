@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E '\\\\.\\(html|scss|yml|md|js|css\\)$')",
+      "Bash(git -C /Users/jp/vcs/github/online-cv status --short)",
+      "Bash(git rm *)"
+    ]
+  }
+}

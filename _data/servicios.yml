@@ -1,0 +1,331 @@
+# Catálogo de servicios — Elías Jurado
+#
+# Estructura:
+#   - quick_win: servicio puente, alto ROI inmediato, anterior al Mapa de Madurez.
+#   - niveles: los 3 escalones del Mapa de Madurez Digital (Landing → E-commerce → CRM).
+#   - addons:   módulos opcionales que se suman a cualquier nivel.
+#
+# Precios en USD (referenciales). PEN se calcula 1 USD ≈ 3.75 PEN al render.
+# TODOS LOS PRECIOS INCLUYEN IGV. Comprobante: factura (cliente con RUC) o boleta (consumidor final).
+# Medios de pago: tarjeta, transferencia, Yape, Plin. Por transferencia bancaria: 3% de descuento.
+# Mantener Montserrat + paleta luxury black + esquinas vivas en cualquier UI que consuma este YAML.
+# Campos de texto bilingües: { es: "...", en: "..." }
+# Campos técnicos/numéricos (slug, icon, nivel, precio_*, plazo, cta_key, aplica_a): string sin traducir.
+
+quick_win:
+  slug: whatsapp
+  badge: { es: "Quick Win", en: "Quick Win" }
+  icon: "💬"
+  nombre_corto: { es: "WhatsApp", en: "WhatsApp" }
+  titulo: { es: "Automatización por WhatsApp", en: "WhatsApp Automation" }
+  factor_humano: { es: "Conversación (leads que ya tienes)", en: "Conversation (leads you already have)" }
+  meta: { es: "Ataca primero la vena del negocio — convertir lo que ya llega", en: "Attack the revenue lifeline first — convert what already comes in" }
+  beneficio: { es: "Convierte más sin contestar a mano", en: "Convert more without replying manually" }
+  resumen:
+    es: >-
+      Atiende pedidos, agenda citas y responde consultas frecuentes desde WhatsApp
+      sin estar pegado al celular. Ideal para arrancar — bajo costo, retorno
+      medible en semanas.
+    en: >-
+      Handle orders, schedule appointments, and answer common questions from
+      WhatsApp without being glued to your phone. Ideal to start — low cost,
+      measurable returns in weeks.
+  detalle:
+    es: >-
+      Integración con WhatsApp Cloud API (oficial Meta) o motor open-source
+      OpenWA según escala. Flujos de respuesta automática para preguntas
+      frecuentes, captura estructurada de leads, recordatorios y confirmaciones.
+      Panel para que tu equipo vea conversaciones, etiquete clientes y retome
+      el hilo cuando un humano debe intervenir. Stack: n8n + Supabase + Cloud API.
+    en: >-
+      Integration with WhatsApp Cloud API (official Meta) or open-source
+      OpenWA engine depending on scale. Automated response flows for frequently
+      asked questions, structured lead capture, reminders, and confirmations.
+      A panel for your team to view conversations, tag clients, and pick up
+      the thread when a human needs to step in. Stack: n8n + Supabase + Cloud API.
+  incluye:
+    - { es: "Diseño de flujos conversacionales (hasta 6 intents)", en: "Conversational flow design (up to 6 intents)" }
+    - { es: "Integración WhatsApp Cloud API (o OpenWA según caso)", en: "WhatsApp Cloud API integration (or OpenWA as needed)" }
+    - { es: "Panel de conversaciones para tu equipo", en: "Conversation panel for your team" }
+    - { es: "Captura estructurada de leads a Supabase / Google Sheets", en: "Structured lead capture to Supabase / Google Sheets" }
+    - { es: "Capacitación de 1 hora al equipo", en: "1-hour team training" }
+  precio_usd: "400"
+  precio_pen: "1,500"
+  precio_referencia_usd: "1,200 – 2,500"
+  precio_es_referencial: true
+  plazo: { es: "2 a 3 semanas", en: "2 to 3 weeks" }
+  cta_label: { es: "Empezar por acá", en: "Start here" }
+  cta_key: quickwin
+
+niveles:
+  - slug: landing
+    nivel: 1
+    fase: { es: "Despegue", en: "Launch" }
+    icon: "🚀"
+    nombre_corto: { es: "Landing", en: "Landing" }
+    titulo: { es: "Diseño y desarrollo web", en: "Web design and development" }
+    factor_humano: { es: "Audiencia (visitas, prospectos fríos)", en: "Audience (visitors, cold prospects)" }
+    meta: { es: "Visibilidad, alcance y captación de interés", en: "Visibility, reach, and interest capture" }
+    beneficio: { es: "Tu negocio visible y profesional", en: "Your business visible and professional" }
+    resumen:
+      es: >-
+        Sitios rápidos, mobile-first y SEO-ready. Desde landings de campaña
+        hasta sitios institucionales con blog y panel de contenidos.
+      en: >-
+        Fast, mobile-first, SEO-ready websites. From campaign landing pages
+        to institutional sites with a blog and content management panel.
+    detalle:
+      es: >-
+        Arquitectura mobile-first, optimización para buscadores, páginas de
+        aterrizaje específicas por campaña, blog institucional y panel de
+        administración de contenido. Stack moderno (Next.js o Jekyll según
+        caso), hosting incluido en el Plan Cuidado, deploy automático y
+        dominio profesional configurado.
+      en: >-
+        Mobile-first architecture, search engine optimization, campaign-specific
+        landing pages, institutional blog, and content management panel.
+        Modern stack (Next.js or Jekyll depending on the case), hosting included
+        in the Care Plan, automatic deployment, and professional domain setup.
+    incluye:
+      - { es: "Hasta 6 secciones / páginas", en: "Up to 6 sections / pages" }
+      - { es: "Diseño mobile-first responsive", en: "Mobile-first responsive design" }
+      - { es: "Optimización SEO técnico básico", en: "Basic technical SEO optimization" }
+      - { es: "Integración con WhatsApp click-to-chat", en: "WhatsApp click-to-chat integration" }
+      - { es: "Formulario de contacto + notificaciones", en: "Contact form + notifications" }
+      - { es: "Dominio + correos corporativos básicos", en: "Domain + basic corporate emails" }
+    precio_usd: "800"
+    precio_pen: "3,000"
+    precio_referencia_usd: "2,500 – 4,500"
+    precio_es_referencial: true
+    plazo: { es: "4 a 6 semanas", en: "4 to 6 weeks" }
+    cta_label: { es: "Cotizar este nivel", en: "Get a quote" }
+    cta_key: nivel1
+
+  - slug: ecommerce
+    nivel: 2
+    fase: { es: "Expansión", en: "Expansion" }
+    icon: "🛒"
+    nombre_corto: { es: "E-commerce", en: "E-commerce" }
+    titulo: { es: "E-commerce con IA", en: "AI-powered E-commerce" }
+    factor_humano: { es: "Clientes (compradores, transacciones)", en: "Customers (buyers, transactions)" }
+    meta: { es: "Conversión, monetización automática y facturación 24/7", en: "Conversion, automated monetization, and 24/7 revenue" }
+    beneficio: { es: "Vende cuando no estás", en: "Sell while you're away" }
+    resumen:
+      es: >-
+        Tiendas en línea con catálogo dinámico, checkout simplificado por
+        WhatsApp o pasarelas de pago, panel de administración y reportes.
+      en: >-
+        Online stores with a dynamic catalog, streamlined checkout via
+        WhatsApp or payment gateways, admin panel, and reporting.
+    detalle:
+      es: >-
+        Catálogo dinámico inteligente, procesos de checkout simplificados
+        por WhatsApp, pasarelas de pago integradas (tarjetas, billeteras
+        digitales), paneles de reportes y chatbot de IA para responder
+        consultas de productos y gestionar pedidos. Migración desde tiendas
+        existentes incluida. Stack Next.js + Supabase + Vercel.
+      en: >-
+        Smart dynamic catalog, streamlined WhatsApp checkout, integrated
+        payment gateways (cards, digital wallets), reporting dashboards,
+        and an AI chatbot to answer product questions and manage orders.
+        Migration from existing stores included. Stack: Next.js + Supabase + Vercel.
+    incluye:
+      - { es: "Catálogo dinámico con búsqueda y filtros", en: "Dynamic catalog with search and filters" }
+      - { es: "Checkout por WhatsApp o pasarela", en: "WhatsApp or gateway checkout" }
+      - { es: "Panel admin de productos y pedidos", en: "Products and orders admin panel" }
+      - { es: "Chatbot IA para preguntas de productos", en: "AI chatbot for product questions" }
+      - { es: "Reportes de ventas y stock", en: "Sales and inventory reports" }
+      - { es: "Integración con sistema contable", en: "Accounting system integration" }
+    precio_usd: "2,000"
+    precio_pen: "7,500"
+    precio_referencia_usd: "5,000 – 10,000"
+    precio_es_referencial: true
+    plazo: { es: "6 a 10 semanas", en: "6 to 10 weeks" }
+    cta_label: { es: "Cotizar este nivel", en: "Get a quote" }
+    cta_key: nivel2
+
+  - slug: crm
+    nivel: 3
+    fase: { es: "Liberación", en: "Freedom" }
+    icon: "⚙️"
+    nombre_corto: { es: "CRM", en: "CRM" }
+    titulo: { es: "Automatización y CRM para pymes", en: "Automation and CRM for SMBs" }
+    factor_humano: { es: "Usuarios (equipo interno)", en: "Users (internal team)" }
+    meta: { es: "Eficiencia operativa, cero errores manuales y escalabilidad", en: "Operational efficiency, zero manual errors, and scalability" }
+    beneficio: { es: "Recupera el tiempo de tu equipo", en: "Get your team's time back" }
+    resumen:
+      es: >-
+        Conecto los sistemas que ya usas (Excel, formularios, WhatsApp,
+        contabilidad) para que tu equipo deje de copiar y pegar entre ellos.
+      en: >-
+        I connect the systems you already use (Excel, forms, WhatsApp,
+        accounting) so your team stops copying and pasting between them.
+    detalle:
+      es: >-
+        Análisis del flujo actual, propuesta de automatización con herramientas
+        no invasivas (n8n, Make, scripts a medida), integración inteligente
+        de sistemas existentes, capacitación al equipo y soporte mensual.
+        Diseñado para liberar tiempo del equipo cuando el e-commerce
+        desborda la capacidad manual.
+      en: >-
+        Analysis of your current workflow, automation proposal using
+        non-invasive tools (n8n, Make, custom scripts), smart integration
+        of existing systems, team training, and monthly support.
+        Designed to free up your team's time when e-commerce outpaces
+        manual capacity.
+    incluye:
+      - { es: "Mapeo de procesos actuales", en: "Current process mapping" }
+      - { es: "Diseño de pipeline CRM personalizado", en: "Custom CRM pipeline design" }
+      - { es: "Integraciones (Excel, WhatsApp, contabilidad, ERP)", en: "Integrations (Excel, WhatsApp, accounting, ERP)" }
+      - { es: "Dashboards operativos para tu equipo", en: "Operational dashboards for your team" }
+      - { es: "Capacitación + manual interno", en: "Training + internal handbook" }
+      - { es: "Hosting y soporte mensual", en: "Hosting and monthly support" }
+    precio_usd: "5,000"
+    precio_pen: "18,750"
+    precio_referencia_usd: "12,000 – 30,000"
+    precio_es_referencial: true
+    plazo: { es: "10 a 16 semanas", en: "10 to 16 weeks" }
+    cta_label: { es: "Cotizar este nivel", en: "Get a quote" }
+    cta_key: nivel3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Add-ons modulares — se suman a cualquier nivel (Quick Win, 1, 2 o 3)
+# ─────────────────────────────────────────────────────────────────────────────
+addons:
+  - slug: branded-games
+    icon: "🎮"
+    titulo: { es: "Branded Games", en: "Branded Games" }
+    kicker: { es: "Marketing experiencial", en: "Experiential marketing" }
+    resumen:
+      es: >-
+        Videojuegos web patrocinados por tu marca. Captan audiencia, fidelizan
+        seguidores y generan datos de interacción que ningún anuncio te da.
+      en: >-
+        Web games powered by your brand. They capture audience, build loyalty,
+        and generate interaction data no ad campaign can match.
+    detalle:
+      es: >-
+        Mini-juegos web personalizados (HTML5) embebibles en tu sitio o
+        campaña, con tu marca como skin, ranking de jugadores, captura de
+        leads y compartir social. Ideal para activaciones, lanzamientos,
+        ferias o como mecánica de fidelización recurrente.
+      en: >-
+        Custom HTML5 web mini-games embeddable in your site or campaign,
+        with your brand as the skin, player leaderboards, lead capture,
+        and social sharing. Ideal for activations, launches, trade shows,
+        or as a recurring loyalty mechanic.
+    precio_usd: "1,500"
+    precio_pen: "5,600"
+    precio_es_referencial: true
+    plazo: { es: "3 a 8 semanas", en: "3 to 8 weeks" }
+    aplica_a:
+      - landing
+      - ecommerce
+      - crm
+
+  - slug: migracion-datos
+    icon: "📦"
+    titulo: { es: "Migración de datos históricos", en: "Historical data migration" }
+    kicker: { es: "Add-on técnico", en: "Technical add-on" }
+    resumen:
+      es: >-
+        Pasamos tu Excel, Google Sheets o sistema viejo al nuevo sin perder
+        una fila ni una transacción.
+      en: >-
+        We move your Excel, Google Sheets, or legacy system to the new one
+        without losing a single row or transaction.
+    detalle:
+      es: >-
+        Extracción, limpieza y carga de hasta ~5,000 registros con
+        validaciones automatizadas. Ideal cuando migras de un sistema
+        legacy a tu nueva plataforma.
+      en: >-
+        Extraction, cleaning, and loading of up to ~5,000 records with
+        automated validations. Ideal when migrating from a legacy system
+        to your new platform.
+    precio_usd: "300"
+    precio_pen: "1,100"
+    precio_es_referencial: true
+    plazo: { es: "1 a 2 semanas", en: "1 to 2 weeks" }
+    aplica_a:
+      - ecommerce
+      - crm
+
+  - slug: pasarela-pagos
+    icon: "💳"
+    titulo: { es: "Integración pasarela de pagos", en: "Payment gateway integration" }
+    kicker: { es: "Add-on técnico", en: "Technical add-on" }
+    resumen:
+      es: >-
+        Activa cobros con tarjeta, Yape, Plin, Mercado Pago o Stripe
+        directo desde tu sitio.
+      en: >-
+        Enable payments by card, Yape, Plin, Mercado Pago, or Stripe
+        directly from your site.
+    precio_usd: "400"
+    precio_pen: "1,500"
+    plazo: { es: "1 semana", en: "1 week" }
+    aplica_a:
+      - ecommerce
+      - crm
+
+  - slug: dominio-correos
+    icon: "🌐"
+    titulo: { es: "Dominio + correos corporativos", en: "Domain + corporate emails" }
+    kicker: { es: "Add-on técnico", en: "Technical add-on" }
+    resumen:
+      es: >-
+        Configuración profesional del dominio (.com / .pe) con correos
+        corporativos (tu-nombre@tu-marca.com).
+      en: >-
+        Professional domain setup (.com / .pe) with corporate email addresses
+        (your-name@your-brand.com).
+    precio_usd: { es: "100 + costo anual del dominio", en: "100 + annual domain cost" }
+    precio_pen: { es: "375 + costo anual", en: "375 + annual cost" }
+    plazo: { es: "2 días hábiles", en: "2 business days" }
+    aplica_a:
+      - landing
+      - ecommerce
+      - crm
+
+  - slug: capacitacion
+    icon: "🎓"
+    titulo: { es: "Capacitación adicional", en: "Additional training" }
+    kicker: { es: "Add-on humano", en: "Human add-on" }
+    resumen:
+      es: >-
+        Sesiones de capacitación 1-a-1 con tu equipo más allá de la hora
+        incluida en cada nivel.
+      en: >-
+        1-on-1 training sessions with your team beyond the hour included
+        in each tier.
+    precio_usd: { es: "50 / hora", en: "50 / hour" }
+    precio_pen: { es: "190 / hora", en: "190 / hour" }
+    plazo: { es: "Agendable", en: "On request" }
+    aplica_a:
+      - whatsapp
+      - landing
+      - ecommerce
+      - crm
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Plan Cuidado mensual — recurrente, independiente del nivel de desarrollo
+# ─────────────────────────────────────────────────────────────────────────────
+plan_cuidado:
+  - slug: basico
+    nombre: { es: "Básico", en: "Basic" }
+    incluye: { es: "Hosting + hotfixes + 1 hora de mejoras/mes", en: "Hosting + hotfixes + 1 hour of improvements/mo" }
+    precio_usd: "48"
+    precio_pen: "180"
+  - slug: estandar
+    nombre: { es: "Estándar", en: "Standard" }
+    incluye: { es: "Básico + 2-3 horas de mejoras + reporting mensual", en: "Basic + 2-3 hours of improvements + monthly reporting" }
+    precio_usd: "120"
+    precio_pen: "450"
+    precio_es_referencial: true
+  - slug: plus
+    nombre: { es: "Plus", en: "Plus" }
+    incluye: { es: "Estándar + atención de pedidos/usuarios + 4-6 horas de mejoras", en: "Standard + order/user support + 4-6 hours of improvements" }
+    precio_usd: "240"
+    precio_pen: "900"
+    precio_es_referencial: true

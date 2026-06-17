@@ -1,0 +1,75 @@
+// ── PALETA OFICIAL MIKI — Luxury Black ──────────────────────────────────────
+// Entrega final de Miguel Arriaga (mayo 2026). 4 colores únicos documentados.
+// Estilo luxury black, sobrio, sin tintes Apple — más definida y limitada.
+
+// Tokens base — los 4 oficiales
+$ink-pure:        #000000;   // negro puro — fondos primarios oscuros, color institucional
+$ink-steel:       #243038;   // gris steel oscuro — variante elegante del negro, acento
+$muted:           #606060;   // gris medio — texto secundario, metadata
+$bg-pure:         #ffffff;   // blanco puro — fondos primarios claros
+
+// Aliases derivados (calculados para mantener coherencia con código existente)
+$bg-aluminum:     #f5f5f7;   // blanco muy sutil — fondos de panels (interno, no oficial)
+$line:            #e0e0e0;   // borde sutil — separadores (derivado del gris medio)
+$ink-soft:        #2a2a2a;   // gris muy oscuro — texto principal sobre claro (entre negro y steel)
+
+// Aliases de marca (compatibilidad con código existente que usa $brand-*)
+$brand-primary:       $ink-pure;       // negro puro como principal
+$brand-primary-soft:  $bg-aluminum;
+$brand-primary-line:  $line;
+$brand-accent:        $ink-steel;      // gris steel como acento
+$brand-accent-soft:   $bg-aluminum;
+
+// Aliases neutros adicionales
+$ink:        $ink-pure;
+$bg:         $bg-pure;
+$bg-soft:    $bg-aluminum;
+
+// ── Semantic ────────────────────────────────────────────────────────────────
+$danger:  #c0392b;
+$success: #1f7a3d;
+
+// ── Typography ──────────────────────────────────────────────────────────────
+// Tipografía oficial entregada por Miki (mayo 2026): MONTSERRAT.
+// Sans-serif geométrica, gratuita en Google Fonts, diseñada por Julieta Ulanovsky.
+// Pesos a usar: 500 (Medium), 600 (SemiBold), 800 (ExtraBold).
+$font-sans:  'Montserrat', 'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+// $font-serif queda como alias por retrocompatibilidad — toda la marca es sans Montserrat.
+$font-serif: $font-sans;
+$font-mono:  ui-monospace, 'SF Mono', Menlo, monospace;
+
+// ── Layout ──────────────────────────────────────────────────────────────────
+// Líneas rectas — esquinas vivas en toda la marca. Coherente con la geometría
+// del monograma [ E · J ]: sin curvas decorativas, sin redondeados.
+$container-max:    1080px;
+$container-narrow: 720px;
+$radius:           0;
+$radius-sm:        0;
+$radius-pill:      0;
+
+// ── Spacing scale (4px base) ────────────────────────────────────────────────
+$s-1:  0.25rem;
+$s-2:  0.5rem;
+$s-3:  0.75rem;
+$s-4:  1rem;
+$s-5:  1.5rem;
+$s-6:  2rem;
+$s-7:  3rem;
+$s-8:  4rem;
+$s-9:  6rem;
+
+// ── Breakpoints ─────────────────────────────────────────────────────────────
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// ── Motion ──────────────────────────────────────────────────────────────────
+$ease: cubic-bezier(0.4, 0, 0.2, 1);
+$dur:  220ms;
+
+// ── Shadow ──────────────────────────────────────────────────────────────────
+// Sombras en negro neutro (no tintadas) coherente con la paleta luxury black.
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow:    0 4px 12px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
