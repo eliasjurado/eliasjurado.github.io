@@ -7,6 +7,11 @@
   url: https://hannacomidaarabe.com
   cerrado: 2026-05
 
+- nombre: Joyería Donaire
+  industria: { es: "Joyería", en: "Jewelry" }
+  url: https://joyeriadonaireperu.com
+  cerrado: 2026-07
+
 # Pendiente de cerrar:
 # - nombre: Estudio Jurídico Foti
 #   industria: Servicios Jurídicos
