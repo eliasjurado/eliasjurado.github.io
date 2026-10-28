@@ -1,0 +1,40 @@
+---
+title: Joyería Donaire
+title_en: Donaire Jewelry
+slug: donaire
+destacado: true
+cliente: Joyería Donaire Perú
+industria: Joyería / Plata 950
+industria_en: Jewelry / 950 silver
+stack: Next.js · Supabase · Vercel
+url_vivo: https://joyeriadonaireperu.com
+resumen: >-
+  Tienda en línea con inventario autoadministrable para una joyería de plata
+  con fabricación propia. Ordenó en una web el catálogo que antes vivía en
+  WhatsApp y redes, en español, inglés e italiano.
+resumen_en: >-
+  Online store with self-managed inventory for a silver jewelry maker. It moved
+  a catalog that used to live in WhatsApp and social media into one website, in
+  Spanish, English and Italian.
+---
+
+## El contexto
+
+Joyería Donaire fabrica y personaliza joyas de plata, muchas veces atadas a una historia personal del cliente. Antes del proyecto vendía mostrando el catálogo por WhatsApp y redes, y cerraba cada pedido a mano: el alcance de la venta dependía de cuántos mensajes se podían responder y de quién estaba atendiendo.
+
+## Lo que construimos
+
+Una tienda propia que ordena el catálogo, transmite la confianza de una marca formal y acorta el camino al pedido, sin romper la forma en que sus clientes ya compran.
+
+- **Catálogo por colecciones** (Mujeres, Hombres, Golden, Niños) con buscador, galería de fotos por pieza y selector de tallas con guía.
+- **Bolsa y checkout** que conserva WhatsApp como canal de cierre.
+- **Panel de administración** para que el equipo maneje productos, stock, fotos, banner de campañas y textos legales sin tocar código.
+- **Roles y permisos** (administrador, solo lectura, soporte) con accesos separados por pantalla.
+- **Tienda en tres idiomas** (español, inglés e italiano), con traducción asistida desde el panel.
+- **Libro de Reclamaciones virtual** integrado, con número correlativo y respuesta desde el panel.
+- **Cumplimiento legal peruano:** términos, privacidad, cambios y devoluciones y política de cookies con consentimiento real.
+- **Identidad de marca aplicada** en todo el sitio y el panel, y **PWA** instalable en el celular.
+
+## El resultado
+
+En producción desde octubre de 2026 en su dominio propio. Se actualizará este caso con métricas reales de ventas y pedidos cuando haya suficiente historial.
