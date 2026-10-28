@@ -31,6 +31,7 @@ contact:
   email: info@eliasjurado.com
   phone: '+51 920 050 617'
   whatsapp: '51920050617'
+  whatsapp_demo: '51977822333'     # línea dedicada para el piloto Quick Win
   city: Miraflores, Lima — Perú
   ruc: '10434645421'
 
@@ -43,6 +44,7 @@ whatsapp_messages:
   contact:  'Hola Elías, te escribo desde tu página de contacto. Me interesa saber más sobre tus servicios.'
   contacto: 'Hola Elías, te escribo desde tu página de contacto. Me interesa saber más sobre tus servicios.'
   footer:   'Hola Elías, te escribo desde tu web. Me gustaría más información.'
+  quickwin: 'Hola, vengo de tu web. Quisiera información sobre tus servicios.'
 
 # ── Redes ────────────────────────────────────────────────────────────────────
 redes:

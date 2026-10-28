@@ -155,6 +155,10 @@ card:
   link_copied:    { es: "Enlace copiado al portapapeles.",            en: "Link copied to clipboard."                   }
   copy_link_prompt: { es: "Copia este enlace:",                       en: "Copy this link:"                             }
 
+# ── CTA FLOTANTE WHATSAPP ───────────────────────────────────────────────────
+cta:
+  whatsapp: { es: "Chatear por WhatsApp", en: "Chat on WhatsApp" }
+
 # ── ABOUT ───────────────────────────────────────────────────────────────────
 about:
   page_title:     { es: "Sobre mí",                                   en: "About"                                        }

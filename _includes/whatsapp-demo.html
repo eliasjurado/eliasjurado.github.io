@@ -1,0 +1,158 @@
+{%- comment -%}
+  Demo "Chatéame" — simulación del Quick Win (Automatización por WhatsApp).
+  Client-side, sin backend. Doble propósito:
+   (1) demo de portafolio del producto que Elías vende,
+   (2) embudo real: el botón "Seguir en WhatsApp" abre wa.me con el número real.
+  6 intents: Servicios · Precios · Cotización · Portafolio · Cómo trabajo · Hablar con Elías.
+  Marca: negro {{ site.brand.primary }} + steel {{ site.brand.accent }} · Montserrat (ya cargada).
+{%- endcomment -%}
+<div id="wad" data-wa="{{ site.contact.whatsapp }}" aria-live="polite">
+  <button id="wad-launch" type="button" aria-label="Abrir asistente de chat" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.69 8.4-8.06 8.4Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+    <span>Chatéame</span>
+  </button>
+
+  <div id="wad-panel" role="dialog" aria-label="Asistente de chat — demostración" hidden>
+    <header id="wad-head">
+      <div class="wad-avatar" aria-hidden="true">EJ</div>
+      <div class="wad-id">
+        <strong>Asistente · Estudio Elías Jurado</strong>
+        <span>Demo · respuesta automática</span>
+      </div>
+      <button id="wad-close" type="button" aria-label="Cerrar">&#10005;</button>
+    </header>
+    <div id="wad-note">Demostración de la <b>Automatización por WhatsApp</b> que implemento para negocios. Pruébala.</div>
+    <div id="wad-log" role="log"></div>
+    <div id="wad-quick" aria-label="Opciones rápidas"></div>
+  </div>
+</div>
+
+<style>
+  #wad{position:fixed;right:20px;bottom:20px;z-index:9999;font-family:'Montserrat',system-ui,sans-serif}
+  #wad-launch{display:inline-flex;align-items:center;gap:9px;border:0;cursor:pointer;
+    background:{{ site.brand.primary | default: '#000' }};color:#fff;padding:12px 18px;border-radius:999px;
+    font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.01em;box-shadow:0 8px 26px rgba(0,0,0,.28);
+    transition:transform .15s ease, box-shadow .15s ease}
+  #wad-launch:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.34)}
+  #wad-launch svg{flex:0 0 auto}
+  #wad-panel{position:absolute;right:0;bottom:64px;width:360px;max-width:calc(100vw - 40px);
+    background:#fff;border:1px solid #e6e6e6;border-radius:16px;overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.30);display:flex;flex-direction:column}
+  #wad-head{display:flex;align-items:center;gap:11px;background:{{ site.brand.primary | default: '#000' }};color:#fff;padding:13px 14px}
+  .wad-avatar{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:{{ site.brand.accent | default: '#243038' }};
+    display:grid;place-items:center;font-weight:700;font-size:13px;letter-spacing:.04em}
+  .wad-id{display:flex;flex-direction:column;line-height:1.25;flex:1}
+  .wad-id strong{font-size:13px;font-weight:600}
+  .wad-id span{font-size:11px;color:rgba(255,255,255,.7)}
+  #wad-close{background:none;border:0;color:#fff;font-size:15px;cursor:pointer;opacity:.8;padding:4px}
+  #wad-close:hover{opacity:1}
+  #wad-note{background:#f4f4f4;color:#555;font-size:11.5px;line-height:1.4;padding:9px 14px;border-bottom:1px solid #ececec}
+  #wad-note b{color:#222}
+  #wad-log{padding:14px;height:300px;overflow-y:auto;background:#fafafa;display:flex;flex-direction:column;gap:9px}
+  .wad-msg{max-width:82%;padding:9px 12px;border-radius:14px;font-size:13px;line-height:1.45;animation:wadIn .22s ease}
+  .wad-bot{align-self:flex-start;background:#fff;border:1px solid #ececec;color:#222;border-bottom-left-radius:5px}
+  .wad-me{align-self:flex-end;background:{{ site.brand.primary | default: '#000' }};color:#fff;border-bottom-right-radius:5px}
+  .wad-bot a{color:{{ site.brand.accent | default: '#243038' }};font-weight:600}
+  #wad-quick{display:flex;flex-wrap:wrap;gap:7px;padding:11px 14px;border-top:1px solid #ececec;background:#fff}
+  .wad-chip{border:1px solid {{ site.brand.primary | default: '#000' }};background:#fff;color:{{ site.brand.primary | default: '#000' }};
+    border-radius:999px;padding:7px 13px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:all .12s ease}
+  .wad-chip:hover{background:{{ site.brand.primary | default: '#000' }};color:#fff}
+  .wad-chip.wad-cta{background:#25d366;border-color:#25d366;color:#fff}
+  .wad-chip.wad-cta:hover{background:#1faa52;border-color:#1faa52}
+  @keyframes wadIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){.wad-msg,#wad-launch{animation:none;transition:none}}
+  @media (max-width:480px){#wad-panel{width:calc(100vw - 32px)}#wad-launch span{display:none}#wad-launch{padding:13px}}
+</style>
+
+<script>
+(function(){
+  var root=document.getElementById('wad');if(!root)return;
+  var wa=root.getAttribute('data-wa')||'';
+  var launch=document.getElementById('wad-launch'),
+      panel=document.getElementById('wad-panel'),
+      close=document.getElementById('wad-close'),
+      log=document.getElementById('wad-log'),
+      quick=document.getElementById('wad-quick');
+  var opened=false;
+
+  // ── Los 6 intents (el guion del bot) ──────────────────────────────────────
+  var MENU=[
+    {k:'serv', t:'Servicios'},
+    {k:'precio', t:'Precios'},
+    {k:'cotiza', t:'Quiero una cotización'},
+    {k:'porta', t:'Ver portafolio'},
+    {k:'proceso', t:'¿Cómo trabajas?'},
+    {k:'humano', t:'Hablar con Elías'}
+  ];
+  var FLOWS={
+    serv:{me:'Servicios',bot:[
+      'Te ayudo a que tu negocio venda mejor por internet. Trabajo cuatro cosas:',
+      '• <b>Landing</b> — una página que te hace ver profesional y capta clientes.<br>• <b>Tienda online</b> — vende tu catálogo 24/7.<br>• <b>Automatización por WhatsApp</b> — responde y captura clientes sin que estés pegado al celular (justo lo que estás probando ahora).<br>• <b>CRM</b> — ordena clientes y pedidos cuando ya creciste.'],
+      next:['precio','cotiza','menu']},
+    precio:{me:'¿Cuánto cuesta?',bot:[
+      'Depende del alcance, pero para que te ubiques: automatización de WhatsApp desde <b>USD 400</b>, una landing desde <b>USD 800</b>, tienda online desde <b>USD 2,000</b>.',
+      'Lo justo lo defino después de entender tu caso — así no te cobro de más ni de menos. ¿Te armo una cotización?'],
+      next:['cotiza','porta','menu']},
+    cotiza:{me:'Quiero una cotización',bot:[
+      'Perfecto. Para aterrizarla necesito 3 datos: <b>(1)</b> qué tienes hoy (web, solo redes, nada), <b>(2)</b> a qué se dedica tu negocio, y <b>(3)</b> qué te gustaría lograr.',
+      'En la versión real, el asistente guarda esto automáticamente y te lo paso ordenado. ¿Seguimos por WhatsApp y me cuentas?'],
+      next:['humano','menu']},
+    porta:{me:'Ver portafolio',bot:[
+      'Algunos trabajos en producción: <b>Hanna Comida Árabe</b> (tienda online con pedidos), <b>Joyería Donaire</b> (e-commerce), clínicas estéticas y más.',
+      'Puedes verlos en la sección <a href="{{ '/portfolio/' | relative_url }}">Portafolio</a> del sitio. ¿Te muestro qué haría por tu negocio?'],
+      next:['cotiza','humano','menu']},
+    proceso:{me:'¿Cómo trabajas?',bot:[
+      'Simple: <b>1)</b> diagnostico tu negocio (sin compromiso), <b>2)</b> te mando una propuesta por escrito con alcance y precio, <b>3)</b> construyo con adelanto y entregas por hitos, <b>4)</b> mido resultados.',
+      'Plazos típicos: automatización 2–3 semanas, landing 1–2 semanas. ¿Avanzamos?'],
+      next:['cotiza','humano','menu']},
+    humano:{me:'Hablar con Elías',bot:[
+      'Listo — te paso con Elías. Toca el botón verde y seguimos la conversación en tu WhatsApp; tu mensaje ya va escrito.'],
+      next:['wa','menu']}
+  };
+
+  function add(text,who){
+    var d=document.createElement('div');
+    d.className='wad-msg '+(who==='me'?'wad-me':'wad-bot');
+    d.innerHTML=text;log.appendChild(d);log.scrollTop=log.scrollHeight;
+  }
+  function chips(keys){
+    quick.innerHTML='';
+    keys.forEach(function(k){
+      if(k==='menu'){return makeChip('Volver al menú',function(){showMenu();});}
+      if(k==='wa'){
+        var msg=encodeURIComponent('Hola Elías, vengo de tu web probando el asistente. Me gustaría una cotización.');
+        var a=document.createElement('a');a.className='wad-chip wad-cta';a.textContent='Seguir en WhatsApp';
+        a.href='https://wa.me/'+wa+'?text='+msg;a.target='_blank';a.rel='noopener';quick.appendChild(a);return;
+      }
+      var item=MENU.filter(function(m){return m.k===k;})[0];if(!item)return;
+      makeChip(item.t,function(){run(k);});
+    });
+  }
+  function makeChip(label,fn){
+    var b=document.createElement('button');b.type='button';b.className='wad-chip';b.textContent=label;
+    b.addEventListener('click',fn);quick.appendChild(b);return b;
+  }
+  function run(k){
+    var f=FLOWS[k];if(!f)return;
+    add(f.me,'me');
+    var i=0;(function step(){
+      if(i<f.bot.length){add(f.bot[i],'bot');i++;setTimeout(step,520);}
+      else{chips(f.next);}
+    })();
+  }
+  function showMenu(){
+    add('¿Sobre qué te ayudo? Elige una opción:','bot');
+    chips(MENU.map(function(m){return m.k;}));
+  }
+  function boot(){
+    log.innerHTML='';quick.innerHTML='';
+    add('¡Hola! Soy el asistente de <b>Estudio Elías Jurado</b>. Respondo al toque, cualquier hora.','bot');
+    setTimeout(showMenu,500);
+  }
+  function open(){panel.hidden=false;launch.setAttribute('aria-expanded','true');if(!opened){opened=true;boot();}}
+  function hide(){panel.hidden=true;launch.setAttribute('aria-expanded','false');}
+  launch.addEventListener('click',function(){panel.hidden?open():hide();});
+  close.addEventListener('click',hide);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)hide();});
+})();
+</script>
