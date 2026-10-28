@@ -323,12 +323,27 @@
 
 // ── Footer ───────────────────────────────────────────────────────────────────
 .site-footer {
+  position: relative;
+  overflow: hidden;
   background: $brand-primary;
   color: rgba(255, 255, 255, 0.85);
   padding-block: $s-7;
   margin-top: $s-8;
   a { color: #fff; }
   h4 { color: #fff; font-size: 0.95rem; margin-bottom: $s-3; }
+}
+// Sello sutil de la mascota jaguar (01-identidad/mascota-jaguar/estrategia-jaguar.md).
+// Vive SOLO sobre fondo oscuro (footer es $brand-primary = negro). No es el logo ni el favicon.
+.site-footer__jaguar {
+  position: absolute;
+  right: $s-5;
+  bottom: $s-4;
+  width: 110px;
+  height: auto;
+  opacity: .35;
+  pointer-events: none;
+  mix-blend-mode: screen; // funde el negro del plate con el footer oscuro
+  @media (max-width: $bp-sm) { display: none; }
 }
 .site-footer__description {
   color: rgba(255, 255, 255, 0.75);

@@ -135,6 +135,48 @@ i18n_prefix: about
 
 </div>
 
+<section class="jaguar-origen">
+  <img class="jaguar-origen__img"
+       src="{{ '/assets/images/mascota/jaguar-editorial.png' | relative_url }}"
+       alt="El jaguar — mascota de la marca Elías Jurado" loading="lazy" />
+  <div class="jaguar-origen__texto">
+    <p class="jaguar-origen__kicker" data-i18n-en="The mascot">La mascota</p>
+    <h2 class="jaguar-origen__title" data-i18n-en="The jaguar">El jaguar</h2>
+    <p data-i18n-en="It was born on a court: the jersey for my kids' school family-day cup had a panther. I took it and translated it into the brand's language — matte black, clean geometry, no noise.">
+      Nació en una cancha: la camiseta de la Copa Día de la Familia del colegio de mis hijos
+      tenía una pantera. La tomé y la traduje al lenguaje de la marca — negro mate, geometría
+      limpia, sin estridencia.</p>
+    <p data-i18n-en="The jaguar (otorongo) isn't decoration: it's a top-tier Andean icon (Moche ceramics, the Chavín feline). It connects to my background in History without folkloric costume.">
+      El otorongo no es adorno: es ícono andino de primer nivel (cerámica Moche, felino de
+      Chavín). Conecta con mi formación en Historia sin disfraz folclórico.</p>
+    <p data-i18n-en="It has no eyes or mouth: it's pure silhouette. Just like the way I work — the jaguar holds the brand's presence, but the protagonist is your business, not it.">
+      No tiene ojos ni boca: es pura silueta. Igual que mi forma de trabajar — el jaguar
+      sostiene la presencia de la marca, pero el protagonista es tu negocio, no él.</p>
+  </div>
+</section>
+
+<style>
+  .jaguar-origen {
+    background: #0a0a0c;
+    color: #d2d2d7;
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    margin: 3rem 0;
+  }
+  .jaguar-origen__img { width: 100%; max-width: 360px; height: auto; justify-self: center; }
+  .jaguar-origen__kicker {
+    font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+    color: #6e6e73; margin: 0 0 .4rem;
+  }
+  .jaguar-origen__title { color: #f5f5f7; font-weight: 800; margin: 0 0 1rem; font-size: 2rem; }
+  .jaguar-origen__texto p { line-height: 1.7; margin: 0 0 .9rem; font-size: 1rem; }
+  @media (min-width: 768px) {
+    .jaguar-origen { grid-template-columns: 360px 1fr; gap: 3rem; padding: 3rem; }
+  }
+</style>
+
 {% comment %}
 ============================================================================
 SECCIÓN RSE — LISTA PERO OCULTA (no se renderiza mientras esté en este bloque).
