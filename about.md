@@ -131,10 +131,11 @@ i18n_prefix: about
 
 <p data-i18n-en-html="My RUC is <strong>10434645421</strong>. If you need the invoice with specific tax details, just send them to me when we close the agreement.">Mi RUC es <strong>10434645421</strong>. Si necesitas la factura con datos tributarios específicos, me los pasas al cerrar el acuerdo.</p>
 
-<p data-i18n-en-html="<strong>All my prices include VAT (IGV).</strong> I accept every payment method — card, bank transfer, Yape and Plin. <strong>Pay by bank transfer and you get a 3% discount.</strong>"><strong>Todos mis precios incluyen IGV.</strong> Acepto todos los medios de pago — tarjeta, transferencia, Yape y Plin. <strong>Si pagas por transferencia bancaria, obtienes un 3% de descuento.</strong></p>
+{% comment %} Párrafo IGV + medios de pago — oculto por ahora (Elías, 2026-10-28). {% endcomment %}{% comment %}<p data-i18n-en-html="<strong>All my prices include VAT (IGV).</strong> I accept every payment method — card, bank transfer, Yape and Plin. <strong>Pay by bank transfer and you get a 3% discount.</strong>"><strong>Todos mis precios incluyen IGV.</strong> Acepto todos los medios de pago — tarjeta, transferencia, Yape y Plin. <strong>Si pagas por transferencia bancaria, obtienes un 3% de descuento.</strong></p>{% endcomment %}
 
 </div>
 
+{% comment %} Mascota jaguar — oculta por ahora (decisión de Elías 2026-10-28: se replantea cómo presentarla). Para reactivar, borrar este comment y su endcomment. {% endcomment %}{% comment %}
 <section class="jaguar-origen">
   <img class="jaguar-origen__img"
        src="{{ '/assets/images/mascota/jaguar-editorial.png' | relative_url }}"
@@ -176,6 +177,7 @@ i18n_prefix: about
     .jaguar-origen { grid-template-columns: 360px 1fr; gap: 3rem; padding: 3rem; }
   }
 </style>
+{% endcomment %}
 
 {% comment %}
 ============================================================================
