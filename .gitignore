@@ -6,3 +6,10 @@ _site/
 .sass-cache/
 .jekyll-metadata
 .jekyll-cache
+
+# Ruby / Bundler local
+vendor/
+.bundle/
+
+# Secretos locales (token de GitHub para push)
+.env.local

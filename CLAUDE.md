@@ -1,4 +1,8 @@
-# CLAUDE.md — reglas operativas del repo `online-cv`
+# CLAUDE.md — reglas operativas del repo `eliasjurado.github.io` (sitio eliasjurado.com)
+
+> **Fuente única del sitio (desde 2026-10-28).** Este repo es el dueño del dominio
+> `eliasjurado.com` (CNAME) y de los subproyectos `eliasjurado.com/<repo>/`. El repo
+> `online-cv` quedó retirado: no publicar ahí. No borrar `CNAME`, `docs/` ni `src/`.
 
 > Este archivo lo lee cualquier agente Claude (Opus, Sonnet, Haiku) **antes de
 > tocar el repo**. Las reglas son obligatorias y derivan de decisiones tomadas
@@ -6,7 +10,7 @@
 > actualizar este archivo, después aplicar el cambio.
 >
 > **Contexto extendido y bitácora completa:** `~/Documents/eliasjurado.com/contexto-elias.md`
-> **Manual de marca completo:** `~/Documents/eliasjurado.com/identidad/manual-marca.md`
+> **Manual de marca completo:** `~/Documents/eliasjurado.com/01-identidad/manual-marca.md`
 
 ---
 
@@ -40,19 +44,10 @@
 
 ## 1b. Modo de comunicación con Elías — asesor estratégico y espejo crítico
 
-> Texto literal de Elías, agregado el 29 may 2026. Cualquier sesión de Claude
-> (Opus, Sonnet, Haiku) que hable con Elías opera bajo este manifiesto. Lectura
-> obligatoria antes de redactar cualquier respuesta sustantiva.
-
-Quiero que actúes como mi asesor estratégico y mi espejo crítico. Prioriza decirme la verdad por encima de hacerme sentir cómodo.
-
-No me valides por defecto, no endulces, no me halagues. Desafía mi forma de pensar, cuestiona mis suposiciones y nombra los puntos ciegos que estoy evitando. Sé directo y racional. Cuando mi razonamiento sea débil, desármalo y muéstrame exactamente dónde y por qué falla. Si me estoy engañando, señálalo. Si estoy evitando algo incómodo o perdiendo el tiempo, dímelo y explícame el costo de oportunidad concreto.
-
-Analiza mi situación con objetividad y profundidad estratégica: dónde pongo excusas, dónde juego a lo pequeño, dónde subestimo riesgos o el esfuerzo real que algo requiere. Apóyate en lo que percibas entre líneas de lo que te digo, pero distingue siempre entre lo que es un hecho, lo que es mi interpretación, y lo que es tu inferencia.
-
-Cuando me critiques, no te detengas en el diagnóstico: dame un plan priorizado y accionable sobre qué cambiar en mi pensamiento, mis decisiones o mi mentalidad, y por dónde empezar.
-
-Dos condiciones importantes: primero, dureza no es lo mismo que negatividad — si algo de mi razonamiento o mi plan está objetivamente bien, dímelo con la misma franqueza con que señalas lo que está mal; no inventes defectos para sonar exigente. Segundo, no confundas ser brutal con tener razón: la honestidad sin precisión no me sirve. Desafíame donde realmente haya algo que desafiar, con argumentos, no con severidad por deporte.
+Ver `/home/elias/Claude/CLAUDE.md` sección 1 — se hereda automáticamente por estar este repo
+bajo esa carpeta (`Claude/Projects/EliasJurado/repos/eliasjurado.github.io/`; Claude Code carga `CLAUDE.md`
+de todas las carpetas ancestro). Si una sesión aquí no parece estar aplicando ese tono, léelo
+explícitamente antes de seguir.
 
 ### Operacionalización en este repo
 
@@ -177,7 +172,7 @@ Si Haiku encuentra problemas, Opus arma fix-brief y delega a Sonnet de nuevo. Ha
 
 **Cómo invocarlos:** desde una sesión con Opus, usar la `Agent` tool con `subagent_type: "general-purpose"` y `model: "sonnet"` o `"haiku"`. El prompt al subagente debe:
 
-1. Empezar con: `"Lee /Users/jp/vcs/github/online-cv/CLAUDE.md ANTES de cualquier acción. Si la tarea es ambigua, lee también /Users/jp/Documents/eliasjurado.com/contexto-elias.md."`
+1. Empezar con: `"Lee /home/elias/Claude/Projects/EliasJurado/repos/eliasjurado.github.io/CLAUDE.md ANTES de cualquier acción. Si la tarea es ambigua, lee también /home/elias/Claude/Projects/EliasJurado/USER.md."` (ruta corregida 2026-09-24 — decía `/Users/jp/...`, obsoleta desde la migración a Debian del 22-ago-2026; ver guardrail anti-drift en `CLAUDE.md` del proyecto padre).
 2. Describir la tarea con paths absolutos exactos, no relativos.
 3. Especificar el deliverable (qué archivos modificar, qué reportar, en cuántas palabras).
 4. Acotar el alcance: "no toques X, no agregues Y".
