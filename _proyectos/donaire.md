@@ -7,6 +7,8 @@ cliente: Joyería Donaire Perú
 industria: Joyería / Plata 950
 industria_en: Jewelry / 950 silver
 stack: Next.js · Supabase · Vercel
+captura: /assets/img/portfolio/donaire-movil.jpg
+captura_alt: Página de inicio de Joyería Donaire en un celular
 url_vivo: https://joyeriadonaireperu.com
 resumen: >-
   Tienda en línea con inventario autoadministrable para una joyería de plata

@@ -15,7 +15,7 @@
 quick_win:
   slug: whatsapp
   badge: { es: "Quick Win", en: "Quick Win" }
-  icon: "💬"
+  icon: "chat"
   nombre_corto: { es: "WhatsApp", en: "WhatsApp" }
   titulo: { es: "Automatización por WhatsApp", en: "WhatsApp Automation" }
   factor_humano: { es: "Conversación (leads que ya tienes)", en: "Conversation (leads you already have)" }
@@ -61,7 +61,7 @@ niveles:
   - slug: landing
     nivel: 1
     fase: { es: "Despegue", en: "Launch" }
-    icon: "🚀"
+    icon: "launch"
     nombre_corto: { es: "Landing", en: "Landing" }
     titulo: { es: "Diseño y desarrollo web", en: "Web design and development" }
     factor_humano: { es: "Audiencia (visitas, prospectos fríos)", en: "Audience (visitors, cold prospects)" }
@@ -104,7 +104,7 @@ niveles:
   - slug: ecommerce
     nivel: 2
     fase: { es: "Expansión", en: "Expansion" }
-    icon: "🛒"
+    icon: "shop"
     nombre_corto: { es: "E-commerce", en: "E-commerce" }
     titulo: { es: "E-commerce con IA", en: "AI-powered E-commerce" }
     factor_humano: { es: "Clientes (compradores, transacciones)", en: "Customers (buyers, transactions)" }
@@ -147,7 +147,7 @@ niveles:
   - slug: crm
     nivel: 3
     fase: { es: "Liberación", en: "Freedom" }
-    icon: "⚙️"
+    icon: "flow"
     nombre_corto: { es: "CRM", en: "CRM" }
     titulo: { es: "Automatización y CRM para pymes", en: "Automation and CRM for SMBs" }
     factor_humano: { es: "Usuarios (equipo interno)", en: "Users (internal team)" }
@@ -193,7 +193,7 @@ niveles:
 # ─────────────────────────────────────────────────────────────────────────────
 addons:
   - slug: branded-games
-    icon: "🎮"
+    icon: "game"
     titulo: { es: "Branded Games", en: "Branded Games" }
     kicker: { es: "Marketing experiencial", en: "Experiential marketing" }
     resumen:
@@ -224,7 +224,7 @@ addons:
       - crm
 
   - slug: migracion-datos
-    icon: "📦"
+    icon: "package"
     titulo: { es: "Migración de datos históricos", en: "Historical data migration" }
     kicker: { es: "Add-on técnico", en: "Technical add-on" }
     resumen:
@@ -252,7 +252,7 @@ addons:
       - crm
 
   - slug: pasarela-pagos
-    icon: "💳"
+    icon: "card"
     titulo: { es: "Integración pasarela de pagos", en: "Payment gateway integration" }
     kicker: { es: "Add-on técnico", en: "Technical add-on" }
     resumen:
@@ -270,7 +270,7 @@ addons:
       - crm
 
   - slug: dominio-correos
-    icon: "🌐"
+    icon: "globe"
     titulo: { es: "Dominio + correos corporativos", en: "Domain + corporate emails" }
     kicker: { es: "Add-on técnico", en: "Technical add-on" }
     resumen:
@@ -289,7 +289,7 @@ addons:
       - crm
 
   - slug: capacitacion
-    icon: "🎓"
+    icon: "cap"
     titulo: { es: "Capacitación adicional", en: "Additional training" }
     kicker: { es: "Add-on humano", en: "Human add-on" }
     resumen:

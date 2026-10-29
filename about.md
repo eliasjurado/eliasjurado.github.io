@@ -310,3 +310,8 @@ cobrar / sin costo", tono directo y de decisión personal.
     .about-cta { margin-top: 2.5rem; }
   }
 </style>
+
+<style>
+  /* Medida de lectura: máx. ~68 caracteres reales (56ch) por línea en párrafos corridos */
+  article.section p:not([class]), .mision__lead, .mision__sub { max-width: 56ch; }
+</style>

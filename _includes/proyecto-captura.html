@@ -1,0 +1,8 @@
+{%- comment -%} Captura móvil real del sitio en vivo, en marco sobrio. Params: p (proyecto), size ("card"|"hero"). {%- endcomment -%}
+{%- assign pp = include.p | default: page -%}
+{%- if pp.captura -%}
+<figure class="phone-frame phone-frame--{{ include.size | default: 'card' }}">
+  <img src="{{ pp.captura | relative_url }}" width="780" height="1688" loading="lazy" decoding="async"
+       alt="{{ pp.captura_alt }}">
+</figure>
+{%- endif -%}

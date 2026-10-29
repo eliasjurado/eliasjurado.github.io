@@ -7,6 +7,8 @@ cliente: Hanna Comida Árabe
 industria: Gastronomía / Comida típica
 industria_en: Food / Traditional cuisine
 stack: Next.js · Supabase · Vercel · WhatsApp Cloud API
+captura: /assets/img/portfolio/hanna-movil.jpg
+captura_alt: Página de inicio de Hanna Comida Árabe en un celular
 url_vivo: https://hannacomidaarabe.com
 resumen: >-
   E-commerce con panel administrativo y checkout por WhatsApp para una panadería
@@ -35,7 +37,7 @@ Una tienda en línea que sirve como vitrina pública del catálogo y mantiene el
 
 ## El resultado
 
-Pendiente de go-live a la fecha de publicación. Se actualizará este caso con métricas reales una vez el sitio esté en producción.
+En producción en su dominio propio. Se actualizará este caso con métricas reales cuando haya historial.
 
 ---
 

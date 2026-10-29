@@ -15,9 +15,9 @@ i18n_prefix: services
     <article class="summary-col summary-col--quickwin" data-slug="{{ qw.slug }}">
       <div class="summary-col__badge" data-i18n-en="{{ qw.badge.en }}">{{ qw.badge.es }}</div>
       <div class="summary-col__numero">00</div>
-      <div class="summary-col__icon" aria-hidden="true">{{ qw.icon }}</div>
-      <p class="summary-col__kicker">Nivel de entrada · <span data-i18n-en="{{ qw.factor_humano.en }}">{{ qw.factor_humano.es }}</span></p>
-      <h3 class="summary-col__titulo" data-i18n-en="{{ qw.nombre_corto.en }}">{{ qw.nombre_corto.es }}</h3>
+      <div class="summary-col__icon" aria-hidden="true">{% include mm-icon.html name=qw.icon %}</div>
+      <p class="summary-col__kicker"><span data-i18n="services.entry_level">Nivel de entrada</span> · <span data-i18n-en="{{ qw.factor_humano.en }}">{{ qw.factor_humano.es }}</span></p>
+      <h2 class="summary-col__titulo" data-i18n-en="{{ qw.nombre_corto.en }}">{{ qw.nombre_corto.es }}</h2>
       <p class="summary-col__servicio" data-i18n-en="{{ qw.titulo.en }}">{{ qw.titulo.es }}</p>
       <p class="summary-col__beneficio" data-i18n-en="{{ qw.beneficio.en }}">{{ qw.beneficio.es }}</p>
       <p class="summary-col__resumen" data-i18n-en="{{ qw.resumen.en }}">{{ qw.resumen.es }}</p>
@@ -33,9 +33,9 @@ i18n_prefix: services
     {% for s in site.data.servicios.niveles %}
     <article class="summary-col" data-slug="{{ s.slug }}">
       <div class="summary-col__numero">0{{ s.nivel }}</div>
-      <div class="summary-col__icon" aria-hidden="true">{{ s.icon }}</div>
-      <p class="summary-col__kicker">Nivel {{ s.nivel }} · <span data-i18n-en="{{ s.fase.en }}">{{ s.fase.es }}</span></p>
-      <h3 class="summary-col__titulo" data-i18n-en="{{ s.nombre_corto.en }}">{{ s.nombre_corto.es }}</h3>
+      <div class="summary-col__icon" aria-hidden="true">{% include mm-icon.html name=s.icon %}</div>
+      <p class="summary-col__kicker"><span data-i18n="services.level_word">Nivel</span> {{ s.nivel }} · <span data-i18n-en="{{ s.fase.en }}">{{ s.fase.es }}</span></p>
+      <h2 class="summary-col__titulo" data-i18n-en="{{ s.nombre_corto.en }}">{{ s.nombre_corto.es }}</h2>
       <p class="summary-col__servicio" data-i18n-en="{{ s.titulo.en }}">{{ s.titulo.es }}</p>
       <p class="summary-col__beneficio" data-i18n-en="{{ s.beneficio.en }}">{{ s.beneficio.es }}</p>
       <p class="summary-col__resumen" data-i18n-en="{{ s.resumen.en }}">{{ s.resumen.es }}</p>
@@ -60,7 +60,7 @@ i18n_prefix: services
     <div class="potenciadores-chips">
       {% for a in site.data.servicios.addons %}
       <a href="#addon-{{ a.slug }}" data-scroll class="potenciador-chip">
-        <span class="potenciador-chip__icon" aria-hidden="true">{{ a.icon }}</span>
+        <span class="potenciador-chip__icon" aria-hidden="true">{% include mm-icon.html name=a.icon %}</span>
         <span class="potenciador-chip__text">
           <strong data-i18n-en="{{ a.titulo.en }}">{{ a.titulo.es }}</strong>
           <small>{% if a.precio_es_referencial %}<span data-i18n="services.starting_at">Desde</span> {% endif %}USD <span{% if a.precio_usd.en %} data-i18n-en="{{ a.precio_usd.en }}"{% endif %}>{{ a.precio_usd.es | default: a.precio_usd }}</span></small>
@@ -80,7 +80,7 @@ i18n_prefix: services
       {% for p in site.data.servicios.plan_cuidado %}
       <a href="#cuidado-{{ p.slug }}" data-scroll class="cuidado-chip">
         <span class="cuidado-chip__nombre" data-i18n-en="{{ p.nombre.en }}">{{ p.nombre.es }}</span>
-        <span class="cuidado-chip__precio">{% if p.precio_es_referencial %}Desde {% endif %}USD {{ p.precio_usd }}/mes</span>
+        <span class="cuidado-chip__precio">{% if p.precio_es_referencial %}<span data-i18n="services.starting_at">Desde</span> {% endif %}USD {{ p.precio_usd }}<span data-i18n="services.per_month">/mes</span></span>
         <span class="cuidado-chip__incluye" data-i18n-en="{{ p.incluye.en }}">{{ p.incluye.es }}</span>
       </a>
       {% endfor %}
@@ -98,17 +98,17 @@ i18n_prefix: services
         <span class="metodo-step__num">01</span>
         <span class="metodo-step__label" data-i18n="services.method_step1_short">Conversamos</span>
       </li>
-      <li class="metodo-step__arrow" aria-hidden="true">→</li>
+      <li class="metodo-step__arrow" aria-hidden="true">{% include mm-icon.html name="arrow" cls="metodo-step__arrow-svg" %}</li>
       <li class="metodo-step">
         <span class="metodo-step__num">02</span>
         <span class="metodo-step__label" data-i18n="services.method_step2_short">Propuesta</span>
       </li>
-      <li class="metodo-step__arrow" aria-hidden="true">→</li>
+      <li class="metodo-step__arrow" aria-hidden="true">{% include mm-icon.html name="arrow" cls="metodo-step__arrow-svg" %}</li>
       <li class="metodo-step">
         <span class="metodo-step__num">03</span>
         <span class="metodo-step__label" data-i18n="services.method_step3_short">Construimos</span>
       </li>
-      <li class="metodo-step__arrow" aria-hidden="true">→</li>
+      <li class="metodo-step__arrow" aria-hidden="true">{% include mm-icon.html name="arrow" cls="metodo-step__arrow-svg" %}</li>
       <li class="metodo-step">
         <span class="metodo-step__num">04</span>
         <span class="metodo-step__label" data-i18n="services.method_step4_short">Lanzamos y cuidamos</span>
@@ -137,10 +137,10 @@ i18n_prefix: services
   <div class="strategy-card__badge" data-i18n-en="{{ qw.badge.en }}">{{ qw.badge.es }}</div>
 
   <header class="strategy-card__header">
-    <div class="strategy-card__icon" aria-hidden="true">{{ qw.icon }}</div>
+    <div class="strategy-card__icon" aria-hidden="true">{% include mm-icon.html name=qw.icon %}</div>
     <div>
       <p class="strategy-card__kicker" data-i18n="services.detail_qw_kicker">Paso 0 · Activación inmediata</p>
-      <h2 class="strategy-card__titulo"><span data-i18n-en="{{ qw.nombre_corto.en }}">{{ qw.nombre_corto.es }}</span> — <span data-i18n-en="{{ qw.titulo.en }}">{{ qw.titulo.es }}</span></h2>
+      <h2 class="strategy-card__titulo" data-i18n-en="{{ qw.titulo.en }}">{{ qw.titulo.es }}</h2>
       <p class="strategy-card__beneficio" data-i18n-en="{{ qw.beneficio.en }}">{{ qw.beneficio.es }}</p>
     </div>
   </header>
@@ -174,7 +174,7 @@ i18n_prefix: services
   <div class="strategy-card__numero-grande">0{{ s.nivel }}</div>
 
   <header class="strategy-card__header strategy-card__header--simple">
-    <p class="strategy-card__kicker">Nivel {{ s.nivel }} · <span data-i18n-en="{{ s.fase.en }}">{{ s.fase.es }}</span></p>
+    <p class="strategy-card__kicker"><span data-i18n="services.level_word">Nivel</span> {{ s.nivel }} · <span data-i18n-en="{{ s.fase.en }}">{{ s.fase.es }}</span></p>
     <h2 class="strategy-card__titulo" data-i18n-en="{{ s.nombre_corto.en }}">{{ s.nombre_corto.es }}</h2>
     <p class="strategy-card__servicio" data-i18n-en="{{ s.titulo.en }}">{{ s.titulo.es }}</p>
     <p class="strategy-card__beneficio" data-i18n-en="{{ s.beneficio.en }}">{{ s.beneficio.es }}</p>
@@ -218,7 +218,7 @@ i18n_prefix: services
   <div class="addons-grid">
     {% for a in site.data.servicios.addons %}
     <article class="addon-card" id="addon-{{ a.slug }}">
-      <div class="addon-card__icon" aria-hidden="true">{{ a.icon }}</div>
+      <div class="addon-card__icon" aria-hidden="true">{% include mm-icon.html name=a.icon %}</div>
       <p class="addon-card__kicker" data-i18n-en="{{ a.kicker.en }}">{{ a.kicker.es }}</p>
       <h3 class="addon-card__titulo" data-i18n-en="{{ a.titulo.en }}">{{ a.titulo.es }}</h3>
       <p class="addon-card__resumen" data-i18n-en="{{ a.resumen.en }}">{{ a.resumen.es }}</p>
@@ -252,7 +252,7 @@ i18n_prefix: services
       <h3 data-i18n-en="{{ p.nombre.en }}">{{ p.nombre.es }}</h3>
       <p data-i18n-en="{{ p.incluye.en }}">{{ p.incluye.es }}</p>
       <div class="cuidado-card__precio">
-        <span class="precio-final">{% if p.precio_es_referencial %}<span data-i18n="services.starting_at">Desde</span> {% endif %}USD {{ p.precio_usd }}/mes</span>
+        <span class="precio-final">{% if p.precio_es_referencial %}<span data-i18n="services.starting_at">Desde</span> {% endif %}USD {{ p.precio_usd }}<span data-i18n="services.per_month">/mes</span></span>
         <span class="precio-pen">≈ PEN {{ p.precio_pen }}</span>
         {% if p.precio_es_referencial %}<span class="precio-nota precio-nota--cuidado" data-i18n="services.reference_short">*Referencial</span>{% endif %}
       </div>
@@ -346,7 +346,7 @@ i18n_prefix: services
     box-shadow: 0 4px 14px rgba(0,0,0,0.07);
   }
   .potenciador-chip__icon {
-    font-size: 1.3rem;
+    width: 24px; height: 24px;
     line-height: 1;
     flex-shrink: 0;
   }
@@ -363,7 +363,7 @@ i18n_prefix: services
     font-family: 'Montserrat', sans-serif;
   }
   .potenciador-chip__text small {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: #606060;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.02em;
@@ -435,7 +435,7 @@ i18n_prefix: services
     letter-spacing: -0.01em;
   }
   .cuidado-chip__incluye {
-    font-size: 0.74rem;
+    font-size: 0.75rem;
     color: #d2d2d7;
     line-height: 1.4;
   }
@@ -483,7 +483,7 @@ i18n_prefix: services
     padding: 0.5rem;
   }
   .metodo-step__num {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 800;
     color: #d2d2d7;
     letter-spacing: 0.2em;
@@ -498,9 +498,15 @@ i18n_prefix: services
   }
   .metodo-step__arrow {
     color: #606060;
-    font-size: 1.2rem;
     padding: 0 0.4rem;
+    display: none;
   }
+  .metodo-step__arrow-svg { width: 20px; height: 20px; display: block; }
+  @media (min-width: 701px) { .metodo-step__arrow { display: block; } }
+
+  /* Íconos SVG (reemplazan emoji) */
+  .summary-col__icon svg, .strategy-card__icon svg, .addon-card__icon svg { width: 100%; height: 100%; display: block; }
+  .potenciador-chip__icon svg { width: 100%; height: 100%; display: block; }
   .metodo-ver-detalle {
     display: block;
     text-align: center;
@@ -517,7 +523,7 @@ i18n_prefix: services
 
   /* Mention de Plan Cuidado en cards de nivel */
   .summary-col__cuidado-mention {
-    font-size: 0.74rem;
+    font-size: 0.75rem;
     color: #606060;
     font-style: italic;
     margin: 0 0 0.8rem;
@@ -533,10 +539,7 @@ i18n_prefix: services
       grid-template-columns: 1fr;
       gap: 0.5rem;
     }
-    .metodo-step__arrow {
-      padding: 0.3rem 0;
-      transform: rotate(90deg);
-    }
+    .metodo-step__arrow { display: none; }
   }
 
   /* ═══════════════════════ INTRO ═══════════════════════ */
@@ -592,7 +595,7 @@ i18n_prefix: services
     background: #fff;
     color: #000;
     padding: 4px 12px;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -654,13 +657,13 @@ i18n_prefix: services
   }
 
   .summary-col__icon {
-    font-size: 2.2rem;
+    width: 36px; height: 36px;
     line-height: 1;
     margin-bottom: 0.8rem;
   }
 
   .summary-col__kicker {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #606060;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -719,7 +722,7 @@ i18n_prefix: services
     letter-spacing: -0.01em;
   }
   .summary-col__precio .precio-plazo {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: #606060;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -763,7 +766,7 @@ i18n_prefix: services
     background: #fff;
     color: #000;
     padding: 4px 12px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -783,7 +786,7 @@ i18n_prefix: services
   }
 
   .summary-row__kicker {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #d2d2d7;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -822,7 +825,7 @@ i18n_prefix: services
     letter-spacing: -0.01em;
   }
   .summary-row__precio .precio-plazo {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: #d2d2d7;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -883,7 +886,7 @@ i18n_prefix: services
     background: #000;
     color: #fff;
     padding: 5px 14px;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -914,13 +917,13 @@ i18n_prefix: services
   .strategy-card__header--simple { display: block; }
 
   .strategy-card__icon {
-    font-size: 2.5rem;
+    width: 40px; height: 40px;
     line-height: 1;
     flex-shrink: 0;
   }
 
   .strategy-card__kicker {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: #606060;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -955,6 +958,7 @@ i18n_prefix: services
   }
 
   .strategy-card__resumen {
+    max-width: 56ch;
     color: #424245;
     font-size: 0.95rem;
     line-height: 1.7;
@@ -996,7 +1000,7 @@ i18n_prefix: services
     position: absolute;
     left: 0;
     top: 0.55rem;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
   }
 
   .strategy-card__footer {
@@ -1045,15 +1049,15 @@ i18n_prefix: services
   }
 
   .precio-nota {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: #606060;
     font-style: italic;
     margin-top: 0.5rem;
     line-height: 1.4;
     display: block;
   }
-  .precio-nota--mini { font-size: 0.65rem; margin-top: 0.3rem; }
-  .precio-nota--cuidado { color: #d2d2d7; font-size: 0.7rem; margin-top: 0.3rem; }
+  .precio-nota--mini { font-size: 0.75rem; margin-top: 0.3rem; }
+  .precio-nota--cuidado { color: #d2d2d7; font-size: 0.75rem; margin-top: 0.3rem; }
   .summary-row__precio .precio-nota { color: #d2d2d7; }
 
   .strategy-card__back {
@@ -1112,9 +1116,9 @@ i18n_prefix: services
     transition: border-color 200ms ease;
   }
   .addon-card:hover { border-color: #000; }
-  .addon-card__icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .addon-card__icon { width: 32px; height: 32px; margin-bottom: 0.75rem; }
   .addon-card__kicker {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: #606060;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -1141,7 +1145,7 @@ i18n_prefix: services
     border-top: 1px solid #f5f5f7;
   }
   .addon-card__meta dt {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #606060;
     text-transform: uppercase;
     letter-spacing: 0.15em;

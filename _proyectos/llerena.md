@@ -7,6 +7,8 @@ cliente: Dra. Verónica Llerena — Llerena Clinimed Aesthetic (Portoviejo y Man
 industria: Medicina estética / Salud
 industria_en: Aesthetic medicine / Healthcare
 stack: Jekyll · Netlify Functions · Google Calendar API · Google Sheets API
+captura: /assets/img/portfolio/llerena-movil.jpg
+captura_alt: Página de inicio de Llerena Clinimed Aesthetic en un celular
 url_vivo: https://llerenaclinimed.com
 resumen: >-
   Sitio bilingüe con reserva de citas en línea para una médica especialista en

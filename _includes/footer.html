@@ -8,7 +8,7 @@
     <div class="site-footer__grid">
       <div>
         <h4>{{ site.title }}</h4>
-        <p class="site-footer__description">
+        <p class="site-footer__description" data-i18n="footer.description">
           {{ site.description }}
         </p>
       </div>
@@ -51,16 +51,23 @@
     var menu = document.querySelector('[data-nav-mobile]');
     if (!btn || !menu) return;
 
+    var iconMenu = btn.querySelector('[data-nav-icon="menu"]');
+    var iconClose = btn.querySelector('[data-nav-icon="close"]');
+    function setIcon(open) {
+      if (iconMenu) iconMenu.hidden = open;
+      if (iconClose) iconClose.hidden = !open;
+    }
+
     function closeMenu() {
       menu.classList.remove('is-open');
       btn.setAttribute('aria-expanded', 'false');
-      btn.textContent = '☰';
+      setIcon(false);
     }
 
     btn.addEventListener('click', function() {
       var open = menu.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? '✕' : '☰';
+      setIcon(open);
     });
 
     document.addEventListener('click', function(event) {

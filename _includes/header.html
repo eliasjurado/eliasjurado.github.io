@@ -23,7 +23,8 @@
     </div>
 
     <button class="site-nav__toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-nav-toggle>
-      ☰
+      <span data-nav-icon="menu">{% include mm-icon.html name="menu" cls="nav-toggle__svg" %}</span>
+      <span data-nav-icon="close" hidden>{% include mm-icon.html name="close" cls="nav-toggle__svg" %}</span>
     </button>
   </div>
 

@@ -9,8 +9,9 @@ i18n_prefix: portfolio
 {% if site.proyectos.size > 0 %}
 <div class="grid grid--2">
   {%- for p in site.proyectos -%}
-    <article class="card">
-      <h3 class="card__title"{% if p.title_en %} data-i18n-en="{{ p.title_en }}"{% endif %}>{{ p.title }}</h3>
+    <article class="card card--captura">
+      {%- include proyecto-captura.html p=p size="card" -%}
+      <h2 class="card__title"{% if p.title_en %} data-i18n-en="{{ p.title_en }}"{% endif %}>{{ p.title }}</h2>
       {%- if p.cliente -%}<p class="text-sm portfolio-card__meta">{{ p.cliente }} · <span data-i18n-en="{{ p.industria_en | default: p.industria }}">{{ p.industria }}</span></p>{%- endif -%}
       <p class="card__body"{% if p.resumen_en %} data-i18n-en="{{ p.resumen_en }}"{% endif %}>{{ p.resumen }}</p>
       <p class="portfolio-card__actions">
@@ -31,6 +32,7 @@ i18n_prefix: portfolio
 <p data-i18n-en-html="Need specific references from your industry? <a href='/contact/'>Tell me what you're looking for</a> and I'll share the closest cases.">¿Necesitas referencias específicas de tu industria? <a href="/contact/">Cuéntame qué buscas</a> y te paso los casos más cercanos a lo que necesitas.</p>
 
 <style>
+  .card--captura .card__title { font-size: 1.35rem; }
   .portfolio-card__meta {
     margin-bottom: 0.5rem;
   }

@@ -12,6 +12,7 @@ layout: default
 
 <article class="section">
   <div class="container container-narrow">
+    {%- include proyecto-captura.html size="hero" -%}
     {%- if page.cliente or page.industria or page.stack or page.url_vivo -%}
     <div class="callout">
       {%- if page.cliente   -%}<strong>Cliente:</strong> {{ page.cliente }}<br>{%- endif -%}

@@ -113,7 +113,8 @@ hero_subtitle: "Visibilidad → Conversión → Eficiencia"
     </div>
     <div class="grid grid--2">
       {%- for p in destacados limit: 2 -%}
-        <article class="card">
+        <article class="card card--captura">
+          {%- include proyecto-captura.html p=p size="card" -%}
           <h3 class="card__title"{% if p.title_en %} data-i18n-en="{{ p.title_en }}"{% endif %}>{{ p.title }}</h3>
           {%- if p.cliente or p.industria -%}<p class="text-sm home-featured__meta">{{ p.cliente }}{% if p.industria %} · <span data-i18n-en="{{ p.industria_en | default: p.industria }}">{{ p.industria }}</span>{% endif %}</p>{%- endif -%}
           <p class="card__body"{% if p.resumen_en %} data-i18n-en="{{ p.resumen_en }}"{% endif %}>{{ p.resumen }}</p>

@@ -108,9 +108,9 @@
     display: block;
   }
 
+  // Móvil: el monograma va DEBAJO del texto y los CTA, reducido (≤40 % del ancho).
   @media (max-width: ($bp-md - 1)) {
-    order: -1;
-    width: min(88vw, 380px);
+    width: min(40vw, 150px);
   }
 
   @media (min-width: $bp-md) { width: 420px; }
@@ -268,8 +268,8 @@
   display: inline-flex; @media (min-width: $bp-md) { display: none; }
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   background: $bg;
   border: 1px solid $line;
   cursor: pointer;
@@ -641,3 +641,29 @@
     &.mm--arm .mm__seg-fill { transform: scaleX(0); }
   }
 }
+
+// ── Marco sobrio de teléfono para capturas reales (spec 018) ─────────────────
+// Mobile-first: base = móvil. Borde 1px línea, radio 0, sin sombras.
+.phone-frame {
+  margin: 0 auto $s-4;
+  width: 100%;
+  max-width: 220px;
+  border: 1px solid #e0e0e0;
+  background: #f5f5f7;
+  line-height: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &--hero {
+    max-width: 260px;
+    margin-bottom: $s-6;
+  }
+}
+.card--captura { text-align: left; }
+.card__icon .card__svg { width: 24px; height: 24px; display: block; }
+.nav-toggle__svg { width: 22px; height: 22px; display: block; }
+.site-nav__toggle [hidden] { display: none; }

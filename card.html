@@ -128,6 +128,7 @@ sitemap: false
     font-size: 14px;
     font-weight: 700;
   }
+  .btn .ico-svg { width: 20px; height: 20px; display: block; }
   .btn.whatsapp .ico { background: var(--steel); color: var(--white); }
   .btn .label-r {
     color: var(--muted);
@@ -192,28 +193,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <nav class="actions" aria-label="Contacto">
     <a class="btn whatsapp" href="https://wa.me/{{ site.contact.whatsapp }}?text={{ wa_text | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
-      <span class="ico" aria-hidden="true">💬</span>
+      <span class="ico" aria-hidden="true">{% include mm-icon.html name="chat" cls="ico-svg" %}</span>
       <span class="text">
         <span class="label-r" data-i18n="card.whatsapp_label">WhatsApp</span>
         <span class="value">{{ phone_display }}</span>
       </span>
     </a>
     <a class="btn" href="tel:{{ phone_e164 }}" aria-label="Llamar por telefono">
-      <span class="ico" aria-hidden="true">📞</span>
+      <span class="ico" aria-hidden="true">{% include mm-icon.html name="phone" cls="ico-svg" %}</span>
       <span class="text">
         <span class="label-r" data-i18n="card.call_label">Llamar</span>
         <span class="value">{{ phone_display }}</span>
       </span>
     </a>
     <a class="btn" href="mailto:{{ site.contact.email }}" aria-label="Enviar correo">
-      <span class="ico" aria-hidden="true">✉</span>
+      <span class="ico" aria-hidden="true">{% include mm-icon.html name="mail" cls="ico-svg" %}</span>
       <span class="text">
         <span class="label-r" data-i18n="card.email_label">Correo</span>
         <span class="value">{{ site.contact.email }}</span>
       </span>
     </a>
     <a class="btn" href="{{ site.url }}" target="_blank" rel="noopener noreferrer" aria-label="Ir al sitio web">
-      <span class="ico" aria-hidden="true">🌐</span>
+      <span class="ico" aria-hidden="true">{% include mm-icon.html name="globe" cls="ico-svg" %}</span>
       <span class="text">
         <span class="label-r" data-i18n="card.website_label">Sitio web</span>
         <span class="value">{{ site.url | replace: 'https://', '' | replace: 'http://', '' }}</span>

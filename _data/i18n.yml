@@ -93,6 +93,9 @@ services:
   market_ref:          { es: "Mercado",                               en: "Market"                                      }
   market_ref_long:     { es: "Referencia mercado",                    en: "Market reference"                            }
   starting_at:         { es: "Desde",                                 en: "From"                                        }
+  entry_level:         { es: "Nivel de entrada",                      en: "Entry level"                                 }
+  level_word:          { es: "Nivel",                                 en: "Level"                                       }
+  per_month:           { es: "/mes",                                  en: "/month"                                      }
   price_note_short:    { es: "*Precio referencial",                   en: "*Reference price"                            }
   price_note_long:     { es: "*Precio referencial. La cotización final se ajusta según alcance.",
                          en: "*Reference price. Final quote depends on project scope." }
@@ -151,6 +154,8 @@ footer:
   contact_label:  { es: "Contacto",                                   en: "Contact"                                     }
   links_label:    { es: "Enlaces",                                    en: "Links"                                       }
   rights:         { es: "Todos los derechos reservados.",             en: "All rights reserved."                        }
+  description:    { es: "Visibilidad → Conversión → Eficiencia. Landing web, e-commerce y CRM para pymes que quieren crecer ordenado.",
+                  en: "Visibility → Conversion → Efficiency. Landing page, e-commerce and CRM for SMBs that want to grow in an orderly way." }
 
 # ── TARJETA DIGITAL /card/ ─────────────────────────────────────────────────
 card:

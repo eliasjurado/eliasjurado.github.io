@@ -12,7 +12,7 @@ i18n_prefix: contact
   <div class="card"
        data-wa-number="{{ site.contact.whatsapp }}"
        data-wa-base="{{ site.whatsapp_messages.contacto }}">
-    <div class="card__icon" aria-hidden="true">💬</div>
+    <div class="card__icon" aria-hidden="true">{% include mm-icon.html name="chat" cls="card__svg" %}</div>
     <h3 class="card__title">WhatsApp</h3>
     <p class="card__body">{{ site.contact.phone }}</p>
     <form class="wa-form" id="wa-contact-form" onsubmit="return false;">
@@ -33,7 +33,7 @@ i18n_prefix: contact
   </div>
 
   <a href="mailto:{{ site.contact.email }}" class="card contact-email-card">
-    <div class="card__icon" aria-hidden="true">✉️</div>
+    <div class="card__icon" aria-hidden="true">{% include mm-icon.html name="mail" cls="card__svg" %}</div>
     <h3 class="card__title" data-i18n-en="Email">Correo</h3>
     <p class="card__body">{{ site.contact.email }}</p>
     <p class="contact-email-link" data-i18n-en="Send email →">Enviar correo →</p>
@@ -103,13 +103,6 @@ i18n_prefix: contact
     letter-spacing: 0;
   }
 
-  @media (max-width: 767px) {
-    .contact-email-card {
-      text-align: center;
-    }
-
-    .contact-email-link {
-      margin-top: 0.8rem;
-    }
-  }
+  .contact-email-card { display: block; }
+  .card__svg { width: 24px; height: 24px; display: block; }
 </style>

@@ -21,6 +21,7 @@
 
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var STEP_MS = 360;
+  var wide = window.matchMedia ? window.matchMedia('(min-width: 900px)') : null;
 
   // ── Selector (solo existe con JS: se muestra aquí) ─────────────────────
   if (select) select.hidden = false;
@@ -41,7 +42,8 @@
       if (seg) seg.classList.toggle('is-undrawn', k !== -1 && i >= k);
       st.classList.toggle('is-selected', k !== -1 && i === k);
       st.classList.toggle('is-dim', k !== -1 && i !== k);
-      st.classList.toggle('is-past', k !== -1 && i < k);
+      // La entrada (WhatsApp, idx 0) es transversal: nunca se marca como "pasada".
+      st.classList.toggle('is-past', k !== -1 && i > 0 && i < k);
       st.classList.toggle('is-ahead', k !== -1 && i > k);
     });
     picks.forEach(function (b) {
@@ -51,6 +53,13 @@
       p.hidden = !(k !== -1 && p.getAttribute('data-mm-panel') === slug);
     });
     if (resetBtn) resetBtn.hidden = k === -1;
+    // En móvil (<900px) el panel queda bajo las opciones: llevar la vista hasta él.
+    if (k !== -1 && wide && !wide.matches) {
+      var panelWrap = root.querySelector('[data-mm-panel-wrap]');
+      if (panelWrap) {
+        panelWrap.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+      }
+    }
   }
 
   var current = null;
