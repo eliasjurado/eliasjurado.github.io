@@ -584,6 +584,17 @@
 
   // Selección: la línea llega hasta la estación elegida
   &__seg-fill.is-undrawn { transform: scaleY(0); }
+  // Toda la estación es clicable: el enlace del nombre se "estira" sobre la estación.
+  &__station { position: relative; }
+  &__link { color: inherit; text-decoration: none; }
+  &__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+  &__link:focus-visible { outline: none; }
+  &__station:has(.mm__link:focus-visible) { outline: 2px solid $ink-pure; outline-offset: 6px; }
+  &__more { display: inline-block; margin-top: $s-3; font-size: .85rem; font-weight: 600; color: $ink-steel;
+    border-bottom: 1px solid transparent; transition: border-color .2s; }
+  &__station:hover .mm__more { border-bottom-color: $ink-steel; }
+  &__station:hover .mm__node { transform: translateY(-2px); }
+  @media (prefers-reduced-motion: reduce) { &__station:hover .mm__node { transform: none; } }
   &__station.is-dim { .mm__name, .mm__benefit, .mm__price, .mm__num, .mm__result { color: $muted; } }
   &__station.is-past .mm__node { background: $muted; border-color: $muted; }
   &__station.is-ahead .mm__node { background: $bg-pure; color: $muted; border-color: $muted; }

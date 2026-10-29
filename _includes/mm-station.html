@@ -10,12 +10,13 @@
       {%- if include.kind == "entry" -%}<span data-i18n="home.journey_entry">Punto de entrada</span>
       {%- else -%}<span class="mm__num">0{{ s.nivel }}</span> <span data-i18n-en="{{ s.fase.en }}">{{ s.fase.es }}</span>{%- endif -%}
     </p>
-    <h3 class="mm__name" data-i18n-en="{{ s.nombre_corto.en }}">{{ s.nombre_corto.es }}</h3>
+    <h3 class="mm__name"><a class="mm__link" href="/services/#{{ s.slug }}" data-i18n-en="{{ s.nombre_corto.en }}">{{ s.nombre_corto.es }}</a></h3>
     {%- if include.kind != "entry" -%}
     <p class="mm__result"><span data-i18n="home.mm_res_{{ s.slug }}">{% case s.slug %}{% when "landing" %}Visibilidad{% when "ecommerce" %}Conversión{% else %}Eficiencia{% endcase %}</span></p>
     {%- endif -%}
     <p class="mm__benefit" data-i18n-en="{{ s.beneficio.en }}">{{ s.beneficio.es }}</p>
     <p class="mm__factor" data-i18n-en="{{ s.factor_humano.en }}">{{ s.factor_humano.es }}</p>
     <p class="mm__price"><span data-i18n="services.starting_at">Desde</span> USD {{ s.precio_usd }}</p>
+    <span class="mm__more" aria-hidden="true" data-i18n="home.journey_cta">Ver detalle →</span>
   </div>
 </li>
