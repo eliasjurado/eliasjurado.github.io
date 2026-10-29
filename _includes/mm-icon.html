@@ -1,0 +1,9 @@
+{%- comment -%} Íconos del Mapa de Madurez: 24x24, trazo 1.5, terminaciones cuadradas, currentColor. Uso: {% include mm-icon.html name="chat" %} {%- endcomment -%}
+<svg class="mm__icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false">
+{%- case include.name -%}
+  {%- when "chat" -%}<path d="M3 4h18v12H10l-5 4v-4H3z"/><path d="M7 8.5h10M7 11.5h6"/>
+  {%- when "launch" -%}<path d="M12 3l6 8h-4v7h-4v-7H6z"/><path d="M6 21h12"/>
+  {%- when "shop" -%}<path d="M2 10l2-6h16l2 6z"/><path d="M4 10v10h16V10"/><path d="M9 20v-6h6v6"/>
+  {%- when "flow" -%}<path d="M4 5h6v5H4z"/><path d="M14 14h6v5h-6z"/><path d="M10 7.5h7V14"/>
+{%- endcase -%}
+</svg>

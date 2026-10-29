@@ -96,6 +96,11 @@ exclude:
   - Gemfile.lock
   - docker-compose.yml
   - vendor
+  # Documentos internos: no se publican (29-oct-2026, estaban expuestos en eliasjurado.com)
+  - CLAUDE.md
+  - specs
+  - preview-jaguar-local.sh
+  - .env.local
 
 # ── Tracker (deshabilitado — Universal Analytics deprecado en jul-2023) ──────
 # Para habilitar GA4, coloca tu measurement ID (ej: G-AB12C3D4E5).

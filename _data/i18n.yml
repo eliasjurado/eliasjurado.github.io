@@ -51,11 +51,23 @@ home:
                        en: "Once the Quick Win shows profitability, it's time to build real capacity. These are the three levels." }
   levels_cta:        { es: "Ver pricing completo + add-ons →",        en: "See full pricing + add-ons →"                }
 
-  journey_title:     { es: "Tu recorrido, paso a paso",               en: "Your journey, step by step"                  }
-  journey_body:      { es: "Cuatro estaciones del camino digital de tu negocio. Empieza donde estés. Avanza cuando el retorno lo pida.",
-                       en: "Four stations on your business's digital path. Start where you are. Move forward when the return justifies it." }
+  journey_title:     { es: "Mapa de Madurez Digital",                 en: "Digital Maturity Map"                        }
+  journey_body:      { es: "Tu recorrido, paso a paso. Empieza donde estés; avanza cuando el retorno lo pida.",
+                       en: "Your journey, step by step. Start where you are; move forward when the return justifies it." }
   journey_entry:     { es: "Punto de entrada",                        en: "Entry point"                                  }
   journey_cta:       { es: "Ver detalle →",                           en: "See detail →"                                 }
+
+  mm_aria_map:       { es: "Mapa de madurez digital: de WhatsApp a Landing, E-commerce y CRM", en: "Digital maturity map: from WhatsApp to Landing, E-commerce and CRM" }
+  mm_question:       { es: "¿Dónde está tu negocio hoy?",             en: "Where is your business today?"               }
+  mm_opt_entry:      { es: "Atiendo todo por WhatsApp y se me escapan clientes", en: "I handle everything on WhatsApp and customers slip away" }
+  mm_opt_landing:    { es: "No tengo web o no me encuentran",         en: "I have no website or nobody finds me"        }
+  mm_opt_ecommerce:  { es: "Tengo web pero no vende sola",            en: "I have a website but it doesn't sell on its own" }
+  mm_opt_crm:        { es: "Vendo, pero mi equipo se ahoga en tareas manuales", en: "I sell, but my team is drowning in manual tasks" }
+  mm_next:           { es: "Tu siguiente paso:",                      en: "Your next step:"                             }
+  mm_reset:          { es: "Ver todo el mapa",                        en: "See the whole map"                           }
+  mm_res_landing:    { es: "Visibilidad",                             en: "Visibility"                                  }
+  mm_res_ecommerce:  { es: "Conversión",                              en: "Conversion"                                  }
+  mm_res_crm:        { es: "Eficiencia",                              en: "Efficiency"                                  }
 
   closing_title:     { es: "¿Tu negocio necesita escalar?",           en: "Does your business need to scale?"           }
   closing_body:      { es: "Conversemos sin compromiso. Te respondo en menos de 24 horas en días hábiles.",
