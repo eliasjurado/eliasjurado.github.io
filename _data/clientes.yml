@@ -7,6 +7,11 @@
   url: https://hannacomidaarabe.com
   cerrado: 2026-05
 
+- nombre: Llerena Clinimed Aesthetic
+  industria: { es: "Medicina estética", en: "Aesthetic medicine" }
+  url: https://llerenaclinimed.com
+  cerrado: 2026-06
+
 - nombre: Joyería Donaire
   industria: { es: "Joyería", en: "Jewelry" }
   url: https://joyeriadonaireperu.com
