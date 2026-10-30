@@ -16,7 +16,7 @@
 # ── NAVEGACIÓN ─────────────────────────────────────────────────────────────
 nav:
   home:        { es: "Inicio",      en: "Home"        }
-  strategies:  { es: "Estrategias", en: "Strategies"  }
+  strategies:  { es: "Servicios",    en: "Services"    }
   portfolio:   { es: "Portafolio",  en: "Portfolio"   }
   about:       { es: "Sobre mí",    en: "About"       }
   contact:     { es: "Contacto",    en: "Contact"     }
@@ -27,15 +27,18 @@ toggle:
 
 # ── HERO DE HOME ───────────────────────────────────────────────────────────
 hero:
-  kicker:        { es: "Madurez digital de tu pyme",                    en: "Your SMB's digital maturity"                                    }
-  tagline:       { es: "Acompaño la madurez digital de tu pyme — de la visibilidad a la conversión, de la conversión a la eficiencia.",
-                   en: "I guide your SMB through its digital maturity — from visibility to conversion, from conversion to efficiency."   }
-  title_short:   { es: "Acompaño la madurez digital de tu pyme.",
-                   en: "I guide your SMB through its digital maturity." }
+  kicker:        { es: "Sistemas de ventas digitales para pymes",
+                   en: "Digital sales systems for small businesses" }
+  tagline:       { es: "Ayudo a las pymes a vender más con tecnología. Conecto tu web, tu tienda en línea y tu WhatsApp para que cada consulta tenga respuesta y cada cotización tenga seguimiento.",
+                   en: "I help small businesses sell more with technology. I connect your website, online store and WhatsApp so every inquiry gets an answer and every quote gets a follow-up." }
+  title_short:   { es: "Que ninguna venta se quede en el WhatsApp.",
+                   en: "No more sales lost in WhatsApp." }
+  subtitle:      { es: "Ayudo a las pymes a vender más con tecnología. Conecto tu web, tu tienda en línea y tu WhatsApp para que cada consulta tenga respuesta y cada cotización tenga seguimiento.",
+                   en: "I help small businesses sell more with technology. I connect your website, online store and WhatsApp so every inquiry gets an answer and every quote gets a follow-up." }
   subtitle_flow: { es: "Visibilidad → Conversión → Eficiencia",
                    en: "Visibility → Conversion → Efficiency" }
   cta_primary:   { es: "Conversemos",       en: "Let's talk"       }
-  cta_secondary: { es: "Ver estrategias",   en: "View strategies"  }
+  cta_secondary: { es: "Ver servicios y precios",   en: "See services and pricing"  }
 
 # ── SECCIONES DEL HOME ─────────────────────────────────────────────────────
 home:
@@ -49,7 +52,7 @@ home:
   levels_title:      { es: "Tres niveles para crecer ordenado",       en: "Three levels to grow with structure"         }
   levels_body:       { es: "Cuando el Quick Win deja rentabilidad, llega el momento de construir capacidad real. Estos son los tres escalones.",
                        en: "Once the Quick Win shows profitability, it's time to build real capacity. These are the three levels." }
-  levels_cta:        { es: "Ver pricing completo + add-ons →",        en: "See full pricing + add-ons →"                }
+  levels_cta:        { es: "Ver precios y potenciadores →",           en: "See pricing and boosters →"                  }
 
   journey_title:     { es: "Mapa de Madurez Digital",                 en: "Digital Maturity Map"                        }
   journey_body:      { es: "Tu recorrido, paso a paso. Empieza donde estés; avanza cuando el retorno lo pida.",
@@ -69,19 +72,19 @@ home:
   mm_res_ecommerce:  { es: "Conversión",                              en: "Conversion"                                  }
   mm_res_crm:        { es: "Eficiencia",                              en: "Efficiency"                                  }
 
-  closing_title:     { es: "¿Tu negocio necesita escalar?",           en: "Does your business need to scale?"           }
-  closing_body:      { es: "Conversemos sin compromiso. Te respondo en menos de 24 horas en días hábiles.",
-                       en: "Let's talk with no commitment. I'll reply within 24 hours on business days." }
+  closing_title:     { es: "¿Te escriben mucho y cierras poco?",      en: "Lots of messages, few sales?"                }
+  closing_body:      { es: "Cuéntame cómo te llegan hoy los clientes y te digo por dónde empezar. Te respondo en menos de 24 horas en días hábiles.",
+                       en: "Tell me how customers reach you today and I'll tell you where to start. I reply within 24 hours on business days." }
   closing_cta:       { es: "Escribir por WhatsApp",                   en: "Message me on WhatsApp"                      }
 
 # ── PÁGINA SERVICES / ESTRATEGIAS ──────────────────────────────────────────
 services:
-  page_title:     { es: "Estrategias",                                en: "Strategies"                                  }
+  page_title:     { es: "Servicios",                                  en: "Services"                                    }
   page_kicker:    { es: "Mapa de Madurez Digital",                    en: "Digital Maturity Map"                        }
-  page_subtitle:  { es: "Una estrategia para cada fase del negocio. Empieza donde estés — y avanza cuando el retorno lo pida.",
-                    en: "A strategy for every stage of your business. Start where you are — and move forward when the return justifies it." }
-  intro_body:     { es: "Toda pyme atraviesa el mismo viaje digital — solo cambia en qué punto está hoy. Acá vas a encontrar tres niveles del Mapa de Madurez para construir capacidad real, y un Quick Win transversal que activa la conversión inmediata antes de invertir en lo grande.",
-                    en: "Every SMB goes through the same digital journey — only the starting point varies. Here you'll find three Digital Maturity levels to build real capacity, plus a transversal Quick Win that activates immediate conversion before investing in the larger pieces." }
+  page_subtitle:  { es: "Un paso para cada momento de tu negocio. Empieza donde estés y avanza cuando el retorno lo justifique.",
+                    en: "One step for each stage of your business. Start where you are and move forward when the return justifies it." }
+  intro_body:     { es: "Toda pyme recorre el mismo camino digital; solo cambia el punto de partida. Aquí están los tres niveles del Mapa de Madurez y un primer paso para ordenar tu WhatsApp antes de invertir en lo grande.",
+                    en: "Every small business walks the same digital path; only the starting point changes. Here are the three levels of the Digital Maturity Map and a first step to organize your WhatsApp before investing in the bigger pieces." }
 
   summary_qw_kicker:   { es: "Paso 0 · Transversal a cualquier nivel", en: "Step 0 · Transversal to any level"          }
   detail_qw_kicker:    { es: "Paso 0 · Activación inmediata",          en: "Step 0 · Immediate activation"               }
@@ -107,8 +110,8 @@ services:
   addons_kicker:       { es: "Potenciadores opcionales",               en: "Optional boosters"                           }
   addons_title:        { es: "Servicios que se suman a cualquier estrategia",
                          en: "Services that complement any strategy" }
-  addons_body:         { es: "Marketing experiencial, integraciones puntuales y capacitación. Se cotizan aparte y se agregan al Quick Win o a cualquier nivel del Mapa.",
-                         en: "Experiential marketing, targeted integrations, and training. Priced separately and added to the Quick Win or any Map level." }
+  addons_body:         { es: "Integraciones puntuales, capacitación y marketing experiencial. Se cotizan aparte y se suman a cualquier paso del mapa.",
+                         en: "Targeted integrations, training and experiential marketing. Priced separately and added to any step of the map." }
   addons_investment:   { es: "Inversión",                             en: "Investment"                                  }
   addons_term:         { es: "Plazo",                                 en: "Term"                                        }
 
@@ -139,7 +142,7 @@ services:
   care_strip_kicker:     { es: "+ Plan Cuidado mensual",              en: "+ Monthly Care Plan"                          }
   care_strip_caption:    { es: "Hosting, soporte y mejoras continuas. Independiente del desarrollo.",
                            en: "Hosting, support, and continuous improvements. Independent of development." }
-  cuidado_mention:       { es: "+ Plan Cuidado mensual desde USD 48", en: "+ Monthly Care Plan from USD 48"              }
+  cuidado_mention:       { es: "+ Plan Cuidado mensual desde S/ 180", en: "+ Monthly Care Plan from USD 48"              }
   method_strip_kicker:   { es: "Nuestro método",                      en: "Our method"                                   }
   method_strip_caption:  { es: "4 pasos. Cada uno con un entregable tangible que validas antes de continuar.",
                            en: "4 steps. Each with a tangible deliverable you validate before continuing." }
@@ -154,12 +157,12 @@ footer:
   contact_label:  { es: "Contacto",                                   en: "Contact"                                     }
   links_label:    { es: "Enlaces",                                    en: "Links"                                       }
   rights:         { es: "Todos los derechos reservados.",             en: "All rights reserved."                        }
-  description:    { es: "Visibilidad → Conversión → Eficiencia. Landing web, e-commerce y CRM para pymes que quieren crecer ordenado.",
-                  en: "Visibility → Conversion → Efficiency. Landing page, e-commerce and CRM for SMBs that want to grow in an orderly way." }
+  description:    { es: "Que ninguna venta se quede en el WhatsApp. Webs, tiendas en línea y CRM para pymes que quieren vender más.",
+                  en: "No more sales lost in WhatsApp. Websites, online stores and CRM for small businesses that want to sell more." }
 
 # ── TARJETA DIGITAL /card/ ─────────────────────────────────────────────────
 card:
-  tagline:        { es: "Landing · E-commerce · CRM",                 en: "Landing · E-commerce · CRM"                  }
+  tagline:        { es: "Sistemas de ventas digitales para pymes",    en: "Digital sales systems for small businesses"  }
   whatsapp_label: { es: "WhatsApp",                                   en: "WhatsApp"                                    }
   call_label:     { es: "Llamar",                                     en: "Call"                                        }
   email_label:    { es: "Correo",                                     en: "Email"                                       }
@@ -168,7 +171,7 @@ card:
   share:          { es: "Compartir",                                  en: "Share"                                       }
   tax_id_label:   { es: "RUC",                                        en: "Tax ID"                                      }
   share_title:    { es: "Elías Jurado",                               en: "Elias Jurado"                                }
-  share_text:     { es: "Landing · E-commerce · CRM",                 en: "Landing · E-commerce · CRM"                  }
+  share_text:     { es: "Sistemas de ventas digitales para pymes",    en: "Digital sales systems for small businesses"  }
   link_copied:    { es: "Enlace copiado al portapapeles.",            en: "Link copied to clipboard."                   }
   copy_link_prompt: { es: "Copia este enlace:",                       en: "Copy this link:"                             }
 

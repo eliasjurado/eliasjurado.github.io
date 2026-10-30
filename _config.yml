@@ -4,10 +4,10 @@
 
 # ── Identidad del sitio ──────────────────────────────────────────────────────
 title: Elías Jurado
-tagline: Acompaño la madurez digital de tu pyme.
+tagline: Que ninguna venta se quede en el WhatsApp.
 description: >-
-  Visibilidad → Conversión → Eficiencia. Landing web, e-commerce y CRM para
-  pymes que quieren crecer ordenado.
+  Webs, tiendas en línea y WhatsApp conectados para que las pymes vendan más:
+  cada consulta con respuesta y cada cotización con seguimiento.
 url: 'https://eliasjurado.com'
 author:
   name: Elías Luis Jurado Santos
@@ -56,7 +56,7 @@ redes:
 # Rutas en inglés desde mayo 2026. Etiquetas visibles siguen en español.
 nav:
   - { label: Inicio,       url: /,            i18n: nav.home       }
-  - { label: Estrategias,  url: /services/,   i18n: nav.strategies }
+  - { label: Servicios,     url: /services/,   i18n: nav.strategies }
   - { label: Portafolio,   url: /portfolio/,  i18n: nav.portfolio  }
   - { label: Sobre mí,     url: /about/,      i18n: nav.about      }
   - { label: Contacto,     url: /contact/,    i18n: nav.contact    }

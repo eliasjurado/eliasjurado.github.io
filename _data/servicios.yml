@@ -32,22 +32,22 @@ quick_win:
       measurable returns in weeks.
   detalle:
     es: >-
-      Integración con WhatsApp Cloud API (oficial Meta) o motor open-source
-      OpenWA según escala. Flujos de respuesta automática para preguntas
-      frecuentes, captura estructurada de leads, recordatorios y confirmaciones.
-      Panel para que tu equipo vea conversaciones, etiquete clientes y retome
-      el hilo cuando un humano debe intervenir. Stack: n8n + Supabase + Cloud API.
+      Conexión con el WhatsApp oficial de tu negocio. Flujos de respuesta
+      automática para preguntas frecuentes, registro ordenado de cada contacto,
+      recordatorios y confirmaciones. Panel para que tu equipo vea
+      conversaciones, etiquete clientes y retome el hilo cuando un humano
+      debe intervenir.
     en: >-
-      Integration with WhatsApp Cloud API (official Meta) or open-source
-      OpenWA engine depending on scale. Automated response flows for frequently
-      asked questions, structured lead capture, reminders, and confirmations.
-      A panel for your team to view conversations, tag clients, and pick up
-      the thread when a human needs to step in. Stack: n8n + Supabase + Cloud API.
+      Connection to your business's official WhatsApp. Automated response
+      flows for frequently asked questions, every contact logged in an orderly
+      way, reminders, and confirmations. A panel for your team to view
+      conversations, tag clients, and pick up the thread when a human needs
+      to step in.
   incluye:
     - { es: "Diseño de flujos conversacionales (hasta 6 intents)", en: "Conversational flow design (up to 6 intents)" }
-    - { es: "Integración WhatsApp Cloud API (o OpenWA según caso)", en: "WhatsApp Cloud API integration (or OpenWA as needed)" }
+    - { es: "Conexión con WhatsApp Business (API oficial)", en: "WhatsApp Business connection (official API)" }
     - { es: "Panel de conversaciones para tu equipo", en: "Conversation panel for your team" }
-    - { es: "Captura estructurada de leads a Supabase / Google Sheets", en: "Structured lead capture to Supabase / Google Sheets" }
+    - { es: "Cada contacto queda registrado en una hoja o base de datos", en: "Every contact is logged in a sheet or database" }
     - { es: "Capacitación de 1 hora al equipo", en: "1-hour team training" }
   precio_usd: "400"
   precio_pen: "1,500"
@@ -78,14 +78,13 @@ niveles:
       es: >-
         Arquitectura mobile-first, optimización para buscadores, páginas de
         aterrizaje específicas por campaña, blog institucional y panel de
-        administración de contenido. Stack moderno (Next.js o Jekyll según
-        caso), hosting incluido en el Plan Cuidado, deploy automático y
-        dominio profesional configurado.
+        administración de contenido. Hosting incluido en el Plan Cuidado,
+        publicación automática de cambios y dominio profesional configurado.
       en: >-
         Mobile-first architecture, search engine optimization, campaign-specific
         landing pages, institutional blog, and content management panel.
-        Modern stack (Next.js or Jekyll depending on the case), hosting included
-        in the Care Plan, automatic deployment, and professional domain setup.
+        Hosting included in the Care Plan, automatic publishing of changes,
+        and professional domain setup.
     incluye:
       - { es: "Hasta 6 secciones / páginas", en: "Up to 6 sections / pages" }
       - { es: "Diseño mobile-first responsive", en: "Mobile-first responsive design" }
@@ -106,7 +105,7 @@ niveles:
     fase: { es: "Expansión", en: "Expansion" }
     icon: "shop"
     nombre_corto: { es: "E-commerce", en: "E-commerce" }
-    titulo: { es: "E-commerce con IA", en: "AI-powered E-commerce" }
+    titulo: { es: "Tienda en línea que vende sola", en: "Online store that sells on its own" }
     factor_humano: { es: "Clientes (compradores, transacciones)", en: "Customers (buyers, transactions)" }
     meta: { es: "Conversión, monetización automática y facturación 24/7", en: "Conversion, automated monetization, and 24/7 revenue" }
     beneficio: { es: "Vende cuando no estás", en: "Sell while you're away" }
@@ -123,12 +122,12 @@ niveles:
         por WhatsApp, pasarelas de pago integradas (tarjetas, billeteras
         digitales), paneles de reportes y chatbot de IA para responder
         consultas de productos y gestionar pedidos. Migración desde tiendas
-        existentes incluida. Stack Next.js + Supabase + Vercel.
+        existentes incluida.
       en: >-
         Smart dynamic catalog, streamlined WhatsApp checkout, integrated
         payment gateways (cards, digital wallets), reporting dashboards,
         and an AI chatbot to answer product questions and manage orders.
-        Migration from existing stores included. Stack: Next.js + Supabase + Vercel.
+        Migration from existing stores included.
     incluye:
       - { es: "Catálogo dinámico con búsqueda y filtros", en: "Dynamic catalog with search and filters" }
       - { es: "Checkout por WhatsApp o pasarela", en: "WhatsApp or gateway checkout" }
@@ -152,7 +151,7 @@ niveles:
     titulo: { es: "Automatización y CRM para pymes", en: "Automation and CRM for SMBs" }
     factor_humano: { es: "Usuarios (equipo interno)", en: "Users (internal team)" }
     meta: { es: "Eficiencia operativa, cero errores manuales y escalabilidad", en: "Operational efficiency, zero manual errors, and scalability" }
-    beneficio: { es: "Recupera el tiempo de tu equipo", en: "Get your team's time back" }
+    beneficio: { es: "Ninguna cotización sin seguimiento", en: "No quote without a follow-up" }
     resumen:
       es: >-
         Conecto los sistemas que ya usas (Excel, formularios, WhatsApp,
@@ -163,13 +162,13 @@ niveles:
     detalle:
       es: >-
         Análisis del flujo actual, propuesta de automatización con herramientas
-        no invasivas (n8n, Make, scripts a medida), integración inteligente
+        no invasivas (automatizaciones y scripts a medida), integración inteligente
         de sistemas existentes, capacitación al equipo y soporte mensual.
         Diseñado para liberar tiempo del equipo cuando el e-commerce
         desborda la capacidad manual.
       en: >-
         Analysis of your current workflow, automation proposal using
-        non-invasive tools (n8n, Make, custom scripts), smart integration
+        non-invasive tools (automations and custom scripts), smart integration
         of existing systems, team training, and monthly support.
         Designed to free up your team's time when e-commerce outpaces
         manual capacity.

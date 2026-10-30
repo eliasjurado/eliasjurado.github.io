@@ -1,13 +1,13 @@
 ---
-title: Estrategias
+title: Servicios
 permalink: /services/
 kicker: Mapa de Madurez Digital
-subtitle: Una estrategia para cada fase del negocio. Empieza donde estés — y avanza cuando el retorno lo pida.
+subtitle: Un paso para cada momento de tu negocio. Empieza donde estés y avanza cuando el retorno lo justifique.
 i18n_prefix: services
 ---
 
 <!-- ═══════════════════════════ RESUMEN COMPARATIVO (4 columnas) ═══════════════════════════ -->
-<section class="summary" aria-label="Resumen de estrategias">
+<section class="summary" aria-label="Resumen de servicios">
   <div class="summary-grid summary-grid--four">
 
     <!-- ───── Columna 0: Quick Win (capa de entrada) ───── -->
@@ -22,7 +22,7 @@ i18n_prefix: services
       <p class="summary-col__beneficio" data-i18n-en="{{ qw.beneficio.en }}">{{ qw.beneficio.es }}</p>
       <p class="summary-col__resumen" data-i18n-en="{{ qw.resumen.en }}">{{ qw.resumen.es }}</p>
       <div class="summary-col__precio">
-        <span class="precio-final"><span data-i18n="services.starting_at">Desde</span> USD {{ qw.precio_usd }}</span>
+        <span class="precio-final" data-i18n-en="From USD {{ qw.precio_usd }}">Desde S/ {{ qw.precio_pen }}</span>
         <span class="precio-plazo" data-i18n-en="{{ qw.plazo.en }}">{{ qw.plazo.es }}</span>
         <span class="precio-nota" data-i18n="services.price_note_short">*Precio referencial</span>
       </div>
@@ -40,11 +40,11 @@ i18n_prefix: services
       <p class="summary-col__beneficio" data-i18n-en="{{ s.beneficio.en }}">{{ s.beneficio.es }}</p>
       <p class="summary-col__resumen" data-i18n-en="{{ s.resumen.en }}">{{ s.resumen.es }}</p>
       <div class="summary-col__precio">
-        <span class="precio-final"><span data-i18n="services.starting_at">Desde</span> USD {{ s.precio_usd }}</span>
+        <span class="precio-final" data-i18n-en="From USD {{ s.precio_usd }}">Desde S/ {{ s.precio_pen }}</span>
         <span class="precio-plazo" data-i18n-en="{{ s.plazo.en }}">{{ s.plazo.es }}</span>
         <span class="precio-nota" data-i18n="services.price_note_short">*Precio referencial</span>
       </div>
-      <p class="summary-col__cuidado-mention" data-i18n="services.cuidado_mention">+ Plan Cuidado mensual desde USD 48</p>
+      <p class="summary-col__cuidado-mention" data-i18n="services.cuidado_mention">+ Plan Cuidado mensual desde S/ 180</p>
       <a class="summary-col__cta" href="#{{ s.slug }}" data-scroll data-i18n="services.see_more">Ver más →</a>
     </article>
     {% endfor %}
@@ -63,7 +63,7 @@ i18n_prefix: services
         <span class="potenciador-chip__icon" aria-hidden="true">{% include mm-icon.html name=a.icon %}</span>
         <span class="potenciador-chip__text">
           <strong data-i18n-en="{{ a.titulo.en }}">{{ a.titulo.es }}</strong>
-          <small>{% if a.precio_es_referencial %}<span data-i18n="services.starting_at">Desde</span> {% endif %}USD <span{% if a.precio_usd.en %} data-i18n-en="{{ a.precio_usd.en }}"{% endif %}>{{ a.precio_usd.es | default: a.precio_usd }}</span></small>
+          <small data-i18n-en="{% if a.precio_es_referencial %}From {% endif %}USD {{ a.precio_usd.en | default: a.precio_usd }}">{% if a.precio_es_referencial %}Desde {% endif %}S/ {{ a.precio_pen.es | default: a.precio_pen }}</small>
         </span>
       </a>
       {% endfor %}
@@ -80,7 +80,7 @@ i18n_prefix: services
       {% for p in site.data.servicios.plan_cuidado %}
       <a href="#cuidado-{{ p.slug }}" data-scroll class="cuidado-chip">
         <span class="cuidado-chip__nombre" data-i18n-en="{{ p.nombre.en }}">{{ p.nombre.es }}</span>
-        <span class="cuidado-chip__precio">{% if p.precio_es_referencial %}<span data-i18n="services.starting_at">Desde</span> {% endif %}USD {{ p.precio_usd }}<span data-i18n="services.per_month">/mes</span></span>
+        <span class="cuidado-chip__precio" data-i18n-en="{% if p.precio_es_referencial %}From {% endif %}USD {{ p.precio_usd }}/month">{% if p.precio_es_referencial %}Desde {% endif %}S/ {{ p.precio_pen }}/mes</span>
         <span class="cuidado-chip__incluye" data-i18n-en="{{ p.incluye.en }}">{{ p.incluye.es }}</span>
       </a>
       {% endfor %}
@@ -119,12 +119,7 @@ i18n_prefix: services
 </section>
 
 <section class="strategies-intro">
-  <p data-i18n="services.intro_body">
-    Toda pyme atraviesa el mismo viaje digital — solo cambia en qué punto está hoy.
-    Acá vas a encontrar <strong>tres niveles del Mapa de Madurez</strong> para construir
-    capacidad real, y un <em>Quick Win</em> transversal que activa la conversión inmediata
-    antes de invertir en lo grande.
-  </p>
+  <p data-i18n="services.intro_body">Toda pyme recorre el mismo camino digital; solo cambia el punto de partida. Aquí están los tres niveles del Mapa de Madurez y un primer paso para ordenar tu WhatsApp antes de invertir en lo grande.</p>
 </section>
 
 <!-- ═══════════════════════════ DIVISOR ═══════════════════════════ -->
@@ -157,8 +152,8 @@ i18n_prefix: services
   <div class="strategy-card__footer">
     <div class="strategy-card__precio">
       <span class="precio-ref"><span data-i18n="services.market_ref_long">Referencia mercado</span>: USD {{ qw.precio_referencia_usd }}</span>
-      <span class="precio-final"><span data-i18n="services.starting_at">Desde</span> USD {{ qw.precio_usd }}</span>
-      <span class="precio-pen">≈ PEN {{ qw.precio_pen }}</span>
+      <span class="precio-final" data-i18n-en="From USD {{ qw.precio_usd }}">Desde S/ {{ qw.precio_pen }}</span>
+      <span class="precio-pen" data-i18n-en="≈ PEN {{ qw.precio_pen }}">≈ USD {{ qw.precio_usd }}</span>
       <span class="precio-plazo" data-i18n-en="{{ qw.plazo.en }}">{{ qw.plazo.es }}</span>
       <span class="precio-nota" data-i18n="services.price_note_long">*Precio referencial. La cotización final se ajusta según alcance.</span>
     </div>
@@ -192,8 +187,8 @@ i18n_prefix: services
   <div class="strategy-card__footer">
     <div class="strategy-card__precio">
       <span class="precio-ref"><span data-i18n="services.market_ref">Mercado</span>: USD {{ s.precio_referencia_usd }}</span>
-      <span class="precio-final"><span data-i18n="services.starting_at">Desde</span> USD {{ s.precio_usd }}</span>
-      <span class="precio-pen">≈ PEN {{ s.precio_pen }}</span>
+      <span class="precio-final" data-i18n-en="From USD {{ s.precio_usd }}">Desde S/ {{ s.precio_pen }}</span>
+      <span class="precio-pen" data-i18n-en="≈ PEN {{ s.precio_pen }}">≈ USD {{ s.precio_usd }}</span>
       <span class="precio-plazo" data-i18n-en="{{ s.plazo.en }}">{{ s.plazo.es }}</span>
       <span class="precio-nota" data-i18n="services.price_note_long">*Precio referencial. La cotización final se ajusta según alcance.</span>
     </div>
@@ -209,10 +204,7 @@ i18n_prefix: services
   <header class="strategies-addons__header">
     <p class="kicker" data-i18n="services.addons_kicker">Potenciadores opcionales</p>
     <h2 data-i18n="services.addons_title">Servicios que se suman a cualquier estrategia</h2>
-    <p data-i18n="services.addons_body">
-      Marketing experiencial, integraciones puntuales y capacitación. Se cotizan aparte
-      y se agregan al Quick Win o a cualquier nivel del Mapa.
-    </p>
+    <p data-i18n="services.addons_body">Integraciones puntuales, capacitación y marketing experiencial. Se cotizan aparte y se suman a cualquier paso del mapa.</p>
   </header>
 
   <div class="addons-grid">
@@ -226,7 +218,7 @@ i18n_prefix: services
       <dl class="addon-card__meta">
         <div>
           <dt data-i18n="services.addons_investment">Inversión</dt>
-          <dd>{% if a.precio_es_referencial %}<span data-i18n="services.starting_at">Desde</span> {% endif %}USD <span{% if a.precio_usd.en %} data-i18n-en="{{ a.precio_usd.en }}"{% endif %}>{{ a.precio_usd.es | default: a.precio_usd }}</span><br><span class="pen-small">≈ PEN <span{% if a.precio_pen.en %} data-i18n-en="{{ a.precio_pen.en }}"{% endif %}>{{ a.precio_pen.es | default: a.precio_pen }}</span></span>{% if a.precio_es_referencial %}<br><span class="precio-nota precio-nota--mini" data-i18n="services.reference_short">*Referencial</span>{% endif %}</dd>
+          <dd><span data-i18n-en="{% if a.precio_es_referencial %}From {% endif %}USD {{ a.precio_usd.en | default: a.precio_usd }}">{% if a.precio_es_referencial %}Desde {% endif %}S/ {{ a.precio_pen.es | default: a.precio_pen }}</span><br><span class="pen-small" data-i18n-en="≈ PEN {{ a.precio_pen.en | default: a.precio_pen }}">≈ USD {{ a.precio_usd.es | default: a.precio_usd }}</span>{% if a.precio_es_referencial %}<br><span class="precio-nota precio-nota--mini" data-i18n="services.reference_short">*Referencial</span>{% endif %}</dd>
         </div>
         <div>
           <dt data-i18n="services.addons_term">Plazo</dt>
@@ -252,8 +244,8 @@ i18n_prefix: services
       <h3 data-i18n-en="{{ p.nombre.en }}">{{ p.nombre.es }}</h3>
       <p data-i18n-en="{{ p.incluye.en }}">{{ p.incluye.es }}</p>
       <div class="cuidado-card__precio">
-        <span class="precio-final">{% if p.precio_es_referencial %}<span data-i18n="services.starting_at">Desde</span> {% endif %}USD {{ p.precio_usd }}<span data-i18n="services.per_month">/mes</span></span>
-        <span class="precio-pen">≈ PEN {{ p.precio_pen }}</span>
+        <span class="precio-final" data-i18n-en="{% if p.precio_es_referencial %}From {% endif %}USD {{ p.precio_usd }}/month">{% if p.precio_es_referencial %}Desde {% endif %}S/ {{ p.precio_pen }}/mes</span>
+        <span class="precio-pen" data-i18n-en="≈ PEN {{ p.precio_pen }}">≈ USD {{ p.precio_usd }}</span>
         {% if p.precio_es_referencial %}<span class="precio-nota precio-nota--cuidado" data-i18n="services.reference_short">*Referencial</span>{% endif %}
       </div>
     </article>

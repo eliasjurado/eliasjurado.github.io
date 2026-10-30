@@ -11,13 +11,13 @@ captura: /assets/img/portfolio/llerena-movil.jpg
 captura_alt: Página de inicio de Llerena Clinimed Aesthetic en un celular
 url_vivo: https://llerenaclinimed.com
 resumen: >-
-  Sitio bilingüe con reserva de citas en línea para una médica especialista en
-  medicina estética con dos consultorios en Manabí, Ecuador. Reemplazó la
-  agenda manual por WhatsApp por reservas sobre su Google Calendar real.
+  Las pacientes reservan su valoración desde la web y la cita cae directo en el
+  Google Calendar de la doctora. Antes, la agenda se llevaba a mano por
+  WhatsApp.
 resumen_en: >-
-  Bilingual website with online booking for an aesthetic medicine specialist
-  with two clinics in Manabí, Ecuador. It replaced manual scheduling over
-  WhatsApp with bookings against her real Google Calendar.
+  Patients book their consultation on the website and the appointment lands
+  straight in the doctor's Google Calendar. Before, the schedule was handled by
+  hand over WhatsApp.
 ---
 
 ## El contexto
@@ -38,4 +38,4 @@ Un sitio propio que presenta los tratamientos con la seriedad de una consulta m�
 
 ## El resultado
 
-En producción desde octubre de 2026 en su dominio propio. Se actualizará este caso con métricas de reservas cuando haya historial.
+En producción desde octubre de 2026 en su dominio propio. **Lo que medimos:** cada reserva queda registrada en la hoja de solicitudes de la clínica, con fecha, sede, tratamiento y cómo nos conoció.

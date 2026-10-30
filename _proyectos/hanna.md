@@ -11,11 +11,13 @@ captura: /assets/img/portfolio/hanna-movil.jpg
 captura_alt: Página de inicio de Hanna Comida Árabe en un celular
 url_vivo: https://hannacomidaarabe.com
 resumen: >-
-  E-commerce con panel administrativo y checkout por WhatsApp para una panadería
-  árabe en Miraflores. Reemplazó el flujo manual de pedidos por mensaje.
+  Los pedidos llegan ordenados desde la web, con un panel para el equipo que
+  cuenta pedidos atendidos y venta perdida. Antes, cada pedido se tomaba a mano
+  por mensaje.
 resumen_en: >-
-  E-commerce with admin panel and WhatsApp checkout for an Arabic bakery in
-  Miraflores. Replaced the manual order-by-message flow.
+  Orders arrive organized from the website, with a team dashboard that counts
+  fulfilled orders and lost sales. Before, every order was taken by hand over
+  chat.
 ---
 
 ## El contexto
@@ -37,7 +39,7 @@ Una tienda en línea que sirve como vitrina pública del catálogo y mantiene el
 
 ## El resultado
 
-En producción en su dominio propio. Se actualizará este caso con métricas reales cuando haya historial.
+En producción en su dominio propio. **Lo que medimos:** pedidos recibidos, atendidos y venta perdida, mes a mes, desde el panel del negocio.
 
 ---
 

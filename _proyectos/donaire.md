@@ -11,13 +11,11 @@ captura: /assets/img/portfolio/donaire-movil.jpg
 captura_alt: Página de inicio de Joyería Donaire en un celular
 url_vivo: https://joyeriadonaireperu.com
 resumen: >-
-  Tienda en línea con inventario autoadministrable para una joyería de plata
-  con fabricación propia. Ordenó en una web el catálogo que antes vivía en
-  WhatsApp y redes, en español, inglés e italiano.
+  El catálogo que vivía en WhatsApp y redes ahora es una tienda en línea en
+  español, inglés e italiano, que la joyería administra sola.
 resumen_en: >-
-  Online store with self-managed inventory for a silver jewelry maker. It moved
-  a catalog that used to live in WhatsApp and social media into one website, in
-  Spanish, English and Italian.
+  The catalog that lived in WhatsApp and social media is now an online store in
+  Spanish, English and Italian that the jewelry shop runs on its own.
 ---
 
 ## El contexto
@@ -39,4 +37,4 @@ Una tienda propia que ordena el catálogo, transmite la confianza de una marca f
 
 ## El resultado
 
-En producción desde octubre de 2026 en su dominio propio. Se actualizará este caso con métricas reales de ventas y pedidos cuando haya suficiente historial.
+En producción desde octubre de 2026 en su dominio propio. **Lo que medimos:** visitas, productos vistos, carritos y compras con Google Analytics 4 (en activación).

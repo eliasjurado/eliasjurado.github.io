@@ -188,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Logo blanco oficial Miki sobre gradiente carbón → steel -->
     <img class="head__logo" src="/assets/images/logo/logo-blanco.svg" alt="{{ site.title }}">
     <h1 class="head__name">{{ site.title }}</h1>
-    <p class="head__tagline" data-i18n="card.tagline">Landing · E-commerce · CRM</p>
+    <p class="head__tagline" data-i18n="card.tagline">Sistemas de ventas digitales para pymes</p>
   </header>
 
   <nav class="actions" aria-label="Contacto">
@@ -263,7 +263,7 @@ function downloadVCard() {
     "EMAIL;TYPE=WORK:" + contactEmail,
     "URL:" + contactUrl,
     "ADR;TYPE=WORK:;;;" + contactCity + ";;;;",
-    "NOTE:Acompaño la madurez digital de tu pyme — de la visibilidad a la conversión\\, de la conversión a la eficiencia.",
+    "NOTE:Que ninguna venta se quede en el WhatsApp. Sistemas de ventas digitales para pymes.",
     "END:VCARD"
   ].join("\r\n");
   const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
@@ -276,7 +276,7 @@ function downloadVCard() {
 async function shareCard() {
   const data = {
     title: i18nLookup('card.share_title', {{ site.title | jsonify }}),
-    text: i18nLookup('card.share_text', 'Landing · E-commerce · CRM'),
+    text: i18nLookup('card.share_text', 'Sistemas de ventas digitales para pymes'),
     url: location.href
   };
   if (navigator.share) {
