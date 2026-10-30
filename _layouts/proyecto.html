@@ -17,7 +17,7 @@ layout: default
     <div class="callout">
       {%- if page.cliente   -%}<strong>Cliente:</strong> {{ page.cliente }}<br>{%- endif -%}
       {%- if page.industria -%}<strong>Industria:</strong> {{ page.industria }}<br>{%- endif -%}
-      {%- if page.stack     -%}<strong>Stack:</strong> {{ page.stack }}<br>{%- endif -%}
+      {%- if page.stack     -%}<strong data-i18n-en="Technology:">Tecnología:</strong> {{ page.stack }}<br>{%- endif -%}
       {%- if page.url_vivo  -%}<strong>Sitio:</strong> <a href="{{ page.url_vivo }}" target="_blank" rel="noopener">{{ page.url_vivo }}</a>{%- endif -%}
     </div>
     {%- endif -%}

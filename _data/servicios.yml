@@ -120,19 +120,19 @@ niveles:
       es: >-
         Catálogo dinámico inteligente, procesos de checkout simplificados
         por WhatsApp, pasarelas de pago integradas (tarjetas, billeteras
-        digitales), paneles de reportes y chatbot de IA para responder
-        consultas de productos y gestionar pedidos. Migración desde tiendas
+        digitales), paneles de reportes y un asistente que responde
+        consultas de productos y ayuda a gestionar pedidos. Migración desde tiendas
         existentes incluida.
       en: >-
         Smart dynamic catalog, streamlined WhatsApp checkout, integrated
         payment gateways (cards, digital wallets), reporting dashboards,
-        and an AI chatbot to answer product questions and manage orders.
+        and an assistant that answers product questions and helps manage orders.
         Migration from existing stores included.
     incluye:
       - { es: "Catálogo dinámico con búsqueda y filtros", en: "Dynamic catalog with search and filters" }
       - { es: "Checkout por WhatsApp o pasarela", en: "WhatsApp or gateway checkout" }
       - { es: "Panel admin de productos y pedidos", en: "Products and orders admin panel" }
-      - { es: "Chatbot IA para preguntas de productos", en: "AI chatbot for product questions" }
+      - { es: "Asistente que responde preguntas de productos", en: "Assistant that answers product questions" }
       - { es: "Reportes de ventas y stock", en: "Sales and inventory reports" }
       - { es: "Integración con sistema contable", en: "Accounting system integration" }
     precio_usd: "2,000"

@@ -9,4 +9,4 @@
 - [x] **T6.** Cierre de home, `_config.yml`, `index.html` description, footer y card (CA2, CA4).
 - [x] **T7.** Build Jekyll + grep de CA2 sobre `_site` (salvo /about/) + detector "después" (CA5).
 - [x] **T8.** Render 390/1440 ES y EN con Playwright: H1 ≤4 líneas, sin overflow, toggle de idioma completo (CA1, CA4, CA5).
-- [ ] **T9.** Haiku verifica contra CA1–CA6 (orquestador).
+- [x] **T9.** Haiku verifica contra CA1–CA6 (orquestador). Haiku: BLOCK solo por "Stack:" en páginas de caso → resuelto con decisión documentada en spec.md.

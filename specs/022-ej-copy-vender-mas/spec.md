@@ -123,3 +123,9 @@ sin listas de tres adornos; sin "IA", "n8n", "Supabase", "stack", "deploy" en te
 - CA5. Build Jekyll OK; `impeccable detect --json` sin hits nuevos frente al estado previo; sin scroll horizontal a 390 px;
   H1 del hero no se parte en más de 4 líneas a 390 px.
 - CA6. Ninguna cifra, testimonio o logo nuevo que no esté en este spec.
+
+## Decisiones del orquestador tras la verificación (30-oct)
+- **Páginas de caso conservan la tecnología usada**, con la etiqueta "Tecnología:" (antes "Stack:"): ahí la mira quien
+  evalúa cómo trabaja Elías, no es texto de venta del titular. Excepción explícita a CA2.
+- "Chatbot de IA" en E-commerce → "asistente que responde consultas de productos" (regla 8).
+- La home muestra los casos en orden Llerena → Hanna (campo `orden_home`): la clínica es el caso del pitch de BNI.
