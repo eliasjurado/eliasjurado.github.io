@@ -12,12 +12,11 @@ captura: /assets/img/portfolio/hanna-movil.jpg
 captura_alt: Página de inicio de Hanna Comida Árabe en un celular
 url_vivo: https://hannacomidaarabe.com
 resumen: >-
-  Los pedidos llegan ordenados desde la web, con un panel para el equipo que
-  cuenta pedidos atendidos y venta perdida. Antes, cada pedido se tomaba a mano
-  por mensaje.
+  En sus primeros cinco meses, 70 pedidos de 39 clientes distintos llegaron
+  ordenados por la web. Antes, cada pedido se tomaba a mano por mensaje.
 resumen_en: >-
-  Orders arrive organized from the website, with a team dashboard that counts
-  fulfilled orders and lost sales. Before, every order was taken by hand over
+  In its first five months, 70 orders from 39 different customers arrived
+  organized through the website. Before, every order was taken by hand over
   chat.
 ---
 
@@ -40,7 +39,15 @@ Una tienda en línea que sirve como vitrina pública del catálogo y mantiene el
 
 ## El resultado
 
-En producción en su dominio propio. **Lo que medimos:** pedidos recibidos, atendidos y venta perdida, mes a mes, desde el panel del negocio.
+En producción desde mayo de 2026 en su dominio propio.
+
+- **70 pedidos** llegaron por la web entre junio y octubre de 2026.
+- **39 clientes distintos** compraron por ese canal.
+- Cada pedido queda registrado con su cliente, monto y estado, y el panel lo resume mes a mes.
+
+**El siguiente paso:** que la confirmación por WhatsApp marque sola el pedido como atendido, para medir también cuántos pedidos se cierran y que ningún cliente se quede sin respuesta.
+
+*Cifras publicadas con autorización de Hanna Comida Árabe.*
 
 ---
 
