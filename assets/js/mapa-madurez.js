@@ -20,7 +20,7 @@
   if (!map || !stations.length) return;
 
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var STEP_MS = 360;
+  var STEP_MS = 600; // mismo valor que --mm-step en _components.scss
   var wide = window.matchMedia ? window.matchMedia('(min-width: 900px)') : null;
 
   // ── Selector (solo existe con JS: se muestra aquí) ─────────────────────

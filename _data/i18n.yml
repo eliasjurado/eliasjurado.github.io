@@ -68,6 +68,7 @@ home:
   mm_opt_crm:        { es: "Vendo, pero mi equipo se ahoga en tareas manuales", en: "I sell, but my team is drowning in manual tasks" }
   mm_next:           { es: "Tu siguiente paso:",                      en: "Your next step:"                             }
   mm_reset:          { es: "Ver todo el mapa",                        en: "See the whole map"                           }
+  mm_res_whatsapp:   { es: "Atención",                                en: "Response"                                    }
   mm_res_landing:    { es: "Visibilidad",                             en: "Visibility"                                  }
   mm_res_ecommerce:  { es: "Conversión",                              en: "Conversion"                                  }
   mm_res_crm:        { es: "Eficiencia",                              en: "Efficiency"                                  }
