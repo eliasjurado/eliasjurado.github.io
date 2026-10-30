@@ -3,6 +3,7 @@ title: Joyería Donaire
 title_en: Donaire Jewelry
 slug: donaire
 destacado: true
+orden_home: 3
 cliente: Joyería Donaire Perú
 industria: Joyería / Plata 950
 industria_en: Jewelry / 950 silver

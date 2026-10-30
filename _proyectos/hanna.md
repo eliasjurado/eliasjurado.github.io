@@ -3,6 +3,7 @@ title: Hanna Comida Árabe
 title_en: Hanna Arabic Food
 slug: hanna
 destacado: true
+orden_home: 2
 cliente: Hanna Comida Árabe
 industria: Gastronomía / Comida típica
 industria_en: Food / Traditional cuisine

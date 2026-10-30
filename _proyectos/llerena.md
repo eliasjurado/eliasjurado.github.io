@@ -3,6 +3,7 @@ title: Llerena Clinimed Aesthetic
 title_en: Llerena Clinimed Aesthetic
 slug: llerena
 destacado: true
+orden_home: 1
 cliente: Dra. Verónica Llerena — Llerena Clinimed Aesthetic (Portoviejo y Manta, Ecuador)
 industria: Medicina estética / Salud
 industria_en: Aesthetic medicine / Healthcare

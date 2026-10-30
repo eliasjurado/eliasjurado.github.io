@@ -103,7 +103,7 @@ hero_subtitle: "Ayudo a las pymes a vender más con tecnología. Conecto tu web,
   }
 </style>
 
-{%- assign destacados = site.proyectos | where: "destacado", true -%}
+{%- assign destacados = site.proyectos | where: "destacado", true | sort: "orden_home" -%}
 {%- if destacados.size > 0 -%}
 <section class="section section--soft">
   <div class="container">
