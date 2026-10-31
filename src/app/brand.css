@@ -2477,3 +2477,10 @@ small, .text-sm {
 .svc-card__go { flex-shrink: 0; white-space: nowrap; }
 /* Intro del catálogo alineada a la izquierda como las secciones */
 .strategies-intro { margin-inline: 0; text-align: left; }
+
+/* === Ajustes post-crítica 27/40 (31-oct): precio sin cortes y objetivos táctiles ≥44 px === */
+.svc-card__foot { flex-wrap: wrap; row-gap: 0.25rem; column-gap: 0.75rem; }
+.svc-card__price { white-space: nowrap; }
+.portfolio-card__link,
+.home-featured__link { display: inline-flex; align-items: center; min-height: 44px; }
+.lang-toggle__btn { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
