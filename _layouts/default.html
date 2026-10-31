@@ -2,7 +2,10 @@
 <html lang="{{ site.locale | default: 'es' | slice: 0, 2 }}">
 <head>
   {%- include seo.html -%}
-  {%- seo title=false -%}
+  {%- comment -%} jekyll-seo-tag duplicaba og:/twitter: con valores viejos («Inicio»); de él solo se publica el JSON-LD. {%- endcomment -%}
+  {%- capture seo_raw -%}{%- seo title=false -%}{%- endcapture -%}
+  {%- assign seo_parts = seo_raw | split: '<script type="application/ld+json">' -%}
+  {%- if seo_parts.size > 1 -%}<script type="application/ld+json">{{ seo_parts | last }}{%- endif -%}
 </head>
 <body>
   {%- if site.gtm_container -%}
