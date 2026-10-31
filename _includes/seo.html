@@ -40,18 +40,21 @@
 <meta property="og:title" content="{{ full_title }}">
 <meta property="og:description" content="{{ page_desc | strip_newlines }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
-<meta property="og:image" content="{{ '/assets/images/eliasjurado-logo.svg' | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/images/brand/og-eliasjurado.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Elías Jurado — Sistemas de ventas digitales para pymes">
 
 <!-- Twitter / X -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ full_title }}">
 <meta name="twitter:description" content="{{ page_desc | strip_newlines }}">
-<meta name="twitter:image" content="{{ '/assets/images/eliasjurado-logo.svg' | absolute_url }}">
+<meta name="twitter:image" content="{{ '/assets/images/brand/og-eliasjurado.png' | absolute_url }}">
 
-<!-- Favicon: SVG primero (navegadores modernos), .ico como fallback legacy -->
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!-- Favicon e íconos: la mascota jaguar (PNG; WhatsApp/iOS no leen SVG) -->
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="/assets/images/eliasjurado-logo.svg">
+<link rel="icon" href="/assets/images/brand/icon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/images/brand/icon-180.png">
 
 <!-- Tipografías de marca (mismas que las propuestas) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
