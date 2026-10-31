@@ -5,6 +5,9 @@
   {%- assign full_title = page_title -%}
 {%- endif -%}
 {%- assign page_desc = page.description | default: site.description -%}
+{%- comment -%} Vista previa de enlaces (WhatsApp/redes): og_title / og_description propios si la página los define; <title> y meta description quedan para Google. {%- endcomment -%}
+{%- assign share_title = page.og_title | default: full_title -%}
+{%- assign share_desc = page.og_description | default: page_desc -%}
 
 <title>{{ full_title }}</title>
 <meta name="description" content="{{ page_desc | strip_newlines }}">
@@ -37,8 +40,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{{ site.locale }}">
 <meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:title" content="{{ full_title }}">
-<meta property="og:description" content="{{ page_desc | strip_newlines }}">
+<meta property="og:title" content="{{ share_title }}">
+<meta property="og:description" content="{{ share_desc | strip_newlines }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:image" content="{{ '/assets/images/brand/og-eliasjurado.png' | absolute_url }}">
 <meta property="og:image:width" content="1200">
@@ -47,13 +50,13 @@
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ full_title }}">
-<meta name="twitter:description" content="{{ page_desc | strip_newlines }}">
+<meta name="twitter:title" content="{{ share_title }}">
+<meta name="twitter:description" content="{{ share_desc | strip_newlines }}">
 <meta name="twitter:image" content="{{ '/assets/images/brand/og-eliasjurado.png' | absolute_url }}">
 
-<!-- Favicon e íconos: la mascota jaguar (PNG; WhatsApp/iOS no leen SVG) -->
+<!-- Pestaña: EJ de las propuestas · iPhone y vista previa: jaguar (PNG; WhatsApp/iOS no leen SVG) -->
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/assets/images/brand/icon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/assets/images/brand/favicon-ej-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/images/brand/icon-180.png">
 
 <!-- Tipografías de marca (mismas que las propuestas) -->
