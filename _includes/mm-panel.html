@@ -1,9 +1,0 @@
-{%- assign s = include.item -%}
-<div class="mm__panel-item" data-mm-panel="{{ s.slug }}" hidden>
-  <p class="mm__next"><span data-i18n="home.mm_next">Tu siguiente paso:</span> <strong data-i18n-en="{{ s.nombre_corto.en }}">{{ s.nombre_corto.es }}</strong> — <span data-i18n-en="{{ s.beneficio.en }}">{{ s.beneficio.es }}</span></p>
-  <p class="mm__panel-price" data-i18n-en="From USD {{ s.precio_usd }}">Desde S/ {{ s.precio_pen }}</p>
-  <div class="mm__panel-actions">
-    <a class="btn btn--primary" href="/contact/" data-i18n="hero.cta_primary">Conversemos</a>
-    <a class="btn btn--ghost" href="/services/#{{ s.slug }}" data-i18n="home.journey_cta">Ver detalle →</a>
-  </div>
-</div>

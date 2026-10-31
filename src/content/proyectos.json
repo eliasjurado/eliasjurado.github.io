@@ -1,0 +1,50 @@
+[
+ {
+  "title": "Joyería Donaire",
+  "title_en": "Donaire Jewelry",
+  "slug": "donaire",
+  "destacado": true,
+  "orden_home": 3,
+  "cliente": "Joyería Donaire Perú",
+  "industria": "Joyería / Plata 950",
+  "industria_en": "Jewelry / 950 silver",
+  "stack": "Next.js · Supabase · Vercel",
+  "captura": "/assets/img/portfolio/donaire-movil.jpg",
+  "captura_alt": "Página de inicio de Joyería Donaire en un celular",
+  "url_vivo": "https://joyeriadonaireperu.com",
+  "resumen": "El catálogo que vivía en WhatsApp y redes ahora es una tienda en línea en español, inglés e italiano, que la joyería administra sola.",
+  "resumen_en": "The catalog that lived in WhatsApp and social media is now an online store in Spanish, English and Italian that the jewelry shop runs on its own."
+ },
+ {
+  "title": "Hanna Comida Árabe",
+  "title_en": "Hanna Arabic Food",
+  "slug": "hanna",
+  "destacado": true,
+  "orden_home": 2,
+  "cliente": "Hanna Comida Árabe",
+  "industria": "Gastronomía / Comida típica",
+  "industria_en": "Food / Traditional cuisine",
+  "stack": "Next.js · Supabase · Vercel · WhatsApp Cloud API",
+  "captura": "/assets/img/portfolio/hanna-movil.jpg",
+  "captura_alt": "Página de inicio de Hanna Comida Árabe en un celular",
+  "url_vivo": "https://hannacomidaarabe.com",
+  "resumen": "Los pedidos que llegan por la web se duplicaron entre julio y septiembre de 2026, todos registrados en un panel. Antes, cada pedido se tomaba a mano por mensaje.",
+  "resumen_en": "Orders coming in through the website doubled between July and September 2026, all logged in a dashboard. Before, every order was taken by hand over chat."
+ },
+ {
+  "title": "Llerena Clinimed Aesthetic",
+  "title_en": "Llerena Clinimed Aesthetic",
+  "slug": "llerena",
+  "destacado": true,
+  "orden_home": 1,
+  "cliente": "Dra. Verónica Llerena — Llerena Clinimed Aesthetic (Portoviejo y Manta, Ecuador)",
+  "industria": "Medicina estética / Salud",
+  "industria_en": "Aesthetic medicine / Healthcare",
+  "stack": "Jekyll · Netlify Functions · Google Calendar API · Google Sheets API",
+  "captura": "/assets/img/portfolio/llerena-movil.jpg",
+  "captura_alt": "Página de inicio de Llerena Clinimed Aesthetic en un celular",
+  "url_vivo": "https://llerenaclinimed.com",
+  "resumen": "Las pacientes reservan su valoración desde la web y la cita cae directo en el Google Calendar de la doctora. Antes, la agenda se llevaba a mano por WhatsApp.",
+  "resumen_en": "Patients book their consultation on the website and the appointment lands straight in the doctor's Google Calendar. Before, the schedule was handled by hand over WhatsApp."
+ }
+]

@@ -1,0 +1,21 @@
+# Tasks 025
+
+- [x] **T1.** Rama `feat/next-migration` desde `development`; referencia del sitio Jekyll (HTML renderizado + fuentes) fuera del repo.
+- [x] **T2.** Mover estáticos a `public/` (CNAME, favicons, `assets/images|img|pdf`, `docs/`, `src/`); descartar `assets/plugins` (17 MB sin referencias), `assets/js`, `assets/css`.
+- [x] **T3.** Next 16 + TS + Tailwind v4 + shadcn (`button`, `card`, `sheet`), `components.json`, `cn`; `output: "export"`, `trailingSlash`.
+- [x] **T4.** Tokens shadcn → paleta de marca (radio 0); Montserrat 400/500/600/800 con `next/font`.
+- [x] **T5.** `brand.css` desde `_sass` + `<style>` inline; reglas de página scopeadas; Tailwind sin preflight.
+- [x] **T6.** Datos: `i18n.json`, `servicios.json`, `clientes.json`, `proyectos.json`, `lib/site.ts`.
+- [x] **T7.** i18n (`LangProvider`, `L`, `useT`, `LangToggle`) con la misma detección y claves.
+- [x] **T8.** Layout raíz: GTM (script + noscript), analytics, metadata/OG/Twitter/iconos, JSON-LD.
+- [x] **T9.** Header (EJ + ELÍAS JURADO, `Sheet` móvil), footer, `PageShell`.
+- [x] **T10.** Home: hero con jaguar, clientes, Mapa de Madurez (React), casos destacados, cierre.
+- [x] **T11.** `/services/`, `/portfolio/`, `/portfolio/[slug]/`, `/about/` («Quién hay detrás» al final), `/contact/`, `/card/`, 404.
+- [x] **T12.** `sitemap.xml`, `robots.txt`, `feed.xml`.
+- [x] **T13.** `.github/workflows/pages.yml`; borrar Jekyll (Gemfile*, `_config.yml`, `_layouts`, `_includes`, `_sass`, `_data`, `_proyectos`, páginas `.md`, docker-compose, script de preview).
+- [x] **T14.** `npm run build`; servir `out/`; capturas 390 y 1440 contra el sitio en vivo (diferencia < 1 % en las 5 páginas).
+- [x] **T15.** Playwright: toggle de idioma, menú móvil, mapa, formulario de contacto, card, sin errores de consola/hidratación.
+- [x] **T16.** Detector impeccable sobre `out/*.html`: sin hits nuevos (el único residual, `overused-font` = Montserrat de marca, ya estaba).
+- [x] **T17.** Actualizar `CLAUDE.md` y `README.md` del repo (estructura, i18n, datos).
+- [ ] **T18 (Elías).** Settings → Pages → Source = GitHub Actions; luego merge a `development`.
+- [ ] **T19.** Deuda: `brand.css` → utilidades Tailwind y `min-width`; PWA.

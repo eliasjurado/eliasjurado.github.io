@@ -13,3 +13,13 @@ vendor/
 
 # Secretos locales (token de GitHub para push)
 .env.local
+
+# Next.js
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Vistas previas locales del sitio Jekyll anterior
+_preview/

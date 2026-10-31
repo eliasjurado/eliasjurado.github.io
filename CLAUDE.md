@@ -19,7 +19,7 @@
 - [ ] Leer este archivo completo (`CLAUDE.md`).
 - [ ] Leer el contexto extendido en `~/Documents/eliasjurado.com/contexto-elias.md` si la tarea es nueva o ambigua.
 - [ ] Confirmar que el cambio que vas a hacer respeta las cuatro reglas no-negociables (sección 1).
-- [ ] Si la tarea modifica copy comercial o tarifas, abrir `_data/servicios.yml` y `~/Documents/eliasjurado.com/operacion/clausulas-contractuales.md`.
+- [ ] Si la tarea modifica copy comercial o tarifas, abrir `src/content/servicios.json` y `~/Documents/eliasjurado.com/operacion/clausulas-contractuales.md`.
 
 ## 1. Cuatro reglas no-negociables
 
@@ -40,7 +40,7 @@
    - Stack CSS: `'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif`.
    - Cero serif, cero alternativas decorativas.
 
-4. **Esquinas vivas — cero border-radius.** La marca es de líneas rectas. Las variables `$radius`, `$radius-sm`, `$radius-pill` están en `0` en `_sass/_variables.scss`. No introducir `border-radius` hardcoded en CSS inline ni en componentes nuevos.
+4. **Esquinas vivas — cero border-radius.** La marca es de líneas rectas. `--radius` y toda la escala de radios de shadcn están en `0` en `src/app/globals.css`. No introducir `border-radius` hardcoded en CSS inline ni en componentes nuevos.
 
 ## 1b. Modo de comunicación con Elías — asesor estratégico y espejo crítico
 
@@ -61,42 +61,37 @@ Complemento en `SOUL.md` sección 2 (modo de comunicación) y secciones 5 (patro
 
 ## 2. Estructura del repo
 
+> **Migrado a Next.js el 2026-10-31 (spec `specs/025-ej-next-migration/`).** Stack estándar de Elías (`05-operacion/stack-frontend.md`): Next.js App Router + TypeScript + Tailwind v4 + shadcn/ui, `output: "export"`, publicado en GitHub Pages con el workflow `.github/workflows/pages.yml` (push a `development`). Jekyll ya no existe en el repo.
+
 ```
-online-cv/
-├── _config.yml               ← identidad, nav (con claves i18n), branding
-├── _data/
-│   ├── servicios.yml         ← Quick Win + 3 niveles + add-ons + Plan Cuidado
-│   └── i18n.yml              ← diccionario ES/EN para el switcher JS
-├── _includes/
-│   ├── header.html           ← nav principal + toggle ES|EN
-│   ├── footer.html           ← contacto + enlaces + redes
-│   └── seo.html              ← head, fonts, i18n script injection
-├── _layouts/
-│   ├── default.html
-│   ├── home.html             ← layout home (ancho .container)
-│   ├── page.html             ← layout estándar (ancho .container-narrow — 720px)
-│   └── proyecto.html         ← layout de cada caso de portafolio
-├── _sass/
-│   ├── _variables.scss       ← paleta Miki + Montserrat + $radius:0
-│   ├── _base.scss            ← reset, .container, .container-narrow
-│   └── _components.scss      ← cards, hero, botones
-├── _proyectos/               ← collection: cada caso es un .md
-├── assets/
-│   ├── css/main.scss
-│   ├── js/i18n.js            ← language switcher con localStorage
-│   └── images/logo/          ← logo-negro.svg + logo-blanco.svg (Miki oficial)
-├── services.md               ← /services/ — pricing/strategies (custom CSS inline)
-├── about.md, contact.md, portfolio.md, card.html
+eliasjurado.github.io/
+├── next.config.ts            ← output: "export", trailingSlash: true, images.unoptimized
+├── .github/workflows/pages.yml ← build (npm ci && npm run build) → out/ → deploy-pages
+├── public/                   ← se copia tal cual a out/: CNAME, favicon.*, assets/ (images, img, pdf), docs/, src/ (subproyectos servidos)
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx        ← <html>, GTM, Montserrat (next/font), LangProvider
+│   │   ├── globals.css       ← Tailwind v4 (sin preflight) + tokens shadcn mapeados a la marca
+│   │   ├── brand.css         ← hoja de marca (antes _sass + <style> inline), clases heredadas del sitio Jekyll
+│   │   ├── (site)/           ← páginas con header/footer: page.tsx (home), services, portfolio, portfolio/[slug], about, contact
+│   │   ├── card/             ← tarjeta digital (sin header/footer, CSS Module propio)
+│   │   └── not-found.tsx, robots.ts, sitemap.ts, feed.xml/route.ts
+│   ├── components/           ← L (i18n), maturity-map, site-header/footer, icon, ui/ (shadcn: button, card, sheet)
+│   ├── content/              ← i18n.json, servicios.json, clientes.json, proyectos.json (+ proyectos/*.tsx = cuerpos de los casos)
+│   └── lib/                  ← site.ts (identidad/contacto/WhatsApp), seo.ts, data.ts, i18n.ts
+├── specs/                    ← specs del sitio (025 = esta migración)
 └── CLAUDE.md                 ← este archivo
 ```
 
+Comandos: `npm run dev` · `npm run build` (genera `out/`) · `npm run typecheck`. Para ver el export: `python3 -m http.server -d out 8765`.
+
 ## 3. Política de precios — "Desde X" + asterisco
 
-Decisión tomada el 23 may 2026. Aplica a `_data/servicios.yml` y a todo el sitio.
+Decisión tomada el 23 may 2026. Aplica a `src/content/servicios.json` (antes `_data/servicios.yml`) y a todo el sitio.
 
 - Cada item con rango histórico muestra **"Desde USD X"** (el piso del rango) en lugar del rango completo.
 - Mantener `precio_referencia_usd` como rango de mercado tachado al lado (efecto anchor de descuento).
-- Agregar `precio_es_referencial: true` en YAML para que el render incluya el asterisco *"Precio referencial. La cotización final se ajusta según alcance."*
+- Agregar `precio_es_referencial: true` en el JSON para que el render incluya el asterisco *"Precio referencial. La cotización final se ajusta según alcance."*
 - Razón: deja techo abierto para negociar caso a caso sin generar fricción de "es caro" desde el sitio. Mantiene transparencia (filtra leads no calificados) y posicionamiento profesional.
 
 ## 4. Reglas de UI / componentes
@@ -110,20 +105,20 @@ Decisión tomada el 23 may 2026. Aplica a `_data/servicios.yml` y a todo el siti
 
 ## 5. i18n — switcher JS
 
-- Diccionario en `_data/i18n.yml` con estructura `key.subkey: {es: "...", en: "..."}`.
-- Script en `assets/js/i18n.js` (vanilla JS, sin dependencias).
+- Diccionario en `src/content/i18n.json` (antes `_data/i18n.yml`) con estructura `key.subkey: {es: "...", en: "..."}`.
+- Lógica en `src/components/l.tsx` (`LangProvider` + componente `L` + hook `useT`); el HTML estático sale en ES y al montar se aplica la detección.
 - Detección inicial: `localStorage.eliasjurado_lang` > `navigator.language` (es-* → ES, otro → EN) > ES default.
-- Tres patrones de marcado (elegir según el caso):
-  - **`data-i18n="grupo.clave"`** — texto fijo que vive en `_data/i18n.yml`. El JS reemplaza `textContent`.
-  - **`data-i18n-en="Texto inglés"`** — texto plano inline (sin HTML). El JS reemplaza `textContent`. Útil para copy puntual largo donde una key i18n sería overhead.
-  - **`data-i18n-en-html="..<strong>texto</strong>.."`** — cuando la traducción contiene HTML (negrita, enlaces, spans). El JS reemplaza `innerHTML`. **Obligatorio cuando el texto tiene tags**, sino el HTML se ve literal como texto.
-- Atributos: `data-i18n-attr-aria-label="grupo.clave"`, `data-i18n-attr-placeholder="..."`, etc.
-- Toggle en `_includes/header.html` con clase `.lang-toggle` — dos botones ES | EN, esquinas vivas.
-- Cualquier nuevo texto comercial que se agregue al sitio debe registrarse en `i18n.yml` con ambos idiomas, o marcarse con `data-i18n-en` / `data-i18n-en-html` según el caso.
+- Tres patrones de marcado en JSX con `<L>` (equivalen a los `data-*` de Jekyll; elegir según el caso):
+  - **`<L k="grupo.clave">`** — texto fijo que vive en `i18n.json`; los hijos son el respaldo ES.
+  - **`<L en="Texto inglés">Texto ES</L>`** — texto plano inline (sin HTML). Útil para copy puntual largo donde una key i18n sería overhead.
+  - **`<L enHtml="..<strong>texto</strong>..">…ES…</L>`** — cuando la traducción contiene HTML (negrita, enlaces, spans). **Obligatorio cuando el texto tiene tags**, sino el HTML se ve literal como texto.
+- Atributos: `<L attrs={{ "aria-label": "grupo.clave" }}>` o `useT()` (antes `data-i18n-attr-*`).
+- Toggle en `src/components/lang-toggle.tsx` (clase `.lang-toggle`) — dos botones ES | EN, esquinas vivas.
+- Cualquier nuevo texto comercial que se agregue al sitio debe registrarse en `i18n.json` con ambos idiomas, o marcarse con `<L en>` / `<L enHtml>` según el caso.
 
 ## 6. Servicios — catálogo vigente
 
-Estructura en `_data/servicios.yml`:
+Estructura en `src/content/servicios.json` (claves del objeto raíz):
 
 ```yaml
 quick_win:        # WhatsApp Automation — capa de entrada ("free tier" estilo SaaS)
@@ -132,7 +127,7 @@ addons:           # Branded Games + integraciones + capacitación (renderizar co
 plan_cuidado:     # Básico / Estándar / Plus (mensual recurrente)
 ```
 
-**Nota de naming:** la key YAML es `addons` por compatibilidad técnica, pero en TODO el copy visible se llama **"Potenciadores"** (ES) / **"Boosters"** (EN). NO renombrar la key sin migrar también `services.md` y `_data/i18n.yml`.
+**Nota de naming:** la key YAML es `addons` por compatibilidad técnica, pero en TODO el copy visible se llama **"Potenciadores"** (ES) / **"Boosters"** (EN). NO renombrar la key sin migrar también `src/app/(site)/services/page.tsx` y `src/content/i18n.json`.
 
 ## 7. Reglas operativas Globant (críticas, no negociables)
 
@@ -213,17 +208,12 @@ Decisión operativa del 24 may 2026: **los subagentes y Opus NO deben generar ar
 
 El bloque `.help` (con clase `.no-print`) que vive arriba de la primera `.page` ya recuerda este flujo al usuario.
 
-## 9. Pendientes activos del sitio (al 23 may 2026)
+## 9. Pendientes activos del sitio (al 31 oct 2026)
 
-1. Probar build local con `docker-compose up` o `jekyll serve` y validar:
-   - Layout de 4 cols en /services/ (Quick Win negro a la izquierda).
-   - Strip de Potenciadores visible debajo de las 4 cards.
-   - Toggle ES|EN funciona y persiste en localStorage.
-   - Detección automática por OS (es-* → ES, otro → EN).
-2. Marcar el resto de textos del sitio con `data-i18n` (Sonnet puede hacer esto siguiendo el patrón ya establecido en footer.html y header nav).
-3. Commit + push a main del bloque de cambios pricing + i18n + Potenciadores.
-4. Probar performance: el script i18n.js debe correr antes del primer paint o aceptar un FOUC brevísimo.
+1. **Cambiar el origen de GitHub Pages a "GitHub Actions"** (Settings → Pages → Build and deployment → Source) antes de mergear a `development`; si no, el workflow no publica y Pages sigue sirviendo la rama como Jekyll.
+2. Migrar los `max-width` de `brand.css` a `min-width` (mobile-first estricto) y reescribir las clases heredadas en utilidades de Tailwind de forma incremental.
+3. PWA (`manifest.webmanifest` + `sw.js`) según el estándar de `05-operacion/stack-frontend.md` — el sitio Jekyll no la tenía.
 
 ---
 
-*Última actualización: 23 may 2026. Mantener este archivo al día con cada decisión de marca o estructura. Si dudás, lee `~/Documents/eliasjurado.com/contexto-elias.md`.*
+*Última actualización: 31 oct 2026 (migración a Next.js). Mantener este archivo al día con cada decisión de marca o estructura.*
