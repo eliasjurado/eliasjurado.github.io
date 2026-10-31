@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
 import { L } from "@/components/l";
+import { MetodoStrip } from "@/components/metodo-strip";
 import { PageShell } from "@/components/page-shell";
 import { Button } from "@/components/ui/button";
 import { jsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Cómo trabajamos",
+  title: "Cómo trabajo",
   path: "/services/proceso/",
   description: "Cuatro pasos, cada uno con un entregable que validas antes de continuar: conversamos, propuesta, construimos, lanzamos y cuidamos.",
 });
@@ -21,23 +22,23 @@ const steps: [string, string][] = [
 export default function ProcesoPage() {
   return (
     <PageShell
-      prefix="services"
-      kicker="Mapa de Madurez Digital"
-      title="Cómo trabajamos"
+      keys={{ kicker: "services.process_page_kicker", title: "services.process_page_title", subtitle: "services.process_page_subtitle" }}
+      kicker="Mi método"
+      title="Cómo trabajo"
       subtitle="Cuatro pasos, cada uno con un entregable que validas antes de continuar."
-      pageClass="page-services svc-detail-page"
-      narrow
+      pageClass="page-services"
     >
-      <JsonLd data={jsonLd("WebPage", "Cómo trabajamos", "/services/proceso/")} />
+      <JsonLd data={jsonLd("WebPage", "Cómo trabajo", "/services/proceso/")} />
       <nav className="svc-crumbs" aria-label="Ruta de navegación">
         <L link as="a" href="/services/" k="services.crumb_services">
           Servicios
         </L>
         <span aria-hidden="true">›</span>
         <L k="services.process_page_title" aria-current="page">
-          Cómo trabajamos
+          Cómo trabajo
         </L>
       </nav>
+      <MetodoStrip detail={false} />
       <section className="strategies-proceso">
         <L as="h2" k="services.process_title">
           ¿Cómo trabajamos juntos?

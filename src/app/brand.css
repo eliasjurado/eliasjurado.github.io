@@ -1572,7 +1572,7 @@ small, .text-sm {
   .metodo-step__num {
     font-size: 0.75rem;
     font-weight: 800;
-    color: #d2d2d7;
+    color: #6e6e73;
     letter-spacing: 0.2em;
     font-family: var(--font-sans);
   }
@@ -2457,3 +2457,23 @@ small, .text-sm {
 .page-services .metodo-ver-detalle { display: inline-flex; align-items: center; min-height: 44px; }
 .svc-bar { padding-top: 0.6rem; padding-bottom: calc(0.6rem + env(safe-area-inset-bottom)); }
 .svc-bar__inner { padding-block: 0; }
+
+/* === Crítica 27-40 (spec 029) — mobile-first === */
+/* Ritmo bajo la cabecera de página: el hueco cabecera→contenido era 120 px */
+.page-header + .section { padding-top: 2.5rem; }
+@media (min-width: 768px) {
+  .page-header + .section { padding-top: 3.5rem; }
+}
+/* /about/: respiro entre bloques (h2 con más aire arriba que abajo) */
+.page-about .about-body h2 { margin: 3.5rem 0 1rem; }
+.page-about .about-body > h2:first-child { margin-top: 0; }
+/* Contacto: aire entre el teléfono y el formulario */
+.wa-form { margin-top: 1.25rem; }
+/* Proceso: lista de pasos con medida de lectura */
+.strategies-proceso ol { max-width: 70ch; }
+/* Catálogo: pie de tarjeta idéntico en todas (precio izq., «Ver servicio →» der., anclado al fondo) */
+.svc-card__foot { flex-wrap: nowrap; align-items: baseline; margin-top: auto; }
+.svc-card__price { min-width: 0; }
+.svc-card__go { flex-shrink: 0; white-space: nowrap; }
+/* Intro del catálogo alineada a la izquierda como las secciones */
+.strategies-intro { margin-inline: 0; text-align: left; }

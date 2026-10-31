@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/icon";
 import { L } from "@/components/l";
+import { WhatsAppCta } from "@/components/whatsapp-cta";
 import { Button } from "@/components/ui/button";
 import type { Servicio } from "@/lib/data";
 
@@ -139,11 +140,7 @@ export function MaturityMap({ entry, levels }: { entry: Servicio; levels: Servic
                   {priceEs(s)}
                 </L>
                 <div className="mm__panel-actions">
-                  <Button asChild>
-                    <L as="a" link href="/contact/" k="hero.cta_primary">
-                      Conversemos
-                    </L>
-                  </Button>
+                  <WhatsAppCta topic={s.nombre_corto} />
                   <Button asChild variant="ghost">
                     <L as="a" link href={`/services/${s.slug}/`} k="home.journey_cta">
                       Ver detalle →

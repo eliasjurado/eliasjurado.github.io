@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/json-ld";
 import { L } from "@/components/l";
 import { MaturityMap } from "@/components/maturity-map";
 import { ProyectoCaptura } from "@/components/proyecto-captura";
+import { WhatsAppCta } from "@/components/whatsapp-cta";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { clientes, niveles, proyectos, quickWin } from "@/lib/data";
@@ -43,11 +44,7 @@ export default function HomePage() {
               {heroSubtitle}
             </L>
             <div className="hero__actions">
-              <Button asChild size="lg">
-                <L as="a" link href="/contact/" k="hero.cta_primary">
-                  Conversemos
-                </L>
-              </Button>
+              <WhatsAppCta />
               <Button asChild size="lg" variant="ghost">
                 <L as="a" link href="/services/" k="hero.cta_secondary">
                   Ver servicios y precios

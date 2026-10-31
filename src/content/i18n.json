@@ -55,6 +55,10 @@
   "cta_secondary": {
    "es": "Ver servicios y precios",
    "en": "See services and pricing"
+  },
+  "wa_message": {
+   "es": "Hola Elías, vi tu web y me gustaría conversar sobre un proyecto.",
+   "en": "Hi Elías, I saw your website and I'd like to talk about a project."
   }
  },
  "home": {
@@ -393,8 +397,8 @@
    "en": "Care Plan"
   },
   "catalog_estrategias_body": {
-   "es": "Un primer paso y tres niveles del Mapa de Madurez. Elige donde estás hoy.",
-   "en": "A first step and three levels of the Maturity Map. Pick where you are today."
+   "es": "Un primer paso y tres niveles del Mapa de Madurez, según dónde esté tu negocio hoy.",
+   "en": "A first step and three levels of the Maturity Map, depending on where your business is today."
   },
   "catalog_potenciadores_body": {
    "es": "Se suman a cualquier estrategia y se cotizan aparte.",
@@ -441,8 +445,8 @@
    "en": "Focus"
   },
   "process_page_title": {
-   "es": "Cómo trabajamos",
-   "en": "How we work"
+   "es": "Cómo trabajo",
+   "en": "How I work"
   },
   "process_page_subtitle": {
    "es": "Cuatro pasos, cada uno con un entregable que validas antes de continuar.",
@@ -455,6 +459,18 @@
   "care_name_prefix": {
    "es": "Plan Cuidado",
    "en": "Care Plan"
+  },
+  "process_page_kicker": {
+   "es": "Mi método",
+   "en": "My method"
+  },
+  "wa_talk_message": {
+   "es": "Hola Elías, vi tu web y me gustaría conversar sobre: {name}.",
+   "en": "Hi Elías, I saw your website and I'd like to talk about: {name}."
+  },
+  "group_estrategias_title": {
+   "es": "Elige tu punto de partida",
+   "en": "Choose your starting point"
   }
  },
  "footer": {
