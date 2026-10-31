@@ -57,16 +57,6 @@ i18n_prefix: about
 
 <div class="about-body" markdown="1">
 
-## <span data-i18n-en="Who's behind">Quién hay detrás</span>
-
-<p data-i18n-en-html="I'm <strong>Elías Luis Jurado Santos</strong>, a developer based in Miraflores, Lima.">Soy <strong>Elías Luis Jurado Santos</strong>, desarrollador con base en Miraflores, Lima.</p>
-
-<p data-i18n-en-html="My path into software development wasn't linear. I started studying <strong>History and Cultural Management at Universidad de Piura</strong> and worked on social projects in rural areas of northern Peru. I was interested — and still am — in how culture manifests today: the urban, the popular, what people actually live.">Mi camino al desarrollo de software no fue lineal. Empecé estudiando <strong>Historia y Gestión Cultural en la Universidad de Piura</strong> y trabajé en proyectos sociales en zonas rurales del norte del país. Me interesaba —y me sigue interesando— cómo la cultura se manifiesta hoy: lo urbano, lo popular, lo que la gente realmente vive.</p>
-
-<p data-i18n-en="When I moved to Lima, that field barely existed in the city. I studied Computing and Informatics and entered software development through a side door: a Flutter project got me my first job as a software assistant before I finished my technical studies. What I discovered ordered my mind — code has a clear logic of 'works or doesn't work', no middle ground, and that discipline changed me.">Cuando me mudé a Lima, ese rubro casi no existía en la ciudad. Estudié Computación e Informática y entré al desarrollo de software por una puerta lateral: un proyecto en Flutter me consiguió mi primer empleo como asistente de software antes de terminar mis estudios técnicos. Lo que descubrí me ordenó la cabeza — el código tiene una lógica clara de "funciona o no funciona", sin puntos medios, y esa disciplina me cambió.</p>
-
-<p data-i18n-en="Today I combine both: the sensitivity of someone from the humanities — understanding the client's context, reading aesthetics, narrating well — with the technical discipline to build products that work. It's a rare mix in my field, and I think that combination is what makes me useful for businesses that don't just want a website: they want their site to say something.">Hoy combino las dos cosas: la sensibilidad de quien viene de humanidades —entender el contexto del cliente, leer la estética, narrar bien— con la disciplina técnica para construir productos que funcionan. Es un mix raro en mi rubro, y creo que esa mezcla es lo que me hace útil para negocios que no quieren solo un sitio web: quieren que su sitio diga algo.</p>
-
 ## <span data-i18n-en="How I work — the principles">Cómo trabajo — los principios</span>
 
 <p data-i18n-en="Three convictions structure every project:">Tres convicciones estructuran cada proyecto:</p>
@@ -295,6 +285,20 @@ cobrar / sin costo", tono directo y de decisión personal.
   }
 </style>
 {% endcomment %}
+
+<div class="about-body about-body--final" markdown="1">
+
+## <span data-i18n-en="Who's behind">Quién hay detrás</span>
+
+<p data-i18n-en-html="I'm <strong>Elías Luis Jurado Santos</strong>, a developer based in Miraflores, Lima.">Soy <strong>Elías Luis Jurado Santos</strong>, desarrollador con base en Miraflores, Lima.</p>
+
+<p data-i18n-en-html="My path into software development wasn't linear. I started studying <strong>History and Cultural Management at Universidad de Piura</strong> and worked on social projects in rural areas of northern Peru. I was interested — and still am — in how culture manifests today: the urban, the popular, what people actually live.">Mi camino al desarrollo de software no fue lineal. Empecé estudiando <strong>Historia y Gestión Cultural en la Universidad de Piura</strong> y trabajé en proyectos sociales en zonas rurales del norte del país. Me interesaba —y me sigue interesando— cómo la cultura se manifiesta hoy: lo urbano, lo popular, lo que la gente realmente vive.</p>
+
+<p data-i18n-en="When I moved to Lima, that field barely existed in the city. I studied Computing and Informatics and entered software development through a side door: a Flutter project got me my first job as a software assistant before I finished my technical studies. What I discovered ordered my mind — code has a clear logic of 'works or doesn't work', no middle ground, and that discipline changed me.">Cuando me mudé a Lima, ese rubro casi no existía en la ciudad. Estudié Computación e Informática y entré al desarrollo de software por una puerta lateral: un proyecto en Flutter me consiguió mi primer empleo como asistente de software antes de terminar mis estudios técnicos. Lo que descubrí me ordenó la cabeza — el código tiene una lógica clara de "funciona o no funciona", sin puntos medios, y esa disciplina me cambió.</p>
+
+<p data-i18n-en="Today I combine both: the sensitivity of someone from the humanities — understanding the client's context, reading aesthetics, narrating well — with the technical discipline to build products that work. It's a rare mix in my field, and I think that combination is what makes me useful for businesses that don't just want a website: they want their site to say something.">Hoy combino las dos cosas: la sensibilidad de quien viene de humanidades —entender el contexto del cliente, leer la estética, narrar bien— con la disciplina técnica para construir productos que funcionan. Es un mix raro en mi rubro, y creo que esa mezcla es lo que me hace útil para negocios que no quieren solo un sitio web: quieren que su sitio diga algo.</p>
+
+</div>
 
 <div class="about-cta">
   <a href="/contact/" class="btn btn--primary btn--lg" data-i18n-en="Let's talk">Hablemos</a>

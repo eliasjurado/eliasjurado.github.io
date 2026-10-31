@@ -234,8 +234,11 @@
 // Logo pequeño: «EJ» de las propuestas en PDF (cuadro carbón, blanco, peso 800)
 .brand-ej {
   display: inline-grid; place-items: center; flex-shrink: 0;
-  width: 44px; height: 44px; background: #1d1d1f; color: #fff;
-  font-family: $font-sans; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.04em; line-height: 1;
+  width: 40px; height: 40px; background: #000; color: #fff;
+  font-family: $font-sans; font-weight: 800; font-size: 17px; letter-spacing: -0.04em; line-height: 1;
+}
+.site-header__brand .brand-ej + span {
+  text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; font-size: 0.95rem;
 }
 .hero__avatar--jaguar > img { box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .45); }
 .site-header__brand {
