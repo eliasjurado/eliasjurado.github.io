@@ -15,7 +15,7 @@ python3 -m http.server -d out 8765   # revisar el export
 
 ## Despliegue
 
-Push a `development` → `.github/workflows/pages.yml` (build + `actions/deploy-pages`).
+Push a `main` → `.github/workflows/pages.yml` (build + `actions/deploy-pages`).
 Requiere **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
 ## Estructura y reglas

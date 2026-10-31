@@ -61,7 +61,7 @@ Complemento en `SOUL.md` sección 2 (modo de comunicación) y secciones 5 (patro
 
 ## 2. Estructura del repo
 
-> **Migrado a Next.js el 2026-10-31 (spec `specs/025-ej-next-migration/`).** Stack estándar de Elías (`05-operacion/stack-frontend.md`): Next.js App Router + TypeScript + Tailwind v4 + shadcn/ui, `output: "export"`, publicado en GitHub Pages con el workflow `.github/workflows/pages.yml` (push a `development`). Jekyll ya no existe en el repo.
+> **Migrado a Next.js el 2026-10-31 (spec `specs/025-ej-next-migration/`).** Stack estándar de Elías (`05-operacion/stack-frontend.md`): Next.js App Router + TypeScript + Tailwind v4 + shadcn/ui, `output: "export"`, publicado en GitHub Pages con el workflow `.github/workflows/pages.yml` (push a `main`; la rama `development` se renombró a `main` el 2026-10-31). Jekyll ya no existe en el repo.
 
 ```
 eliasjurado.github.io/
@@ -210,7 +210,7 @@ El bloque `.help` (con clase `.no-print`) que vive arriba de la primera `.page` 
 
 ## 9. Pendientes activos del sitio (al 31 oct 2026)
 
-1. **Cambiar el origen de GitHub Pages a "GitHub Actions"** (Settings → Pages → Build and deployment → Source) antes de mergear a `development`; si no, el workflow no publica y Pages sigue sirviendo la rama como Jekyll.
+1. **Cambiar el origen de GitHub Pages a "GitHub Actions"** (Settings → Pages → Build and deployment → Source) antes de mergear a `main`; si no, el workflow no publica y Pages sigue sirviendo la rama como Jekyll.
 2. Migrar los `max-width` de `brand.css` a `min-width` (mobile-first estricto) y reescribir las clases heredadas en utilidades de Tailwind de forma incremental.
 3. PWA (`manifest.webmanifest` + `sw.js`) según el estándar de `05-operacion/stack-frontend.md` — el sitio Jekyll no la tenía.
 
