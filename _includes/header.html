@@ -1,9 +1,8 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a href="/" class="site-header__brand" aria-label="{{ site.title }} — Inicio">
-      <!-- Logo oficial Miki: SVG nativo entregado en logotipo-pack2.
-           logo-negro.svg = versión final entregada por Miki, optimizada para fondo claro. -->
-      <img class="brand-monograma" src="/assets/images/logo/logo-negro.svg" alt="" aria-hidden="true">
+      <!-- Logo en tamaño pequeño = el «EJ» de las propuestas (cuadro carbón). En tamaño grande va el jaguar (hero). -->
+      <span class="brand-ej" aria-hidden="true">EJ</span>
       <span>{{ site.title }}</span>
     </a>
 
@@ -85,6 +84,5 @@
   }
   @media (max-width: 767px) {
     .site-header__inner .lang-toggle { display: none; }
-    .site-header__brand img.brand-monograma { height: 42px; }
   }
 </style>
