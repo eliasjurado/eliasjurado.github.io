@@ -14,7 +14,7 @@ function downloadVCard() {
     `FN:${site.author.name}`,
     "N:Jurado;Elías;Luis;;",
     `ORG:${site.author.name}`,
-    "TITLE:Landing web · E-commerce · CRM",
+    "TITLE:Sistemas de ventas digitales para pymes",
     `TEL;TYPE=CELL,VOICE:${E164}`,
     `EMAIL;TYPE=WORK:${site.contact.email}`,
     `URL:${site.url}`,
@@ -62,10 +62,10 @@ export function CardActions() {
 
   return (
     <div className={styles.secondary}>
-      <L as="button" k="card.save_contact" className={styles["btn-2"]} onClick={downloadVCard}>
+      <L as="button" k="card.save_contact" en="Save contact" className={styles.btn2} onClick={downloadVCard}>
         Guardar contacto
       </L>
-      <L as="button" k="card.share" className={`${styles["btn-2"]} ${styles.outline}`} onClick={share}>
+      <L as="button" k="card.share" en="Share" className={styles.btn2} onClick={share}>
         Compartir
       </L>
     </div>

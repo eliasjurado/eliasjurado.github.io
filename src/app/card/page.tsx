@@ -16,45 +16,53 @@ const host = site.url.replace(/^https?:\/\//, "");
 
 export default function CardPage() {
   const waText = site.whatsappMessages.default;
-  const rows = [
-    { cls: `${styles.btn} ${styles.whatsapp}`, href: waLink(site.contact.whatsapp, waText), label: "Abrir WhatsApp", icon: "chat", key: "card.whatsapp_label", es: "WhatsApp", value: site.contact.phone, ext: true },
-    { cls: styles.btn, href: `tel:+${site.contact.whatsapp}`, label: "Llamar por telefono", icon: "phone", key: "card.call_label", es: "Llamar", value: site.contact.phone },
-    { cls: styles.btn, href: `mailto:${site.contact.email}`, label: "Enviar correo", icon: "mail", key: "card.email_label", es: "Correo", value: site.contact.email },
-    { cls: styles.btn, href: site.url, label: "Ir al sitio web", icon: "globe", key: "card.website_label", es: "Sitio web", value: host, ext: true },
+  const quick = [
+    { href: `tel:+${site.contact.whatsapp}`, label: "Llamar por teléfono", icon: "phone", es: "Llamar", en: "Call" },
+    { href: `mailto:${site.contact.email}`, label: "Enviar correo", icon: "mail", es: "Correo", en: "Email" },
+    { href: site.url, label: "Ir al sitio web", icon: "globe", es: "Web", en: "Website", ext: true },
   ];
   return (
     <div className={styles.page}>
       <main className={styles.card}>
+        <span className={`brand-ej ${styles.ej}`} aria-hidden="true">
+          EJ
+        </span>
         <header className={styles.head}>
-          <img className={styles.head__logo} src="/assets/images/logo/logo-blanco.svg" alt={site.title} />
-          <h1 className={styles.head__name}>{site.title}</h1>
-          <L as="p" k="card.tagline" className={styles.head__tagline}>
+          <img className={styles.jaguar} src="/assets/images/card/jaguar.webp" width={630} height={640} alt="" />
+          <h1 className={styles.name}>Elías Jurado</h1>
+          <L as="p" en="Digital sales systems for small businesses" className={styles.role}>
             Sistemas de ventas digitales para pymes
           </L>
         </header>
 
-        <nav className={styles.actions} aria-label="Contacto">
-          {rows.map((r) => (
-            <a key={r.icon} className={r.cls} href={r.href} aria-label={r.label} {...(r.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
-              <span className={styles.ico} aria-hidden="true">
-                <Icon name={r.icon} className={styles["ico-svg"]} />
-              </span>
-              <span className={styles.text}>
-                <L k={r.key} className={styles["label-r"]}>
-                  {r.es}
-                </L>
-                <span className={styles.value}>{r.value}</span>
-              </span>
-            </a>
-          ))}
-        </nav>
+        <div className={styles.body}>
+          <a
+            className={styles.primary}
+            href={waLink(site.contact.whatsapp, waText)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="chat" className={styles.ico} />
+            <L en="Message me on WhatsApp">Escríbeme por WhatsApp</L>
+          </a>
 
-        <CardActions />
+          <nav className={styles.quick} aria-label="Contacto">
+            {quick.map((r) => (
+              <a key={r.icon} className={styles.q} href={r.href} aria-label={r.label} {...(r.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                <Icon name={r.icon} className={styles.ico} />
+                <L en={r.en}>{r.es}</L>
+              </a>
+            ))}
+          </nav>
+
+          <CardActions />
+        </div>
 
         <footer className={styles.foot}>
-          {site.contact.city} · <L k="card.tax_id_label">RUC</L> {site.contact.ruc}
-          <br />
-          <a href={site.url}>{host}</a>
+          <p>{site.contact.city}</p>
+          <p>
+            RUC {site.contact.ruc} · <a href={site.url}>{host}</a>
+          </p>
         </footer>
       </main>
     </div>

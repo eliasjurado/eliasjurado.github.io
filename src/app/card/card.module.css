@@ -1,131 +1,208 @@
+/* Tarjeta digital — luxury black, mobile-first. Esquinas vivas, Montserrat. */
 .page {
-    --carbon:    #000000;
-    --steel:     #243038;
-    --muted:     #606060;
-    --aluminum:  #f5f5f7;
-    --white:     #ffffff;
+  --ink: #0b0b0c;
+  --line: rgba(255, 255, 255, 0.14);
+  --silver: #a1a1a6;
+  --paper: #f5f5f7;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page,
+.page * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+.page ::selection {
+  background: #fff;
+  color: #000;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 100dvh;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
-  .page, .page * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+}
+
+.ej {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+  font-size: 15px;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.head {
+  padding: 56px 24px 8px;
+  text-align: center;
+}
+.jaguar {
+  display: block;
+  width: min(62vw, 250px);
+  height: auto;
+  margin: 0 auto 20px;
+}
+.name {
+  margin: 0;
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.role {
+  margin: 12px auto 0;
+  max-width: 24ch;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: var(--silver);
+  text-wrap: balance;
+}
+
+.body {
+  padding: 28px 20px 8px;
+  display: grid;
+  gap: 10px;
+}
+
+.ico {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 60px;
+  padding: 0 20px;
+  background: #fff;
+  color: #000;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.primary:hover {
+  background: var(--paper);
+  transform: translateY(-1px);
+}
+.primary:active {
+  transform: none;
+}
+
+.quick {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.q,
+.btn2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--line);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.q {
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 4px;
+  min-height: 72px;
+}
+.q:hover,
+.btn2:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+.secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.primary:focus-visible,
+.q:focus-visible,
+.btn2:focus-visible,
+.foot a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.foot {
+  margin-top: auto;
+  padding: 32px 24px 28px;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--silver);
+}
+.foot p {
+  margin: 0;
+}
+.foot a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+
+/* Escritorio: objeto del tamaño de un teléfono, centrado sobre negro puro */
+@media (min-width: 640px) {
   .page {
-    background: linear-gradient(160deg, var(--carbon) 0%, var(--steel) 100%);
-    min-height: 100vh; min-height: 100dvh;
-    font-family: var(--font-sans);
-    color: var(--carbon);
-    display: flex; align-items: center; justify-content: center;
-    padding: 24px 16px;
+    padding: 40px 16px;
   }
   .card {
-    width: 100%; max-width: 400px;
-    background: var(--white);
-    overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0,0,0,.55);
+    min-height: 0;
+    border: 1px solid var(--line);
   }
+}
 
-  /* HEADER con gradiente carbón → steel y logo blanco */
-  .head {
-    background: linear-gradient(160deg, var(--carbon) 0%, var(--steel) 100%);
-    padding: 44px 28px 32px;
-    color: var(--white);
-    text-align: center;
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
   }
-  .head__logo {
-    display: block;
-    width: 200px;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto 14px;
+  .primary,
+  .q,
+  .btn2 {
+    transition: none;
   }
-  .head__name {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: var(--white);
-    margin: 0;
-    text-transform: uppercase;
+  .primary:hover {
+    transform: none;
   }
-  .head__tagline {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--aluminum);
-    opacity: 0.75;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 10px 0 0;
-  }
-
-  /* Lista de acciones sobre fondo blanco */
-  .actions { padding: 20px 18px 8px; background: var(--white); }
-  .btn {
-    display: flex; align-items: center; gap: 14px;
-    padding: 14px 16px;
-    background: var(--aluminum);
-    color: var(--carbon);
-    text-decoration: none;
-    font-size: 15px; font-weight: 500;
-    margin-bottom: 10px;
-    border: 1px solid transparent;
-    transition: all 0.18s ease;
-    cursor: pointer;
-  }
-  .btn:hover, .btn:active {
-    background: var(--white);
-    border-color: var(--carbon);
-    transform: translateY(-1px);
-  }
-  .btn:focus-visible,
-  .btn-2:focus-visible {
-    outline: 2px solid var(--carbon);
-    outline-offset: 2px;
-  }
-  .btn .ico {
-    flex-shrink: 0; width: 38px; height: 38px;
-    display: grid; place-items: center;
-    background: var(--carbon); color: var(--white);
-    font-size: 14px;
-    font-weight: 700;
-  }
-  .btn .ico-svg { width: 20px; height: 20px; display: block; }
-  .btn.whatsapp .ico { background: var(--steel); color: var(--white); }
-  .btn .label-r {
-    color: var(--muted);
-    font-size: 10.5px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  .btn .text { display: flex; flex-direction: column; gap: 2px; }
-  .btn .value { font-weight: 600; color: var(--carbon); font-size: 14.5px; }
-
-  /* Acciones secundarias */
-  .secondary {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 10px; padding: 8px 18px 22px;
-    background: var(--white);
-  }
-  .btn-2 {
-    text-align: center; padding: 14px 10px;
-    background: var(--carbon); color: var(--white);
-    font-size: 13px; font-weight: 600;
-    text-decoration: none; cursor: pointer; border: none;
-    font-family: inherit;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    transition: all 0.18s ease;
-  }
-  .btn-2.outline {
-    background: transparent; color: var(--carbon);
-    border: 1.5px solid var(--carbon);
-  }
-  .btn-2:hover { opacity: 0.88; transform: translateY(-1px); }
-  .btn-2.outline:hover { background: var(--aluminum); }
-
-  /* Footer */
-  .foot {
-    padding: 18px 24px 22px; text-align: center;
-    background: var(--white);
-    border-top: 1px solid var(--aluminum);
-    font-size: 11px; color: var(--muted);
-    letter-spacing: 0.4px;
-    line-height: 1.7;
-  }
-  .foot a { color: var(--carbon); text-decoration: none; font-weight: 600; }
+}
