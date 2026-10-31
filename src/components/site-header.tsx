@@ -26,7 +26,7 @@ export function SiteHeader() {
 
         <nav className="site-nav" aria-label="Navegación principal">
           {site.nav.map((item) => (
-            <L key={item.url} as="a" link href={item.url} k={item.i18n} aria-current={pathname === item.url ? "page" : undefined}>
+            <L key={item.url} as="a" link href={item.url} k={item.i18n} aria-current={pathname === item.url || (item.url !== "/" && pathname.startsWith(item.url)) ? "page" : undefined}>
               {item.label}
             </L>
           ))}

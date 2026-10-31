@@ -145,7 +145,7 @@ export function MaturityMap({ entry, levels }: { entry: Servicio; levels: Servic
                     </L>
                   </Button>
                   <Button asChild variant="ghost">
-                    <L as="a" link href={`/services/#${s.slug}`} k="home.journey_cta">
+                    <L as="a" link href={`/services/${s.slug}/`} k="home.journey_cta">
                       Ver detalle →
                     </L>
                   </Button>
@@ -201,7 +201,7 @@ export function MaturityMap({ entry, levels }: { entry: Servicio; levels: Servic
                     )}
                   </p>
                   <h3 className="mm__name">
-                    <L as="a" link className="mm__link" href={`/services/#${s.slug}`} en={s.nombre_corto.en}>
+                    <L as="a" link className="mm__link" href={`/services/${s.slug}/`} en={s.nombre_corto.en}>
                       {s.nombre_corto.es}
                     </L>
                   </h3>

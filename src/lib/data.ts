@@ -35,6 +35,7 @@ export interface Addon {
   kicker: Bi;
   resumen: Bi;
   detalle?: Bi;
+  aplica_a?: string[];
   precio_usd: MaybeBi;
   precio_pen: MaybeBi;
   precio_es_referencial?: boolean;

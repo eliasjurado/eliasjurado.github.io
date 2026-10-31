@@ -249,8 +249,8 @@
    "en": "+ Optional boosters"
   },
   "potenciadores_caption": {
-   "es": "Suman a cualquier estrategia. Haz clic en cada uno para ver detalle.",
-   "en": "Add to any strategy. Click each one for details."
+   "es": "Suman a cualquier estrategia. Cada uno tiene su propia página.",
+   "en": "They add to any strategy. Each one has its own page."
   },
   "addons_kicker": {
    "es": "Potenciadores opcionales",
@@ -369,8 +369,92 @@
    "en": "We launch and care"
   },
   "method_see_detail": {
-   "es": "Ver detalle del proceso ↓",
-   "en": "See process detail ↓"
+   "es": "Ver el proceso completo →",
+   "en": "See the full process →"
+  },
+  "breadcrumb_label": {
+   "es": "Ruta de navegación",
+   "en": "Breadcrumb"
+  },
+  "crumb_services": {
+   "es": "Servicios",
+   "en": "Services"
+  },
+  "group_estrategias": {
+   "es": "Estrategias",
+   "en": "Strategies"
+  },
+  "group_potenciadores": {
+   "es": "Potenciadores",
+   "en": "Add-ons"
+  },
+  "group_cuidado": {
+   "es": "Plan Cuidado",
+   "en": "Care Plan"
+  },
+  "catalog_estrategias_body": {
+   "es": "Un primer paso y tres niveles del Mapa de Madurez. Elige donde estás hoy.",
+   "en": "A first step and three levels of the Maturity Map. Pick where you are today."
+  },
+  "catalog_potenciadores_body": {
+   "es": "Se suman a cualquier estrategia y se cotizan aparte.",
+   "en": "They add to any strategy and are quoted separately."
+  },
+  "catalog_cuidado_body": {
+   "es": "Hosting, soporte y mejoras continuas, independiente del desarrollo.",
+   "en": "Hosting, support and continuous improvements, separate from development."
+  },
+  "see_page": {
+   "es": "Ver servicio →",
+   "en": "View service →"
+  },
+  "cta_quote": {
+   "es": "Cotizar por WhatsApp",
+   "en": "Get a quote on WhatsApp"
+  },
+  "see_others": {
+   "es": "Ver otros servicios",
+   "en": "See other services"
+  },
+  "related_title": {
+   "es": "También te puede interesar",
+   "en": "You might also like"
+  },
+  "prev_in_group": {
+   "es": "← Anterior",
+   "en": "← Previous"
+  },
+  "next_in_group": {
+   "es": "Siguiente →",
+   "en": "Next →"
+  },
+  "detail_heading": {
+   "es": "Qué es",
+   "en": "What it is"
+  },
+  "applies_to": {
+   "es": "Se suma a",
+   "en": "Works with"
+  },
+  "focus_label": {
+   "es": "Enfoque",
+   "en": "Focus"
+  },
+  "process_page_title": {
+   "es": "Cómo trabajamos",
+   "en": "How we work"
+  },
+  "process_page_subtitle": {
+   "es": "Cuatro pasos, cada uno con un entregable que validas antes de continuar.",
+   "en": "Four steps, each with a deliverable you validate before moving on."
+  },
+  "wa_message": {
+   "es": "Hola Elías, vi tu web y me gustaría cotizar: {name}.",
+   "en": "Hi Elías, I saw your website and I would like a quote for: {name}."
+  },
+  "care_name_prefix": {
+   "es": "Plan Cuidado",
+   "en": "Care Plan"
   }
  },
  "footer": {
